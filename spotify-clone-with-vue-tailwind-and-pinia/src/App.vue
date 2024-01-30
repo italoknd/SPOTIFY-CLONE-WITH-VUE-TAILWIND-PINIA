@@ -90,12 +90,19 @@ const routeTo = (toRoute: string): void => {
       <div class="w-[200px]">
         <div class="mb-4" @click="routeTo('/')">
           <img
-            width="54"
+            width="124"
             height="100"
             src="/images/icons/spotify-logo.png"
             alt="Home Icon"
           />
         </div>
+
+        <div class="my-8"/>
+<ul>
+  <li></li>
+</ul>
+
+
         <div class="flex mb-4" @click="routeTo('/')">
           <img width="27" src="/images/icons/home-active.png" alt="Home Icon" />
           <p class="text-white font-semibold">Home</p>
