@@ -10,14 +10,67 @@ import ChevronLeft from "vue-material-design-icons/ChevronLeft.vue";
 //HOOKS
 
 //VARIABLES
+let openMenu = $ref<boolean>(false);
+
+const username = $ref("Italo Pedroza");
+const userProfilePicture = $ref(
+  "https://lh3.googleusercontent.com/a/ACg8ocJ-zkH1FfQwQhEAJa5_07Pp2q_HVmFnXS_ce9xYtPHGbnk=s96-c-rg-br100"
+);
+
+//FUNCTIONS
+const toggleOpeness = (param: boolean): void => {
+  openMenu = param;
+};
 </script>
 
 <template>
-  <div
-    class="w-[calc(100%-20px)] h-[60px] fixed right-0 z-20 bg-[#101010] bg-opacity-80 flex items-center justify-between"
-  >
-    <div >
-
+  <div>
+    <div
+      class="w-[calc(100%-20px)] h-[60px] fixed right-0 z-20 bg-[#101010] bg-opacity-80 flex items-center justify-between"
+    >
+      <div class="flex items-center ml-6">
+        <button
+          type="button"
+          class="rounded-full bg-black p-[1px] cursor-pointer"
+        >
+          <ChevronLeft fillColor="#fff" :size="30" />
+        </button>
+        <button
+          type="button"
+          class="rounded-full bg-black p-[1px] cursor-pointer ml-4"
+        >
+          <ChevronRight fillColor="#fff" :size="30" />
+        </button>
+      </div>
+      <button
+        @click="toggleOpeness(!openMenu)"
+        :class="openMenu ? 'bg-[#282828]' : 'bg-black'"
+        class="bg-black hover:bg-[#282828] rounded-full p-0.5 mr-8 mt-0.5 cursor-pointer"
+      >
+        <div class="flex items-center">
+          <img
+            class="rounded-full"
+            width="27"
+            :src="userProfilePicture"
+            alt="Profile Picture"
+          />
+          <div class="text-white text-[14px] mx-1.5 font-semibold">
+            {{ username }}
+          </div>
+          <ChevronDown
+            v-if="openMenu"
+            @click="toggleOpeness(true)"
+            fillColor="#fff"
+            :size="25"
+          />
+          <ChevronUp
+            v-else
+            @click="toggleOpeness(false)"
+            fillColor="#fff"
+            :size="25"
+          />
+        </div>
+      </button>
     </div>
   </div>
 </template>
