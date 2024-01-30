@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView, useRouter } from "vue-router";
 
 //ICONS
 import ChevronUp from "vue-material-design-icons/ChevronUp.vue";
@@ -8,6 +8,9 @@ import ChevronRight from "vue-material-design-icons/ChevronRight.vue";
 import ChevronLeft from "vue-material-design-icons/ChevronLeft.vue";
 
 //HOOKS
+
+//SPECIAL VARIABLES
+const router = useRouter();
 
 //VARIABLES
 let openMenu = $ref<boolean>(false);
@@ -20,6 +23,10 @@ const userProfilePicture = $ref(
 //FUNCTIONS
 const toggleOpeness = (param: boolean): void => {
   openMenu = param;
+};
+
+const routeTo = (toRoute: string): void => {
+  router.push(toRoute);
 };
 </script>
 
@@ -79,7 +86,30 @@ const toggleOpeness = (param: boolean): void => {
     </div>
 
     <!--SIDEBAR-->
-    <div class="h-[100%] p-6 w-[240px] fixed z-50 bg-black" id="sideNav"></div>
+    <div class="h-[100%] p-6 w-[240px] fixed z-50 bg-black" id="sideNav">
+      <div class="w-[200px]">
+        <div class="mb-4" @click="routeTo('/')">
+          <img
+            width="54"
+            height="100"
+            src="/images/icons/spotify-logo.png"
+            alt="Home Icon"
+          />
+        </div>
+        <div class="flex mb-4" @click="routeTo('/')">
+          <img width="27" src="/images/icons/home-active.png" alt="Home Icon" />
+          <p class="text-white font-semibold">Home</p>
+        </div>
+        <div class="flex">
+          <img
+            width="27"
+            src="/images/icons/search-active.png"
+            alt="Search Icon"
+          />
+          <p class="text-white font-semibold">Search</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
