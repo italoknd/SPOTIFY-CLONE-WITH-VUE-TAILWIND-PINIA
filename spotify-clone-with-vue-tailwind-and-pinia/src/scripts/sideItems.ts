@@ -1,7 +1,7 @@
 import { IMenuItems } from "../interfaces/menuItemsProps";
 
 interface TailwindClasses {
-  class?: string;
+  style?: string;
 }
 
 export const side_items: (IMenuItems & TailwindClasses)[] = [
@@ -10,25 +10,25 @@ export const side_items: (IMenuItems & TailwindClasses)[] = [
     iconString: "home",
     name: "Home",
     pageURL: "/",
-    class: "ml-[1px]",
+    style: "ml-[1px]",
   },
   {
     iconSize: 24,
     iconString: "search",
     name: "Search",
     pageURL: "/",
-    class: "ml-[1px]",
+    style: "ml-[1px]",
   },
   {
     iconSize: 23,
     iconString: "library",
     name: "Library",
     pageURL: "/",
-    class: "ml-[2px]",
+    style: "ml-[2px]",
   },
 ];
 
-export const side_items_p2: (IMenuItems & TailwindClasses)[] = [
+export const side_items_p2: IMenuItems[] = [
   {
     iconSize: 24,
     iconString: "playlist",
@@ -40,6 +40,5 @@ export const side_items_p2: (IMenuItems & TailwindClasses)[] = [
     iconString: "liked",
     name: "Liked Songs",
     pageURL: "/liked",
-    class: "ml-[1px]",
   },
 ];
