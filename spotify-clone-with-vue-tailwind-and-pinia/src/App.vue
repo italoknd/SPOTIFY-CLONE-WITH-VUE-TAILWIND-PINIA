@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import { RouterView, useRouter } from "vue-router";
+import { side_items } from "./utils/sideItems";
+import { useRouter } from "vue-router";
 
 //ICONS
 import ChevronUp from "vue-material-design-icons/ChevronUp.vue";
 import ChevronDown from "vue-material-design-icons/ChevronDown.vue";
 import ChevronRight from "vue-material-design-icons/ChevronRight.vue";
 import ChevronLeft from "vue-material-design-icons/ChevronLeft.vue";
+import MenuItem from "./components/MenuItem.vue";
 
 //HOOKS
 
@@ -87,7 +89,7 @@ const routeTo = (toRoute: string): void => {
 
     <!--SIDEBAR-->
     <div class="h-[100%] p-6 w-[240px] fixed z-50 bg-black" id="sideNav">
-      <div class="w-[200px]">
+      <div class="w-[200px] cursor-pointer">
         <div class="mb-4" @click="routeTo('/')">
           <img
             width="124"
@@ -97,24 +99,23 @@ const routeTo = (toRoute: string): void => {
           />
         </div>
 
-        <div class="my-8"/>
-<ul>
-  <li></li>
-</ul>
-
-
-        <div class="flex mb-4" @click="routeTo('/')">
-          <img width="27" src="/images/icons/home-active.png" alt="Home Icon" />
-          <p class="text-white font-semibold">Home</p>
-        </div>
-        <div class="flex">
-          <img
-            width="27"
-            src="/images/icons/search-active.png"
-            alt="Search Icon"
-          />
-          <p class="text-white font-semibold">Search</p>
-        </div>
+        <div class="my-8" />
+        <ul>
+          <RouterLink
+            v-for="(
+              { iconSize, iconString, name, pageURL }, index
+            ) in side_items"
+            :key="index"
+            :to="pageURL"
+          >
+            <MenuItem
+              :iconSize="iconSize"
+              :name="name"
+              :iconString="iconString"
+              :pageUrl="pageURL"
+            />
+          </RouterLink>
+        </ul>
       </div>
     </div>
   </div>
