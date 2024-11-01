@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { side_items } from "./utils/sideItems";
+import { side_items, side_items_p2 } from "./scripts/sideItems";
 import { useRouter } from "vue-router";
 
 //ICONS
@@ -103,7 +103,7 @@ const routeTo = (toRoute: string): void => {
         <ul>
           <RouterLink
             v-for="(
-              { iconSize, iconString, name, pageURL }, index
+              { iconSize, iconString, name, pageURL, style }, index
             ) in side_items"
             :key="index"
             :to="pageURL"
@@ -113,11 +113,51 @@ const routeTo = (toRoute: string): void => {
               :name="name"
               :iconString="iconString"
               :pageUrl="pageURL"
+              :class="style"
+            />
+          </RouterLink>
+          <div class="py-3.5" />
+          <RouterLink
+            v-for="(
+              { iconSize, iconString, name, pageURL, style }, index
+            ) in side_items_p2"
+            :key="index"
+            :to="pageURL"
+          >
+            <MenuItem
+              :iconSize="iconSize"
+              :name="name"
+              :iconString="iconString"
+              :pageUrl="pageURL"
+              :class="style"
             />
           </RouterLink>
         </ul>
+        <div class="border-b border-b-gray-700" />
+        <ul>
+          <li class="font-semibold text-[15px] mt-3 hover:text-white">
+            My Playlist #1
+          </li>
+          <li class="font-semibold text-[15px] mt-3 hover:text-white">
+            My Playlist #2
+          </li>
+          <li class="font-semibold text-[15px] mt-3 hover:text-white">
+            My Playlist #3
+          </li>
+          <li class="font-semibold text-[15px] mt-3 hover:text-white">
+            My Playlist #4
+          </li>
+        </ul>
       </div>
     </div>
+    <div
+      class="fixed right-0 top-0 w-[calc(100%-240px)] overflow-auto h-full bg-gradient-to-b from-[#1c1c1c] to-black"
+    >
+      <div class="mt-[70px]" />
+      <RouterView />
+      <div class="mb-[100px]" />
+    </div>
+
   </div>
 </template>
 
