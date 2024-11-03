@@ -21,7 +21,7 @@
     "noFallthroughCasesInSwitch": true,
 
     //macros
-    "types": ["@vue-macros/reactivity-transform/macros-global"]
+    "types": ["@vue-macros/reactivity-transform/macros-global", "vite/client"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]
