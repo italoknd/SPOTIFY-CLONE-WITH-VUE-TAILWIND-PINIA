@@ -1,43 +1,144 @@
 [
   {
+    "public_playlist": false,
     "artist_of_the_album": "Vintage Culture",
     "album": "Promised Land (Remixes)",
     "album_category": "Album",
-    "album_cover": "./public/album-covers/promised-land-remixes-cover-art.jpeg",
+    "album_cover": "/album-covers/promised-land-remixes-cover-art.jpeg",
     "release_year": "2024",
     "tracks": [
       {
-        "id": 3,
+        "id": 1,
         "name": "Vintage Culture, Fideles & Be No Rain - Fallen Leaf (Massano Remix)",
-        "path": "./public/tracks/Vintage Culture, Fideles & Be No Rain - Fallen Leaf (Massano Remix).mp3"
+        "path": "/tracks/Vintage Culture, Fideles & Be No Rain - Fallen Leaf (Massano Remix).mp3"
       }
     ]
   },
   {
+    "public_playlist": false,
     "artist_of_the_album": "Camelphat",
     "album": "Spiritual Milk",
     "album_category": "Album",
-    "album_cover": "./public/album-covers/spiritual-milk-cover-art.jpeg",
+    "album_cover": "/album-covers/spiritual-milk-cover-art.jpeg",
     "release_year": "2023",
     "tracks": [
       {
         "id": 1,
         "name": "Camelphat & Mathame feat. Fryinn - Many Times",
-        "path": "./public/tracks/CAMELPHAT & Mathame & Frýnn - Many Times.mp3"
+        "path": "/tracks/CAMELPHAT & Mathame & Frýnn - Many Times.mp3"
       }
     ]
   },
   {
+    "public_playlist": false,
     "artist_of_the_album": "Kevin de Vries",
     "album": "Saga",
     "album_category": "EP",
-    "album_cover": "./public/album-covers/saga-cover-art.jpeg",
+    "album_cover": "/album-covers/saga-cover-art.jpeg",
     "release_year": "2024",
     "tracks": [
       {
-        "id": 2,
+        "id": 1,
         "name": "Kevin de Vries, Y do I - Saga",
-        "path": "./public/tracks/Kevin de Vries, Y do I - Saga.mp3"
+        "path": "/tracks/Kevin de Vries, Y do I - Saga.mp3"
+      }
+    ]
+  },
+  {
+    "album": "AS BRABAS DA SUMMER ELETROHITS!",
+    "public_playlist": true,
+    "playlist_name": "AS BRABAS DA SUMMER ELETROHITS!",
+    "album_cover": "/album-covers/garoto-balada-meme-cover-art.jpg",
+    "playlist_cover": "/album-covers/garoto-balada-meme-cover-art.jpg",
+    "tracks": [
+      {
+        "id": 1,
+        "name": "Kevin de Vries, Y do I - Saga",
+        "path": "/tracks/Kevin de Vries, Y do I - Saga.mp3"
+      }
+    ]
+  },
+  {
+    "album": "Fallen Leaf (Massano Remix)",
+    "public_playlist": false,
+    "playlist_name": "Fallen Leaf (Massano Remix)",
+    "album_cover": "/cover-art/fallen-leaf-massano-remix.png",
+    "playlist_cover": "/cover-art/fallen-leaf-massano-remix.png",
+    "tracks": [
+      {
+        "id": 1,
+        "name": "Vintage Culture, Fideles & Be No Rain - Fallen Leaf (Massano Remix)",
+        "path": "/tracks/Vintage Culture, Fideles & Be No Rain - Fallen Leaf (Massano Remix).mp3"
+      }
+    ]
+  },
+  {
+    "album": "Many Times",
+    "public_playlist": false,
+    "playlist_name": "Fallen Leaf (Massano Remix)",
+    "album_cover": "/album-covers/spiritual-milk-cover-art.jpeg",
+    "playlist_cover": "/album-covers/spiritual-milk-cover-art.jpeg",
+    "tracks": [
+      {
+        "id": 1,
+        "name": "Camelphat & Mathame feat. Fryinn - Many Times",
+        "path": "/tracks/CAMELPHAT & Mathame & Frýnn - Many Times.mp3"
+      }
+    ]
+  },
+  {
+    "album": "Make Up",
+    "public_playlist": false,
+    "playlist_name": "Make Up (Blazy Remix)",
+    "album_cover": "./public/cover-art/makeup-blazy-remix.jpg",
+    "playlist_cover": "./public/cover-art/makeup-blazy-remix.jpg",
+    "tracks": [
+      {
+        "id": 1,
+        "name": "Neelix feat. Caroline Harrison - Makeup (Blazy Remix)",
+        "path": "./public/tracks/Neelix - Makeup (feat Caroline Harrison) (Blazy Remix).mp3"
+      }
+    ]
+  },
+  {
+    "album": "Carry You",
+    "public_playlist": false,
+    "playlist_name": "Carry You",
+    "album_cover": "./public/cover-art/carry-you-martin-garrix.jpeg",
+    "playlist_cover": "./public/cover-art/carry-you-martin-garrix.jpeg",
+    "tracks": [
+      {
+        "id": 1,
+        "name": "Martin Garrix & Third Party feat. Oaks & Declan J Donovan - Carry You",
+        "path": "./public/tracks/Martin Garrix & Third  Party - Carry You (feat. Oaks & Declan J Donovan).mp3"
+      }
+    ]
+  },
+  {
+    "album": "Smile",
+    "public_playlist": false,
+    "playlist_name": "Smile",
+    "album_cover": "./public/cover-art/martin-garrix-smile.jpeg",
+    "playlist_cover": "./public/cover-art/martin-garrix-smile.jpeg",
+    "tracks": [
+      {
+        "id": 1,
+        "name": "Martin Garrix feat. Carolina Liar - Smile",
+        "path": "./public/tracks/Martin Garrix feat. Carolina Liar - Smile.mp3"
+      }
+    ]
+  },
+  {
+    "album": "Hollow",
+    "public_playlist": false,
+    "playlist_name": "Hollow",
+    "album_cover": "./public/cover-art/morten-artbat-hollow.jpeg",
+    "playlist_cover": "./public/cover-art/morten-artbat-hollow.jpeg",
+    "tracks": [
+      {
+        "id": 1,
+        "name": "MORTEN, ARTBAT  Hollow (feat. Bonn)",
+        "path": "./public/tracks/MORTEN, ARTBAT  Hollow (feat. Bonn).mp3"
       }
     ]
   }
