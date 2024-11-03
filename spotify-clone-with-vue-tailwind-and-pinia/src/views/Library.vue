@@ -1,13 +1,21 @@
 <template>
-  <div class="p-8 rounded-md grid grid-cols-4 gap-6">
+  <div
+    class="p-8 rounded-md grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6"
+  >
     <div v-for="(album, index) in albums" :key="index">
-      <div class="flex bg-gray-600 rounded-md duration-300 hover:cursor-pointer hover:bg-gray-300">
+      <div
+        class="flex bg-gray-600 rounded-md duration-300 hover:cursor-pointer hover:bg-gray-300"
+      >
         <img :src="album.album_cover" class="w-[60px] h-[60px] rounded-s-md" />
         <div class="ml-3 mr-5 flex items-center justify-between w-full">
-            <p class="font-semibold">{{album.album}}</p>
-            <div class="circle">
-                <Play :size="25"/>
-            </div>
+          <p
+            class="font-semibold w-[60px] xl:max-w-[160px] md:max-w-[100px] sm:w-[200px] whitespace-nowrap overflow-hidden text-ellipsis"
+          >
+            {{ album.album }}
+          </p>
+          <div class="circle">
+            <Play :size="25" />
+          </div>
         </div>
       </div>
     </div>
