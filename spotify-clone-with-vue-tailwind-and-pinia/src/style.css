@@ -5,4 +5,18 @@
 :root {
   padding: 0;
   margin: 0;
+  --spotify-main-color: #1ed760;
+  --spotify-main-color-on-hover: #1fee68;
+}
+
+.circle {
+  background-color: var(--spotify-main-color);
+  padding: 5px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.circle:hover {
+  background-color: var(--spotify-main-color-on-hover);
+  scale: 1.2;
 }
