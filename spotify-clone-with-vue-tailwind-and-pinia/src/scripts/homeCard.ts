@@ -81,7 +81,7 @@ export const recommended_songs_cards: IHomeCard[] = [
   },
   {
     image: "https://i.scdn.co/image/ab67616d0000b273aca64d6105d38b07b061b1f7",
-    title: "MORTEN",
+    title: "MORTEN x Artbat",
     subtitle: "Discover the latest track from MORTEN and Artbat.",
     styles: "md:block hidden",
   },

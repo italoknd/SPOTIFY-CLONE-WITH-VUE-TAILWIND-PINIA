@@ -14,7 +14,7 @@
           {{ title }}
         </div>
         <div
-          class="text-white pt-1 pb-3 text-[14px] w-[100px] max-h-[50px] xl:h-[45px] lg:h-[35px] md:h-[25px] sm:h-[15px] xl:w-[270px] lg:w-[180px] md:w-[150px] sm:w-[100px] overflow-hidden text-ellipsis xl:pl-1 md:pl-1 sm:hidden"
+          class="text-white pt-1 pb-3 text-[14px] w-[100px] max-h-[50px] xl:h-[45px] lg:h-[35px] md:h-[25px] sm:h-[15px] xl:w-[270px] lg:w-[180px] md:w-[150px] sm:w-[100px] overflow-hidden text-ellipsis xl:pl-1 md:pl-1 md:block hidden"
         >
           {{ subtitle }}
         </div>
