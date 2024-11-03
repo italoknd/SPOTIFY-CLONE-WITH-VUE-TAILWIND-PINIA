@@ -1,11 +1,12 @@
 import { createRouter, createWebHashHistory } from "vue-router"; //importando módulos do vue router
 
-import App from "../App.vue";
 import Home from "../views/Home.vue";
+import Search from "../views/Search.vue";
 
 const routes = [
   // { path: "/", component: App },
   { path: "/", component: Home },
+  { path: "/search", component: Search },
 ];
 
 const router = createRouter({
