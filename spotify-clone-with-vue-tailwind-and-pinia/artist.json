@@ -1,0 +1,44 @@
+[
+  {
+    "artist_of_the_album": "Vintage Culture",
+    "album": "Promised Land (Remixes)",
+    "album_category": "Album",
+    "album_cover": "./public/album-covers/promised-land-remixes-cover-art.jpeg",
+    "release_year": "2024",
+    "tracks": [
+      {
+        "id": 3,
+        "name": "Vintage Culture, Fideles & Be No Rain - Fallen Leaf (Massano Remix)",
+        "path": "./public/tracks/Vintage Culture, Fideles & Be No Rain - Fallen Leaf (Massano Remix).mp3"
+      }
+    ]
+  },
+  {
+    "artist_of_the_album": "Camelphat",
+    "album": "Spiritual Milk",
+    "album_category": "Album",
+    "album_cover": "./public/album-covers/spiritual-milk-cover-art.jpeg",
+    "release_year": "2023",
+    "tracks": [
+      {
+        "id": 1,
+        "name": "Camelphat & Mathame feat. Fryinn - Many Times",
+        "path": "./public/tracks/CAMELPHAT & Mathame & Frýnn - Many Times.mp3"
+      }
+    ]
+  },
+  {
+    "artist_of_the_album": "Kevin de Vries",
+    "album": "Saga",
+    "album_category": "EP",
+    "album_cover": "./public/album-covers/saga-cover-art.jpeg",
+    "release_year": "2024",
+    "tracks": [
+      {
+        "id": 2,
+        "name": "Kevin de Vries, Y do I - Saga",
+        "path": "./public/tracks/Kevin de Vries, Y do I - Saga.mp3"
+      }
+    ]
+  }
+]
