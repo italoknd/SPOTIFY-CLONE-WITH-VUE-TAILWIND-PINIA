@@ -16,14 +16,14 @@ export const side_items: (IMenuItems & TailwindClasses)[] = [
     iconSize: 24,
     iconString: "search",
     name: "Search",
-    pageURL: "/",
+    pageURL: "/search",
     style: "ml-[1px]",
   },
   {
     iconSize: 23,
     iconString: "library",
     name: "Library",
-    pageURL: "/",
+    pageURL: "/library",
     style: "ml-[2px]",
   },
 ];
