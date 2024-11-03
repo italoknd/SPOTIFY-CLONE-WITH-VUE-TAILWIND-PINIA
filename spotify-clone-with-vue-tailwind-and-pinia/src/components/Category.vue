@@ -3,7 +3,7 @@
     <RouterLink to="library">
       <div
         v-if="randColor"
-        class="contrast-[2] brightness-[0.87] rounded-xl aspect-square relative overflow-hidden"
+        class="contrast-[2] brightness-[0.87] rounded-xl aspect-square relative overflow-hidden hover:opacity-80"
         :style="{ backgroundColor: randColor.color }"
       >
         <div class="text-white pt-3 pl-4 font-semibold text-[23px]">
@@ -11,7 +11,7 @@
         </div>
         <img
           :src="image"
-          class="absolute contrast-[0.55] -right-3.5 bottom-0 max-w-[175px] rotate-[20deg]"
+          class="absolute contrast-[0.55] -right-3.5 bottom-0 max-w-[175px] rotate-[20deg] duration-300 hover:rotate-[0deg] hover:scale-150 hover:rounded-md"
         />
       </div>
     </RouterLink>

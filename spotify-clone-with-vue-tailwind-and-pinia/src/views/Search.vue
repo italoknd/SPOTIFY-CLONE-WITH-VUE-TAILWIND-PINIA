@@ -4,7 +4,7 @@
       type="button"
       class="text-white text-2xl pl-3 font-semibold hover:underline cursor-pointer"
     >
-      Seek new vibes for you!
+      What you want to listen today?
     </button>
 
     <div class="py-1.5"></div>
