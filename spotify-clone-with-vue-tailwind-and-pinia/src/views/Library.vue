@@ -4,6 +4,7 @@
   >
     <div v-for="(album, index) in albums" :key="index">
       <div
+        @click="selectAlbum(album)"
         class="flex bg-gray-600 rounded-md duration-300 hover:cursor-pointer hover:bg-gray-300"
       >
         <img :src="album.album_cover" class="w-[60px] h-[60px] rounded-s-md" />
@@ -23,6 +24,7 @@
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
+import { useSelectAlbumStore } from "../store/selectAlbum.ts";
 import all_albums from "../../artist.json";
 import { IAlbum } from "../interfaces/albums";
 
@@ -33,4 +35,7 @@ import Heart from "vue-material-design-icons/Heart.vue";
 import ClockTimeThreeOutline from "vue-material-design-icons/ClockTimeThreeOutline.vue";
 
 const albums = ref<IAlbum[]>(all_albums);
+const albumStore = useSelectAlbumStore()
+//functions
+const selectAlbum = (selected_album:IAlbum) => albumStore.getSelectedAlbum(selected_album);
 </script>
