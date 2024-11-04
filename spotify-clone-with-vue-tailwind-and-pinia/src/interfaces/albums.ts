@@ -1,5 +1,7 @@
 export interface IAlbum {
   artist_of_the_album?: string;
+  artist_picture: string;
+  main_color: string;
   album?: string;
   album_category?: string;
   album_cover?: string;

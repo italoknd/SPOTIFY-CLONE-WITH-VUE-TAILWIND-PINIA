@@ -134,7 +134,7 @@ const routeTo = (toRoute: string): void => {
           </RouterLink>
         </ul>
         <div class="border-b border-b-gray-700" />
-        <ul>
+        <ul class="text-white">
           <li class="font-semibold text-[15px] mt-3 hover:text-white">
             My Playlist #1
           </li>
