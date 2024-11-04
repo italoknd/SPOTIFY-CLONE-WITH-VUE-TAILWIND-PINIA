@@ -1,6 +1,8 @@
 <template>
-  <div class="p-8 text-white">
-    <!-- {{ album_details }} -->
+  <div
+    class="p-8 text-white select-none"
+    :style="{ backgroundColor: album_details.main_color }"
+  >
     <div class="flex">
       <img
         class="w-[250px] h-[250px]"
@@ -8,18 +10,29 @@
         alt="Album cover art"
       />
       <div class="ml-3 w-full">
-        <p class="ml-2 text-md">{{ album_details.album_category  }}</p>
-        <h1 class="font-extrabold text-8xl pb-5">
-          {{ album_details.album || "2" }}
+        <p class="ml-2 text-md">{{ album_details.album_category }}</p>
+
+        <h1
+          class="font-extrabold text-8xl pb-5 whitespace-nowrap w-full text-ellipsis"
+        >
+          {{ album_details.album }}
         </h1>
         <div class="flex items-center">
+          <img
+            :src="album_details.artist_picture"
+            alt="Artist Picture"
+            class="w-[25px] h-[25px] rounded-xl object-contain"
+          />
           <p class="mx-2 text-md">
             <strong>{{ album_details.artist_of_the_album }}</strong>
           </p>
           <Dot />
           <p class="mx-2 text-md">{{ album_details.release_year }}</p>
           <Dot />
-          <p class="mx-2 text-md">{{ album_details.tracks.length }} {{album_details.tracks.length > 1 ? 'songs' : 'song'}}</p>
+          <p class="mx-2 text-md">
+            {{ album_details.tracks.length }}
+            {{ album_details.tracks.length > 1 ? "songs" : "song" }}, 1h 31min
+          </p>
         </div>
       </div>
     </div>
