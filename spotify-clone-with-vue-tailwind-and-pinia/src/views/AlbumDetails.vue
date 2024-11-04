@@ -5,11 +5,11 @@
   >
     <div class="flex">
       <img
-        class="w-[250px] h-[250px]"
+        class="w-[250px] h-[250px] rounded-md"
         :src="album_details.album_cover"
         alt="Album cover art"
       />
-      <div class="ml-3 w-full">
+      <div class="ml-3 w-full relative top-[83px]">
         <p class="ml-2 text-md">{{ album_details.album_category }}</p>
 
         <h1
