@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-8xl;
+  }
+  h2 {
+    @apply text-4xl;
+  }
+}
+
 :root {
   padding: 0;
   margin: 0;
