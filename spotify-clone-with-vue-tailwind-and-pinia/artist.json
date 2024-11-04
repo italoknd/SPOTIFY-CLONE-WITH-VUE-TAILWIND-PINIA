@@ -6,6 +6,8 @@
     "album_category": "Album",
     "album_cover": "/album-covers/promised-land-remixes-cover-art.jpeg",
     "release_year": "2024",
+    "main_color": "#B4F111",
+    "artist_picture": "./public/artist-pictures/vintage-culture.jpeg",
     "tracks": [
       {
         "id": 1,
@@ -31,7 +33,7 @@
   },
   {
     "public_playlist": false,
-    "artist_of_the_album": "Kevin de Vries",
+    "artist_of_the_album": "Kevin de Vries, Y do I",
     "album": "Saga",
     "album_category": "EP",
     "album_cover": "/album-covers/saga-cover-art.jpeg",
@@ -46,6 +48,8 @@
   },
   {
     "album": "AS BRABAS DA SUMMER ELETROHITS!",
+    "artist_of_the_album": "Italo Pedroza",
+    "album_category": "Public Playlist",
     "public_playlist": true,
     "playlist_name": "AS BRABAS DA SUMMER ELETROHITS!",
     "album_cover": "/album-covers/garoto-balada-meme-cover-art.jpg",
@@ -60,7 +64,9 @@
   },
   {
     "album": "Fallen Leaf (Massano Remix)",
+    "artist_of_the_album": "Massano",
     "public_playlist": false,
+    "album_category": "Single",
     "playlist_name": "Fallen Leaf (Massano Remix)",
     "album_cover": "/cover-art/fallen-leaf-massano-remix.png",
     "playlist_cover": "/cover-art/fallen-leaf-massano-remix.png",
@@ -73,9 +79,11 @@
     ]
   },
   {
-    "album": "Many Times",
+    "album": "Spiritual Milk",
+    "artist_of_the_album": "Camelphat",
     "public_playlist": false,
-    "playlist_name": "Fallen Leaf (Massano Remix)",
+    "album_category": "Album",
+    "playlist_name": "Spiritual Milk",
     "album_cover": "/album-covers/spiritual-milk-cover-art.jpeg",
     "playlist_cover": "/album-covers/spiritual-milk-cover-art.jpeg",
     "tracks": [
@@ -88,7 +96,9 @@
   },
   {
     "album": "Make Up",
+    "artist_of_the_album": "Blazy",
     "public_playlist": false,
+    "album_category": "Single",
     "playlist_name": "Make Up (Blazy Remix)",
     "album_cover": "/cover-art/makeup-blazy-remix.jpg",
     "playlist_cover": "/cover-art/makeup-blazy-remix.jpg",
@@ -103,6 +113,8 @@
   {
     "album": "Carry You",
     "public_playlist": false,
+    "artist_of_the_album": "Martin Garrix, Third Party Oaks, Declan J Donovan",
+    "album_category": "Single",
     "playlist_name": "Carry You",
     "album_cover": "/cover-art/carry-you-martin-garrix.jpeg",
     "playlist_cover": "/cover-art/carry-you-martin-garrix.jpeg",
@@ -116,8 +128,10 @@
   },
   {
     "album": "Smile",
+    "artist_of_the_album": "Martin Garrix, Carolina Liar",
     "public_playlist": false,
     "playlist_name": "Smile",
+    "album_category": "Single",
     "album_cover": "/cover-art/martin-garrix-smile.jpeg",
     "playlist_cover": "/cover-art/martin-garrix-smile.jpeg",
     "tracks": [
@@ -130,14 +144,17 @@
   },
   {
     "album": "Hollow",
+    "artist_of_the_album": "MORTEN, ARTBAT, Bonn",
+    "release_year": "2024",
     "public_playlist": false,
     "playlist_name": "Hollow",
+    "album_category": "Single",
     "album_cover": "/cover-art/morten-artbat-hollow.jpeg",
     "playlist_cover": "/cover-art/morten-artbat-hollow.jpeg",
     "tracks": [
       {
         "id": 1,
-        "name": "MORTEN, ARTBAT  Hollow (feat. Bonn)",
+        "name": "MORTEN, ARTBAT - Hollow (feat. Bonn)",
         "path": "/tracks/MORTEN, ARTBAT  Hollow (feat. Bonn).mp3"
       }
     ]
