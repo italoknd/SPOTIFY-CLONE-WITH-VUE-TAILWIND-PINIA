@@ -1,11 +1,14 @@
 <template>
-  <div class="flex -mt-[100px] glass-effect">
-    <div>
-      <div class="circle">
-        <Play :size="40" fillColor="#fff" />
+  <div class="-mt-[100px] glass-effect cursor-pointer">
+    <div class="flex">
+      <div>
+        <div class="circle">
+          <Play :size="40" fillColor="#fff" />
+        </div>
       </div>
+      <Heart class="hover:scale-125 duration-300 mt-1 ml-4" :size="40" fillColor="#fff" />
     </div>
-    <Heart class="mt-1 ml-4" :size="40" fillColor="#fff" />
+    <Songs />
   </div>
 </template>
 <script setup lang="ts">
@@ -13,18 +16,15 @@ import { ref } from "vue";
 import { useSelectAlbumStore } from "../store/selectAlbum.ts";
 import { IAlbum } from "../interfaces/albums";
 
+//components
+import Songs from "./Songs.vue";
 import Play from "vue-material-design-icons/Play.vue";
-import Pause from "vue-material-design-icons/Pause.vue";
-import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
 import Heart from "vue-material-design-icons/Heart.vue";
-import ClockTimeThreeOutline from "vue-material-design-icons/ClockTimeThreeOutline.vue";
-import Dot from "../components/Dot.vue";
 
+//variables
 const albumStore = useSelectAlbumStore();
 const album_details = ref<IAlbum>(albumStore.album);
-const linear_gradient = ref<string>(
-  `background-image: linear-gradient(to bottom, ${album_details.value.main_color_on_top}, ${album_details.value.main_color_on_bottom})`
-);
+
 </script>
 <style scoped>
 .glass-effect {
