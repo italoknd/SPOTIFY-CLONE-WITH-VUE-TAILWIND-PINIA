@@ -17,4 +17,5 @@ export interface ITrack {
   id: number;
   name: string;
   path: string;
+  track_artists: string
 }
