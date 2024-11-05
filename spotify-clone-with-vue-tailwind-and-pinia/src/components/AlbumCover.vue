@@ -38,12 +38,7 @@ import { ref } from "vue";
 import { useSelectAlbumStore } from "../store/selectAlbum.ts";
 import { IAlbum } from "../interfaces/albums";
 
-import Play from "vue-material-design-icons/Play.vue";
-import Pause from "vue-material-design-icons/Pause.vue";
-import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
-import Heart from "vue-material-design-icons/Heart.vue";
-import ClockTimeThreeOutline from "vue-material-design-icons/ClockTimeThreeOutline.vue";
-
+//components
 import Dot from "../components/Dot.vue";
 
 const albumStore = useSelectAlbumStore();

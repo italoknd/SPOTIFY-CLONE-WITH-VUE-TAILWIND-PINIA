@@ -12,7 +12,8 @@
     "tracks": [
       {
         "id": 1,
-        "name": "Vintage Culture, Fideles & Be No Rain - Fallen Leaf (Massano Remix)",
+        "track_artists": "Vintage Culture, Fideles, Be No Rain",
+        "name": "Fallen Leaf (Massano Remix)",
         "path": "/tracks/Vintage Culture, Fideles & Be No Rain - Fallen Leaf (Massano Remix).mp3"
       }
     ]
