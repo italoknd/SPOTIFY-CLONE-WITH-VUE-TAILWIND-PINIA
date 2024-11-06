@@ -44,8 +44,8 @@
           </div>
           <div class="flex items-center">
             <Heart v-if="is_hover" fillColor="#1bd760" size="22" />
+            <div>{{ duration }}</div>
           </div>
-          <div>{{ track_time || "2" }}</div>
         </div>
       </li>
     </ul>
@@ -66,7 +66,7 @@ const albumStore = useSelectAlbumStore();
 const album_details = ref<IAlbum>(albumStore.album);
 
 let is_hover = ref<boolean>(false);
-let track_time = ref<string | null>(null);
+let duration = ref<string | null>(null);
 let play_music = ref<boolean>(false);
 
 const toggleMusic = () => {
@@ -76,11 +76,11 @@ const toggleMusic = () => {
 onMounted(() => {
   for (const track of album_details.value.tracks) {
     const audio = new Audio(track.path);
+
     audio.addEventListener("loadedmetadata", () => {
       const minutes = Math.floor(audio.duration / 60);
-      console.log(minutes);
       const seconds = Math.floor(audio.duration % 60);
-      track_time.value = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+      duration.value = `${minutes}:${seconds.toString().padStart(2, "0")}`;
     });
   }
 });
