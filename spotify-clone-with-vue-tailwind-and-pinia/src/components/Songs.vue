@@ -16,12 +16,12 @@
         v-for="(track, index) in album_details.tracks"
         :key="index"
       >
-        <div class="flex items-center w-full py-1.5">
-          <div
-            class="w-[40px] ml-[14px] mr-[6px] cursor-pointer"
-            @mouseenter="is_hover = true"
-            @mouseleave="is_hover = false"
-          >
+        <div
+          class="flex items-center w-full py-1.5"
+          @mouseenter="is_hover = true"
+          @mouseleave="is_hover = false"
+        >
+          <div class="w-[40px] ml-[14px] mr-[6px] cursor-pointer">
             <div @click="toggleMusic()" v-if="is_hover">
               <Play v-if="!play_music" fillColor="#fff" :size="25" />
               <Pause v-else fillColor="#fff" :size="25" />
@@ -42,10 +42,10 @@
               <span>{{ track.track_artists }}</span>
             </div>
           </div>
-          <div class="flex items-center">
-            <Heart v-if="is_hover" fillColor="#1bd760" size="22" />
-            <div>{{ duration }}</div>
-          </div>
+        </div>
+        <div class="mr-4 flex items-center">
+          <Heart v-if="is_hover" fillColor="#1bd760" size="22" />
+          <div class="pl-3">{{ duration }}</div>
         </div>
       </li>
     </ul>
