@@ -1,15 +1,26 @@
 <script setup lang="ts">
-import { side_items, side_items_p2 } from "./scripts/sideItems";
-import { useRouter } from "vue-router";
+//COMPONENTS
+import MusicPlayer from "./components/MusicPlayer.vue";
+import MenuItem from "./components/MenuItem.vue";
 
 //ICONS
 import ChevronUp from "vue-material-design-icons/ChevronUp.vue";
 import ChevronDown from "vue-material-design-icons/ChevronDown.vue";
 import ChevronRight from "vue-material-design-icons/ChevronRight.vue";
 import ChevronLeft from "vue-material-design-icons/ChevronLeft.vue";
-import MenuItem from "./components/MenuItem.vue";
 
-//HOOKS
+//MODULES
+import { useRouter } from "vue-router";
+import { storeToRefs } from "pinia";
+import { onMounted } from "vue";
+
+//SCRIPTS
+import { side_items, side_items_p2 } from "./scripts/sideItems";
+
+//STUFF FROM PINIA
+import { useSongStore } from "./store/song";
+const useSong = useSongStore();
+const { is_playing, current_track } = storeToRefs(useSong);
 
 //SPECIAL VARIABLES
 const router = useRouter();
@@ -21,6 +32,11 @@ const username = $ref("Italo Pedroza");
 const userProfilePicture = $ref(
   "https://lh3.googleusercontent.com/a/ACg8ocJ-zkH1FfQwQhEAJa5_07Pp2q_HVmFnXS_ce9xYtPHGbnk=s96-c-rg-br100"
 );
+
+//HOOKS
+onMounted(() => {
+  is_playing.value = false;
+});
 
 //FUNCTIONS
 const toggleOpeness = (param: boolean): void => {
@@ -158,6 +174,8 @@ const routeTo = (toRoute: string): void => {
       <div class="mb-[100px]" />
     </div>
 
+    <MusicPlayer v-if="current_track" />
+    <!-- <MusicPlayer /> -->
   </div>
 </template>
 
