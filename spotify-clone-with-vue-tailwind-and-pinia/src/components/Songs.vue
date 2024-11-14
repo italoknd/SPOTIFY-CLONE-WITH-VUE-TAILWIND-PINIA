@@ -23,18 +23,34 @@
         >
           <div class="w-[40px] ml-[14px] mr-[6px] cursor-pointer">
             <div @click="toggleMusic()" v-if="is_hover">
-              <Play v-if="!play_music" fillColor="#fff" :size="25" />
-              <Pause v-else fillColor="#fff" :size="25" />
+              <Play
+                v-if="!is_playing"
+                @click="useSong.playOrPauseThisSong(track.name, track)"
+                fillColor="#fff"
+                :size="25"
+              />
+              <Play
+                v-else-if="is_playing && current_track.name !== track.name"
+                @click="useSong.loadSong(track.name, track)"
+                fillColor="#fff"
+                :size="25"
+              />
+              <Pause
+                v-else
+                @click="useSong.playOrPauseSong()"
+                fillColor="#fff"
+                :size="25"
+              />
             </div>
             <div v-else class="ml-1 text-sm">
-              <p>
+              <p :class="highlightPlayingTrack(current_track, track)">
                 <strong>{{ track.id }}</strong>
               </p>
             </div>
           </div>
           <div class="text-sm">
             <div>
-              <span>
+              <span :class="highlightPlayingTrack(current_track, track)">
                 <strong>{{ track.name }}</strong>
               </span>
             </div>
@@ -53,8 +69,14 @@
 </template>
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
+import { storeToRefs } from "pinia";
 import { useSelectAlbumStore } from "../store/selectAlbum.ts";
-import { IAlbum } from "../interfaces/albums";
+import { IAlbum, ITrack } from "../interfaces/albums";
+
+//STUFF FROM PINIA
+import { useSongStore } from "../store/song";
+const useSong = useSongStore();
+const { is_playing, current_track } = storeToRefs(useSong);
 
 //components
 import Play from "vue-material-design-icons/Play.vue";
@@ -84,4 +106,18 @@ onMounted(() => {
     });
   }
 });
+
+//FUNCTIONS
+const highlightPlayingTrack = (
+  current_track: ITrack,
+  track: ITrack
+): string => {
+  let applied_class = "";
+
+  if (current_track && current_track.name === track.name) {
+    applied_class = "text-green-500";
+  }
+
+  return applied_class;
+};
 </script>
