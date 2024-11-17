@@ -2,9 +2,17 @@
   <div
     v-if="audio"
     id="music-player"
-    class="fixed flex items-center justify-between bottom-0 w-full z-50 h-[90px] bg-[#181818] border-t border-t-[#272727]"
+    class="select-none fixed flex items-center justify-between bottom-0 w-full z-50 h-[90px] bg-[#181818] border-t border-t-[#272727]"
   >
-    hey there
+    <div class="flex items-center w-1/4">
+      <div class="flex items-center ml-4">
+        <img class="rounded-sm shadow-2xl" width="55" :src="album.album_cover" alt="Album cover">
+      </div>
+      <div class="ml-3 text-white text-sm">
+        <p><strong>{{current_track.name}}</strong></p>
+        <p>{{current_track.track_artists}}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -23,7 +31,7 @@ import SkipForward from "vue-material-design-icons/SkipForward.vue";
 //store imports
 import { useSongStore } from "../store/song";
 const useSong = useSongStore();
-const { is_playing, audio, current_artist, current_track } =
+const { is_playing, audio, current_artist, current_track, album } =
   storeToRefs(useSong);
 const { loadSong, playOrPauseSong, playOrPauseThisSong, prevSong, nextSong } =
   useSong;
@@ -80,15 +88,12 @@ watch(audio.value, () => {
 
 watch(current_track_time.value, (time) => {
   if (time && time === total_track_time.value) {
-    nextSong(current_track);
+    useSong.nextSong(current_track.value);
   }
 });
 
 const timeupdate = () => {
-  console.log("audio >>>>", audio.value);
-
   audio.value.addEventListener("timeupdate", () => {
-    console.log("aaaaa");
     const minutes = Math.floor(audio.value.currentTime / 60);
     const seconds = Math.floor(audio.value.currentTime - minutes * 60);
 
