@@ -5,7 +5,9 @@
     <div v-for="(album, index) in albums" :key="index">
       <div
         class="flex bg-gray-600 rounded-md duration-300 hover:cursor-pointer hover:bg-gray-700"
-      > 
+        @mouseenter="getItem(true, index)"
+        @mouseleave="getItem(false, index)"
+      >
         <img
           @click="selectAlbum(album)"
           :src="album.album_cover"
@@ -18,7 +20,7 @@
           >
             {{ album.album }}
           </p>
-          <div class="circle">
+          <div v-if="verifyHovering(index)" class="circle">
             <Play :size="25" />
           </div>
         </div>
@@ -38,6 +40,8 @@ import all_albums from "../../artist.json";
 import Play from "vue-material-design-icons/Play.vue";
 
 //VARS
+let index = ref<number | null>(null);
+let is_hovering = ref<boolean>(false);
 const router = useRouter();
 const albums = ref<IAlbum[]>(all_albums);
 const albumStore = useSongStore();
@@ -46,5 +50,14 @@ const albumStore = useSongStore();
 const selectAlbum = (selected_album: IAlbum) => {
   albumStore.getSelectedAlbum(selected_album);
   router.push("/selected-album");
+};
+
+const getItem = (hovering: boolean, item_position: number) => {
+  index.value = item_position;
+  hovering ? (is_hovering.value = true) : (is_hovering.value = false);
+};
+
+const verifyHovering = (item_position: number): boolean => {
+  return item_position === index.value && is_hovering.value ? true : false;
 };
 </script>

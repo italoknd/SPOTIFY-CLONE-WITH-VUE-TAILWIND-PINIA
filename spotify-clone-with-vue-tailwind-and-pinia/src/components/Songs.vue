@@ -17,29 +17,29 @@
         :key="index"
       >
         <div
+          @mouseenter="getItem(true, index)"
+          @mouseleave="getItem(false, index)"
           class="flex items-center w-full py-1.5"
-          @mouseenter="is_hover = true"
-          @mouseleave="is_hover = false"
         >
           <div class="w-[40px] ml-[14px] mr-[6px] cursor-pointer">
-            <div v-if="is_hover">
+            <div v-if="verifyHovering(index)">
               <Play
                 v-if="!is_playing"
-                @click="useSong.playOrPauseThisSong(track.name, track)"
+                @click="useSong.playOrPauseThisSong(track.track_artists, track)"
                 fillColor="#fff"
                 :size="25"
               />
               <Play
                 v-else-if="is_playing && current_track.name !== track.name"
-                @click="useSong.loadSong(track.name, track)"
+                @click="useSong.loadSong(track.track_artists, track)"
                 fillColor="#fff"
                 :size="25"
               />
               <Pause
-              v-else
-              @click="useSong.playOrPauseSong()"
-              fillColor="#fff"
-              :size="25"
+                v-else
+                @click="useSong.playOrPauseSong()"
+                fillColor="#fff"
+                :size="25"
               />
             </div>
             <div v-else class="ml-1 text-sm">
@@ -60,7 +60,7 @@
           </div>
         </div>
         <div class="mr-4 flex items-center">
-          <Heart v-if="is_hover" fillColor="#1bd760" size="22" />
+          <Heart v-if="verifyHovering(index)" fillColor="#1bd760" size="22" />
           <div class="pl-3">{{ duration }}</div>
         </div>
       </li>
@@ -68,26 +68,30 @@
   </div>
 </template>
 <script setup lang="ts">
+//MODULES AND INTERFACES
 import { ref, onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import { IAlbum, ITrack } from "../interfaces/albums";
+
+//ICONS
+import Play from "vue-material-design-icons/Play.vue";
+import Pause from "vue-material-design-icons/Pause.vue";
+import Heart from "vue-material-design-icons/Heart.vue";
+import ClockTimeThreeOutline from "vue-material-design-icons/ClockTimeThreeOutline.vue";
 
 //STUFF FROM PINIA
 import { useSongStore } from "../store/song";
 const useSong = useSongStore();
 const { is_playing, current_track, album } = storeToRefs(useSong);
 
-//components
-import Play from "vue-material-design-icons/Play.vue";
-import Pause from "vue-material-design-icons/Pause.vue";
-import Heart from "vue-material-design-icons/Heart.vue";
-import ClockTimeThreeOutline from "vue-material-design-icons/ClockTimeThreeOutline.vue";
-
+//VARS
 const album_details = ref<IAlbum>(album);
 
+let index = ref<number | null>(null);
 let is_hover = ref<boolean>(false);
 let duration = ref<string | null>(null);
 
+//HOOKS
 onMounted(() => {
   for (const track of album_details.value.tracks) {
     const audio = new Audio(track.path);
@@ -112,5 +116,14 @@ const highlightPlayingTrack = (
   }
 
   return applied_class;
+};
+
+const getItem = (hovering: boolean, item_position: number) => {
+  index.value = item_position;
+  hovering ? (is_hover.value = true) : (is_hover.value = false);
+};
+
+const verifyHovering = (item_position: number): boolean => {
+  return item_position === index.value && is_hover.value ? true : false;
 };
 </script>
