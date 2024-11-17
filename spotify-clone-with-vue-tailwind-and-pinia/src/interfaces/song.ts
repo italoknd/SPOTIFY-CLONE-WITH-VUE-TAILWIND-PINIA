@@ -5,5 +5,7 @@ export interface ISongStore {
   audio: HTMLAudioElement;
   current_artist: string;
   current_track: ITrack;
+  playlist_duration: string;
+  acc_duration: number;
   album: IAlbum
 }

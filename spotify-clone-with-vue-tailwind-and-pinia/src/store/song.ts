@@ -2,8 +2,6 @@ import { defineStore } from "pinia";
 import { ISongStore } from "../interfaces/song";
 import { IAlbum, ITrack } from "../interfaces/albums";
 
-import albums from "../../artist.json";
-
 export const useSongStore = defineStore("song", {
   state: () =>
     ({
@@ -12,6 +10,8 @@ export const useSongStore = defineStore("song", {
       current_artist: "",
       current_track: {} as ITrack,
       album: {} as IAlbum,
+      playlist_duration: "",
+      acc_duration: 0,
     } as ISongStore),
   getters: {
     selected_album: (state) => state.album,
@@ -84,6 +84,30 @@ export const useSongStore = defineStore("song", {
 
     getSelectedAlbum(payload: IAlbum) {
       this.album = payload;
+
+      this.getTotalTimeOfThePlaylist(this.album.tracks);
+    },
+
+    getTotalTimeOfThePlaylist(tracks: ITrack[]) {
+      this.acc_duration = 0;
+      this.playlist_duration = "";
+
+      for (let audio of tracks) {
+        let audio2 = new Audio();
+        audio2.src = audio.path;
+
+        audio2.addEventListener("loadedmetadata", () => {
+          const duration: number = audio2.duration;
+          this.acc_duration += duration;
+
+          const minutes = Math.floor(this.acc_duration / 60);
+          const seconds = Math.floor(this.acc_duration - minutes * 60);
+
+          this.playlist_duration = `${minutes}min ${seconds
+            .toString()
+            .padStart(2, "0")}secs`;
+        });
+      }
     },
 
     resetState() {
@@ -91,6 +115,8 @@ export const useSongStore = defineStore("song", {
       this.audio = {} as HTMLAudioElement;
       this.current_artist = "";
       this.current_track = {} as ITrack;
+      this.acc_duration = 0;
+      this.playlist_duration = "";
     },
   },
 });
