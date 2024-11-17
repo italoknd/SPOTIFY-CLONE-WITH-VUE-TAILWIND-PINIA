@@ -70,13 +70,12 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { storeToRefs } from "pinia";
-import { useSelectAlbumStore } from "../store/selectAlbum.ts";
 import { IAlbum, ITrack } from "../interfaces/albums";
 
 //STUFF FROM PINIA
 import { useSongStore } from "../store/song";
 const useSong = useSongStore();
-const { is_playing, current_track } = storeToRefs(useSong);
+const { is_playing, current_track, album } = storeToRefs(useSong);
 
 //components
 import Play from "vue-material-design-icons/Play.vue";
@@ -84,8 +83,7 @@ import Pause from "vue-material-design-icons/Pause.vue";
 import Heart from "vue-material-design-icons/Heart.vue";
 import ClockTimeThreeOutline from "vue-material-design-icons/ClockTimeThreeOutline.vue";
 
-const albumStore = useSelectAlbumStore();
-const album_details = ref<IAlbum>(albumStore.album);
+const album_details = ref<IAlbum>(album);
 
 let is_hover = ref<boolean>(false);
 let duration = ref<string | null>(null);

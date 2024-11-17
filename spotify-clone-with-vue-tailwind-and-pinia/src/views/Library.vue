@@ -27,22 +27,22 @@
   </div>
 </template>
 <script setup lang="ts">
+//INTERFACES, DATA AND MODULES
+import { IAlbum } from "../interfaces/albums";
+import { useSongStore } from "../store/song";
 import { useRouter } from "vue-router";
 import { ref } from "vue";
-import { useSelectAlbumStore } from "../store/selectAlbum.ts";
 import all_albums from "../../artist.json";
-import { IAlbum } from "../interfaces/albums";
 
+//ICONS
 import Play from "vue-material-design-icons/Play.vue";
-import Pause from "vue-material-design-icons/Pause.vue";
-import DotsHorizontal from "vue-material-design-icons/DotsHorizontal.vue";
-import Heart from "vue-material-design-icons/Heart.vue";
-import ClockTimeThreeOutline from "vue-material-design-icons/ClockTimeThreeOutline.vue";
 
+//VARS
 const router = useRouter();
 const albums = ref<IAlbum[]>(all_albums);
-const albumStore = useSelectAlbumStore();
-//functions
+const albumStore = useSongStore();
+
+//FUNCTIONS
 const selectAlbum = (selected_album: IAlbum) => {
   albumStore.getSelectedAlbum(selected_album);
   router.push("/selected-album");

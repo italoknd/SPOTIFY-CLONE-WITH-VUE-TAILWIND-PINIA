@@ -1,13 +1,13 @@
 <script setup lang="ts">
-//COMPONENTS
-import MusicPlayer from "./components/MusicPlayer.vue";
-import MenuItem from "./components/MenuItem.vue";
-
 //ICONS
 import ChevronUp from "vue-material-design-icons/ChevronUp.vue";
 import ChevronDown from "vue-material-design-icons/ChevronDown.vue";
 import ChevronRight from "vue-material-design-icons/ChevronRight.vue";
 import ChevronLeft from "vue-material-design-icons/ChevronLeft.vue";
+
+//COMPONENTS
+import MusicPlayer from "./components/MusicPlayer.vue";
+import MenuItem from "./components/MenuItem.vue";
 
 //MODULES
 import { useRouter } from "vue-router";

@@ -35,13 +35,13 @@
 </template>
 <script setup lang="ts">
 import { ref } from "vue";
-import { useSelectAlbumStore } from "../store/selectAlbum.ts";
+import { useSongStore } from "../store/song";
 import { IAlbum } from "../interfaces/albums";
 
 //components
 import Dot from "../components/Dot.vue";
 
-const albumStore = useSelectAlbumStore();
+const albumStore = useSongStore();
 const album_details = ref<IAlbum>(albumStore.album);
 const linear_gradient = ref<string>(
   `background-image: linear-gradient(to bottom, ${album_details.value.main_color_on_top}, ${album_details.value.main_color_on_bottom})`
