@@ -27,7 +27,8 @@
         <Dot />
         <p class="mx-2 text-md">
           {{ album_details.tracks.length }}
-          {{ album_details.tracks.length > 1 ? "songs" : "song" }}, 1h 31min
+          {{ album_details.tracks.length > 1 ? "songs" : "song" }},
+          {{ albumStore.playlist_duration }}
         </p>
       </div>
     </div>
