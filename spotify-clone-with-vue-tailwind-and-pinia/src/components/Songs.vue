@@ -22,7 +22,7 @@
           @mouseleave="is_hover = false"
         >
           <div class="w-[40px] ml-[14px] mr-[6px] cursor-pointer">
-            <div @click="toggleMusic()" v-if="is_hover">
+            <div v-if="is_hover">
               <Play
                 v-if="!is_playing"
                 @click="useSong.playOrPauseThisSong(track.name, track)"
@@ -36,10 +36,10 @@
                 :size="25"
               />
               <Pause
-                v-else
-                @click="useSong.playOrPauseSong()"
-                fillColor="#fff"
-                :size="25"
+              v-else
+              @click="useSong.playOrPauseSong()"
+              fillColor="#fff"
+              :size="25"
               />
             </div>
             <div v-else class="ml-1 text-sm">
@@ -87,11 +87,6 @@ const album_details = ref<IAlbum>(album);
 
 let is_hover = ref<boolean>(false);
 let duration = ref<string | null>(null);
-let play_music = ref<boolean>(false);
-
-const toggleMusic = () => {
-  play_music.value = !play_music.value;
-};
 
 onMounted(() => {
   for (const track of album_details.value.tracks) {

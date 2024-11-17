@@ -82,8 +82,8 @@ export const useSongStore = defineStore("song", {
 
     playFromTheBeginning() {
       this.resetState();
-      let track = albums.tracks[0];
-      this.loadSong(albums, track);
+      let track = this.album.tracks[0];
+      this.loadSong(track.name, track);
     },
 
     getSelectedAlbum(payload: IAlbum) {
