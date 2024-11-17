@@ -61,22 +61,18 @@ export const useSongStore = defineStore("song", {
     },
 
     prevSong(current_track: ITrack) {
-      //passo 1: pegar a musica atual do album e voltar 2 indices
-      //passo 2: pegar resultado e passar para a função que carrega a musica
-      let track = albums.tracks[current_track] - 2;
-      this.loadSong(albums, track);
+      let track = this.album.tracks[current_track.id - 2];
+      let artist = this.album.tracks[current_track.id - 2].track_artists;
+      this.loadSong(artist, track);
     },
 
     nextSong(current_track: ITrack) {
-      //passo 1: verificar se a musica atual é a ultima, caso seja, retornar para a primeira musica atribuindo a posição 0 da lista de musicas a uma variavel e passar a mesma para a função loadSong
-
-      //passo 2: caso nao seja a ultima musica, pular para a proxima
-
-      if (current_track.id === albums.tracks.length) {
+      if (current_track.id === this.album.tracks.length) {
         this.playFromTheBeginning();
       } else {
-        let track = albums.tracks[current_track.id];
-        this.loadSong(albums, track);
+        let track = this.album.tracks[current_track.id];
+        let artist = this.album.tracks[current_track.id].track_artists;
+        this.loadSong(artist, track);
       }
     },
 
