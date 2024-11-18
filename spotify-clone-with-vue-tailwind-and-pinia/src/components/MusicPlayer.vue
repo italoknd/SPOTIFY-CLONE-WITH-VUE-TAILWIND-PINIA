@@ -17,8 +17,9 @@
 </template>
 
 <script setup lang="ts">
+//MODULES AND UTILS
 import { ref, onMounted, watch } from "vue";
-import { storeToRefs } from "pinia";
+import { loadedmetadata } from "../utils/loadMetadata";
 
 //icons
 import PictureInPictureBottomRight from "vue-material-design-icons/PictureInPictureBottomRight.vue";
@@ -28,7 +29,8 @@ import Pause from "vue-material-design-icons/Pause.vue";
 import SkipBackward from "vue-material-design-icons/SkipBackward.vue";
 import SkipForward from "vue-material-design-icons/SkipForward.vue";
 
-//store imports
+//STORE STUFF
+import { storeToRefs } from "pinia";
 import { useSongStore } from "../store/song";
 const useSong = useSongStore();
 const { is_playing, audio, current_artist, current_track, album } =
@@ -36,7 +38,7 @@ const { is_playing, audio, current_artist, current_track, album } =
 const { loadSong, playOrPauseSong, playOrPauseThisSong, prevSong, nextSong } =
   useSong;
 
-//vars
+//VARS
 let is_hover = ref<boolean>(false);
 let current_track_time = ref<any>(null);
 let total_track_time = ref<any>(null);
@@ -44,6 +46,7 @@ let seeker = ref<any>(null);
 let seeker_container = ref<any>(null);
 let range = ref<number>(0);
 
+//HOOKS
 onMounted(() => {
   if (audio.value) {
     setTimeout(() => {
@@ -80,7 +83,7 @@ onMounted(() => {
   }
 });
 
-//watchers
+//WATCHERS
 watch(audio.value, () => {
   timeupdate();
   loadedmetadata();
@@ -92,6 +95,7 @@ watch(current_track_time.value, (time) => {
   }
 });
 
+//FUNCTIONS
 const timeupdate = () => {
   audio.value.addEventListener("timeupdate", () => {
     const minutes = Math.floor(audio.value.currentTime / 60);
@@ -117,5 +121,6 @@ const loadedmetadata = () => {
       .toString()
       .padStart(2, "0")}`;
   });
+  // const a = loadedmetadata(audio.value)
 };
 </script>

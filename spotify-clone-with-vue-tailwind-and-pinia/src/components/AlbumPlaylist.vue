@@ -28,7 +28,7 @@
 </template>
 <script setup lang="ts">
 //MODULES AND INTERFACES
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { IAlbum } from "../interfaces/albums";
 
 //COMPONENTS
@@ -46,6 +46,12 @@ const { is_playing, current_track, current_artist, album } =
 
 //VARIABLES
 const album_details = ref<IAlbum>(album.value);
+
+// watch(current_track_time.value, (time) => {
+//   if (time && time === total_track_time.value) {
+//     useSong.nextSong(current_track.value);
+//   }
+// });
 
 //FUNCTIONS
 // const playFunc = () => {
