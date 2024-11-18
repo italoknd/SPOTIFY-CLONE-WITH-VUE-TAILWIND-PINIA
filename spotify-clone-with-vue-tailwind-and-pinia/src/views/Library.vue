@@ -20,7 +20,11 @@
           >
             {{ album.album }}
           </p>
-          <div v-if="verifyHovering(index)" class="circle">
+          <div
+            @click="playSelectedPlaylist(album)"
+            v-if="verifyHovering(index)"
+            class="circle"
+          >
             <Play :size="25" />
           </div>
         </div>
@@ -50,6 +54,11 @@ const albumStore = useSongStore();
 const selectAlbum = (selected_album: IAlbum) => {
   albumStore.getSelectedAlbum(selected_album);
   router.push("/selected-album");
+};
+
+const playSelectedPlaylist = (selected_album: IAlbum) => {
+  albumStore.getSelectedAlbum(selected_album);
+  albumStore.playSelectedPlaylist();
 };
 
 const getItem = (hovering: boolean, item_position: number) => {
