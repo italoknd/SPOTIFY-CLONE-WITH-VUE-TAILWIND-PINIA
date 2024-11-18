@@ -34,7 +34,8 @@
     "tracks": [
       {
         "id": 1,
-        "name": "Camelphat & Mathame feat. Fryinn - Many Times",
+        "track_artists": "Camelphat, Mathame, Fryinn",
+        "name": "Many Times",
         "path": "/tracks/CAMELPHAT & Mathame & Frýnn - Many Times.mp3"
       }
     ]
@@ -49,7 +50,8 @@
     "tracks": [
       {
         "id": 1,
-        "name": "Kevin de Vries, Y do I - Saga",
+        "track_artists": "Kevin de Vries, Y do I",
+        "name": "Saga",
         "path": "/tracks/Kevin de Vries, Y do I - Saga.mp3"
       }
     ]
@@ -65,7 +67,8 @@
     "tracks": [
       {
         "id": 1,
-        "name": "Kevin de Vries, Y do I - Saga",
+        "track_artists": "Kevin de Vries, Y do I",
+        "name": "Saga",
         "path": "/tracks/Kevin de Vries, Y do I - Saga.mp3"
       }
     ]
@@ -81,7 +84,8 @@
     "tracks": [
       {
         "id": 1,
-        "name": "Vintage Culture, Fideles & Be No Rain - Fallen Leaf (Massano Remix)",
+        "track_artists": "Vintage Culture, Fideles, Be No Rain",
+        "name": "Fallen Leaf (Massano Remix)",
         "path": "/tracks/Vintage Culture, Fideles & Be No Rain - Fallen Leaf (Massano Remix).mp3"
       }
     ]
@@ -97,7 +101,8 @@
     "tracks": [
       {
         "id": 1,
-        "name": "Camelphat & Mathame feat. Fryinn - Many Times",
+        "track_artists": "Camelphat, Mathame, Fryinn",
+        "name": "Many Times",
         "path": "/tracks/CAMELPHAT & Mathame & Frýnn - Many Times.mp3"
       }
     ]
@@ -113,7 +118,8 @@
     "tracks": [
       {
         "id": 1,
-        "name": "Neelix feat. Caroline Harrison - Makeup (Blazy Remix)",
+        "track_artists": "Neelix, Caroline Harrison",
+        "name": "Makeup (Blazy Remix)",
         "path": "/tracks/Neelix - Makeup (feat Caroline Harrison) (Blazy Remix).mp3"
       }
     ]
@@ -129,7 +135,8 @@
     "tracks": [
       {
         "id": 1,
-        "name": "Martin Garrix & Third Party feat. Oaks & Declan J Donovan - Carry You",
+        "track_artists": "Martin Garrix, Third Party, Oaks, Declan J Donovan",
+        "name": "Carry You",
         "path": "/tracks/Martin Garrix & Third  Party - Carry You (feat. Oaks & Declan J Donovan).mp3"
       }
     ]
@@ -145,7 +152,8 @@
     "tracks": [
       {
         "id": 1,
-        "name": "Martin Garrix feat. Carolina Liar - Smile",
+        "track_artists": "Martin Garrix, Carolina Liar",
+        "name": "Smile",
         "path": "/tracks/Martin Garrix feat. Carolina Liar - Smile.mp3"
       }
     ]
@@ -162,7 +170,8 @@
     "tracks": [
       {
         "id": 1,
-        "name": "MORTEN, ARTBAT - Hollow (feat. Bonn)",
+        "track_artists": "MORTEN, ARTBAT, Bonn",
+        "name": "Hollow (feat. Bonn)",
         "path": "/tracks/MORTEN, ARTBAT  Hollow (feat. Bonn).mp3"
       }
     ]
