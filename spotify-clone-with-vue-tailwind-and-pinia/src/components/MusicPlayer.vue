@@ -6,11 +6,36 @@
   >
     <div class="flex items-center w-1/4">
       <div class="flex items-center ml-4">
-        <img class="rounded-sm shadow-2xl" width="55" :src="album.album_cover" alt="Album cover">
+        <img
+          class="rounded-sm shadow-2xl"
+          width="55"
+          :src="album.album_cover"
+          alt="Album cover"
+        />
       </div>
-      <div class="ml-3 text-white text-sm">
-        <p><strong>{{current_track.name}}</strong></p>
-        <p>{{current_track.track_artists}}</p>
+      <div class="ml-3 text-sm cursor-pointer">
+        <p class="text-gray-300 hover:text-white">
+          <strong>{{ current_track.name }}</strong>
+        </p>
+        <p class="text-gray-300 hover:text-white">
+          {{ current_track.track_artists }}
+        </p>
+      </div>
+      <div class="flex items-center ml-8">
+        <Heart fillColor="#1bd760" :size="20"></Heart>
+        <PictureInPictureBottomRight fillColor="#ffffff" :size="18" />
+      </div>
+    </div>
+    <div class="max-w-[35%] mx-auto w-2/4 mb-3">
+      <div class="flex-col items-center justify-center">
+        <div class="flex items-center justify-center h-[30px]">
+          <button class="mx-2">
+            <SkipBackward fillColor="#fff" :size="25" @click="useSong.prevSong(current_track)"></SkipBackward>
+          </button>
+          <button class="mx-2">
+            <SkipForward fillColor="#fff" :size="25" @click="useSong.nextSong(current_track)"></SkipForward>
+          </button>
+        </div>
       </div>
     </div>
   </div>

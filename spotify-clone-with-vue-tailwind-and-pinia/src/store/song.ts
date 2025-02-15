@@ -33,6 +33,16 @@ export const useSongStore = defineStore("song", {
       setTimeout(() => {
         this.is_playing = true;
         this.audio.play();
+
+        localStorage.setItem(
+          "song",
+          JSON.stringify({
+            audio: this.audio,
+            current_artist: this.current_artist,
+            current_track: this.current_track,
+            is_playing: this.is_playing,
+          })
+        );
       }, 200);
     },
 
