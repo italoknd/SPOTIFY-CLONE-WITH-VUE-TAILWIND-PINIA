@@ -60,7 +60,7 @@
           </div>
         </div>
         <div class="mr-4 flex items-center">
-          <Heart v-if="verifyHovering(index)" fillColor="#1bd760" size="22" />
+          <Heart v-if="verifyHovering(index)" fillColor="#1bd760" :size="22" />
           <div class="pl-3">{{ duration }}</div>
         </div>
       </li>
