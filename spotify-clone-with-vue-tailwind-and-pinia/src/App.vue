@@ -55,12 +55,14 @@ const routeTo = (toRoute: string): void => {
     >
       <div class="flex items-center ml-6">
         <button
+          @click="router.go(-1)"
           type="button"
           class="rounded-full bg-black p-[1px] cursor-pointer"
         >
           <ChevronLeft fillColor="#fff" :size="30" />
         </button>
         <button
+          @click="router.go(1)"
           type="button"
           class="rounded-full bg-black p-[1px] cursor-pointer ml-4"
         >
