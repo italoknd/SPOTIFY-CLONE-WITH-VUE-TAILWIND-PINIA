@@ -30,12 +30,35 @@
       <div class="flex-col items-center justify-center">
         <div class="flex items-center justify-center h-[30px]">
           <button class="mx-2">
-            <SkipBackward fillColor="#fff" :size="25" @click="useSong.prevSong(current_track)"></SkipBackward>
+            <SkipBackward
+              fillColor="#fff"
+              :size="25"
+              @click="useSong.prevSong(current_track)"
+            ></SkipBackward>
+          </button>
+          <button
+            class="p-1 rounded-full mx-3 bg-white"
+            @click="useSong.playOrPauseThisSong(current_artist, current_track)"
+          >
+            <Play v-if="!is_playing" fillColor="#181818" :size="25"></Play>
+            <Pause v-else fillColor="#181818" :size="25"></Pause>
           </button>
           <button class="mx-2">
-            <SkipForward fillColor="#fff" :size="25" @click="useSong.nextSong(current_track)"></SkipForward>
+            <SkipForward
+              fillColor="#fff"
+              :size="25"
+              @click="useSong.nextSong(current_track)"
+            ></SkipForward>
           </button>
         </div>
+      </div>
+    </div>
+    <div class="flex items-center h-[25px]" v-if="current_track_time">
+      <div class="text-white text-[12px] pr-2 pt-[11px]">
+        {{ current_track_time }}
+      </div>
+      <div class="text-white text-[12px] pr-2 pt-[11px]">
+        {{ total_track_time }}
       </div>
     </div>
   </div>
@@ -44,7 +67,6 @@
 <script setup lang="ts">
 //MODULES AND UTILS
 import { ref, onMounted, watch } from "vue";
-import { loadedmetadata } from "../utils/loadMetadata";
 
 //icons
 import PictureInPictureBottomRight from "vue-material-design-icons/PictureInPictureBottomRight.vue";
@@ -72,11 +94,11 @@ let seeker_container = ref<any>(null);
 let range = ref<number>(0);
 
 //HOOKS
-onMounted(() => {
+onMounted(async () => {
   if (audio.value) {
     setTimeout(() => {
       timeupdate();
-      loadedmetadata();
+      loadedMetadata();
     }, 300);
   }
 
@@ -109,9 +131,9 @@ onMounted(() => {
 });
 
 //WATCHERS
-watch(audio.value, () => {
+watch(audio.value, (val) => {
   timeupdate();
-  loadedmetadata();
+  loadedMetadata();
 });
 
 watch(current_track_time.value, (time) => {
@@ -136,16 +158,18 @@ const timeupdate = () => {
   seeker.value.value = value;
 };
 
-const loadedmetadata = () => {
+const loadedMetadata = () => {
   audio.value.addEventListener("loadedmetadata", () => {
     const duration = audio.value.duration;
     const minutes = Math.floor(duration / 60);
     const seconds = Math.floor(duration - minutes * 60);
-
+    console.log(
+      "total duration >>>>",
+      `${minutes}:${seconds.toString().padStart(2, "0")}`
+    );
     total_track_time.value = `${minutes}:${seconds
       .toString()
       .padStart(2, "0")}`;
   });
-  // const a = loadedmetadata(audio.value)
 };
 </script>

@@ -174,7 +174,6 @@ const routeTo = (toRoute: string): void => {
       <div class="mb-[100px]" />
     </div>
     <MusicPlayer v-if="Object.keys(current_track).length" />
-    <!-- <MusicPlayer /> -->
   </div>
 </template>
 
