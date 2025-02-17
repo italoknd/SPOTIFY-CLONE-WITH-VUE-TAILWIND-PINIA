@@ -10,6 +10,7 @@ export interface IAlbum {
   public_playlist?: boolean;
   playlist_name?: string;
   playlist_cover?: string;
+  playlist_owner_picture?: string;
   tracks: ITrack[];
 }
 
@@ -17,5 +18,5 @@ export interface ITrack {
   id: number;
   name: string;
   path: string;
-  track_artists: string
+  track_artists: string;
 }

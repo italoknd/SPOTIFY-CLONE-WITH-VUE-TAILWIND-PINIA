@@ -29,6 +29,9 @@
     "artist_of_the_album": "Camelphat",
     "album": "Spiritual Milk",
     "album_category": "Album",
+    "main_color_on_top": "#374F84",
+    "main_color_on_bottom": "#374F66",
+    "artist_picture": "./public/artist-pictures/camelphat.jpg",
     "album_cover": "/album-covers/spiritual-milk-cover-art.jpeg",
     "release_year": "2023",
     "tracks": [
@@ -47,6 +50,9 @@
     "album_category": "EP",
     "album_cover": "/album-covers/saga-cover-art.jpeg",
     "release_year": "2024",
+    "main_color_on_top": "#396884",
+    "main_color_on_bottom": "#558295",
+    "artist_picture": "./public/artist-pictures/kevin-de-vries.jpg",
     "tracks": [
       {
         "id": 1,
@@ -61,6 +67,8 @@
     "artist_of_the_album": "Italo Pedroza",
     "album_category": "Public Playlist",
     "public_playlist": true,
+    "release_year": "2024",
+    "playlist_owner_picture": "https://lh3.googleusercontent.com/a/ACg8ocJ-zkH1FfQwQhEAJa5_07Pp2q_HVmFnXS_ce9xYtPHGbnk=s96-c-rg-br100",
     "playlist_name": "AS BRABAS DA SUMMER ELETROHITS!",
     "album_cover": "/album-covers/garoto-balada-meme-cover-art.jpg",
     "playlist_cover": "/album-covers/garoto-balada-meme-cover-art.jpg",
@@ -78,7 +86,11 @@
     "artist_of_the_album": "Massano",
     "public_playlist": false,
     "album_category": "Single",
+    "main_color_on_top": "#3E9FF1",
+    "main_color_on_bottom": "#3E9FAC",
+    "release_year": "2024",
     "playlist_name": "Fallen Leaf (Massano Remix)",
+    "artist_picture": "./public/artist-pictures/massano.jpg",
     "album_cover": "/cover-art/fallen-leaf-massano-remix.png",
     "playlist_cover": "/cover-art/fallen-leaf-massano-remix.png",
     "tracks": [
@@ -91,23 +103,6 @@
     ]
   },
   {
-    "album": "Spiritual Milk",
-    "artist_of_the_album": "Camelphat",
-    "public_playlist": false,
-    "album_category": "Album",
-    "playlist_name": "Spiritual Milk",
-    "album_cover": "/album-covers/spiritual-milk-cover-art.jpeg",
-    "playlist_cover": "/album-covers/spiritual-milk-cover-art.jpeg",
-    "tracks": [
-      {
-        "id": 1,
-        "track_artists": "Camelphat, Mathame, Fryinn",
-        "name": "Many Times",
-        "path": "/tracks/CAMELPHAT & Mathame & Frýnn - Many Times.mp3"
-      }
-    ]
-  },
-  {
     "album": "Make Up",
     "artist_of_the_album": "Blazy",
     "public_playlist": false,
@@ -115,6 +110,10 @@
     "playlist_name": "Make Up (Blazy Remix)",
     "album_cover": "/cover-art/makeup-blazy-remix.jpg",
     "playlist_cover": "/cover-art/makeup-blazy-remix.jpg",
+    "main_color_on_top": "#192A32",
+    "main_color_on_bottom": "#3E4A58",
+    "artist_picture": "./public/artist-pictures/blazy.jpg",
+    "release_year": "2020",
     "tracks": [
       {
         "id": 1,
@@ -128,8 +127,12 @@
     "album": "Carry You",
     "public_playlist": false,
     "artist_of_the_album": "Martin Garrix, Third Party Oaks, Declan J Donovan",
+    "artist_picture": "./public/artist-pictures/martin-garrix.jpg",
     "album_category": "Single",
     "playlist_name": "Carry You",
+    "main_color_on_top": "#0C3F42",
+    "main_color_on_bottom": "#62A1A8",
+    "release_year": "2024",
     "album_cover": "/cover-art/carry-you-martin-garrix.jpeg",
     "playlist_cover": "/cover-art/carry-you-martin-garrix.jpeg",
     "tracks": [
@@ -144,8 +147,12 @@
   {
     "album": "Smile",
     "artist_of_the_album": "Martin Garrix, Carolina Liar",
+    "artist_picture": "./public/artist-pictures/martin-garrix.jpg",
     "public_playlist": false,
     "playlist_name": "Smile",
+    "main_color_on_top": "#BC2534",
+    "main_color_on_bottom": "#672534",
+    "release_year": "2024",
     "album_category": "Single",
     "album_cover": "/cover-art/martin-garrix-smile.jpeg",
     "playlist_cover": "/cover-art/martin-garrix-smile.jpeg",

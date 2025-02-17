@@ -15,7 +15,7 @@
       </h1>
       <div class="flex items-center">
         <img
-          :src="album_details.artist_picture"
+          :src="album_details.artist_picture || album_details.playlist_owner_picture"
           alt="Artist Picture"
           class="w-[25px] h-[25px] rounded-xl object-contain"
         />
