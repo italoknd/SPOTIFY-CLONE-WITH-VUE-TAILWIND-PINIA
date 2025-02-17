@@ -3,4 +3,5 @@ export interface IMenuItems {
   iconSize: number;
   pageURL: string;
   name: string;
+  style?: string;
 }

@@ -130,7 +130,7 @@ const routeTo = (toRoute: string): void => {
               :iconSize="iconSize"
               :name="name"
               :iconString="iconString"
-              :pageUrl="pageURL"
+              :pageURL="pageURL"
               :class="style"
             />
           </RouterLink>
@@ -146,7 +146,7 @@ const routeTo = (toRoute: string): void => {
               :iconSize="iconSize"
               :name="name"
               :iconString="iconString"
-              :pageUrl="pageURL"
+              :pageURL="pageURL"
               :class="style"
             />
           </RouterLink>
