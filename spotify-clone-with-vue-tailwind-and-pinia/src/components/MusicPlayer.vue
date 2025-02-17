@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="audio"
+    v-if="!Object.keys(audio).length"
     id="music-player"
     class="select-none fixed flex items-center justify-between bottom-0 w-full z-50 h-[90px] bg-[#181818] border-t border-t-[#272727]"
   >
@@ -23,7 +23,11 @@
       </div>
       <div class="flex items-center ml-8">
         <Heart fillColor="#1bd760" :size="20"></Heart>
-        <PictureInPictureBottomRight fillColor="#ffffff" :size="18" />
+        <PictureInPictureBottomRight
+          fillColor="#ffffff"
+          :size="18"
+          class="ml-2"
+        />
       </div>
     </div>
     <div class="max-w-[35%] mx-auto w-2/4 mb-3">
@@ -52,12 +56,12 @@
           </button>
         </div>
       </div>
-      <div class="flex items-center h-[25px]" v-if="current_track_time">
+      <div class="flex items-center h-[25px]">
         <div class="text-white text-[12px] pr-2 pt-[11px]">
           {{ current_track_time }}
         </div>
         <div
-          ref="seekerContainer"
+          ref="seeker_container"
           class="w-full relative mt-2 mb-3"
           @mouseenter="is_hover = true"
           @mouseleave="is_hover = false"
@@ -66,7 +70,7 @@
             v-model="range"
             ref="seeker"
             type="range"
-            class="absolute rounded-full my-2 w-full h-0 z-40 appearance-none bg-opacity-100 focus:outline-none accent-white"
+            class="cursor-pointer absolute rounded-full my-2 w-full h-0 z-40 appearance-none bg-opacity-100 focus:outline-none accent-white"
             :class="{ rangeDotHidden: !is_hover }"
           />
           <div
@@ -142,7 +146,6 @@ watch(
 watch(
   () => current_track_time.value,
   (time) => {
-    console.log("total_track_time >>>>", total_track_time.value);
     if (time && time === total_track_time.value) {
       useSong.nextSong(current_track.value);
     }
@@ -151,7 +154,7 @@ watch(
 
 //FUNCTIONS
 const timeupdate = () => {
-  if (!audio.value) return;
+  if (!Object.keys(audio.value).length) return;
 
   audio.value.addEventListener("timeupdate", () => {
     const minutes = Math.floor(audio.value.currentTime / 60);
@@ -160,14 +163,16 @@ const timeupdate = () => {
     current_track_time.value = `${minutes}:${seconds
       .toString()
       .padStart(2, "0")}`;
-  });
 
-  const value = (100 / audio.value.duration) * audio.value.currentTime;
-  range.value = value;
-  seeker.value = value;
+    const value = (100 / audio.value.duration) * audio.value.currentTime;
+    range.value = value;
+    seeker.value.value = value;
+  });
 };
 
 const loadedMetadata = () => {
+  if (!Object.keys(audio.value).length) return;
+
   audio.value.addEventListener("loadedmetadata", () => {
     const duration = audio.value.duration;
     const minutes = Math.floor(duration / 60);
@@ -182,8 +187,7 @@ const loadedMetadata = () => {
 const seekerHandler = () => {
   if (current_track.value) {
     seeker.value.addEventListener("change", () => {
-      const time = audio.value.duration * (seeker.value / 100);
-      console.log("audio.value.currentTime >>>", audio.value.currentTime);
+      const time = audio.value.duration * (seeker.value.value / 100);
       audio.value.currentTime = time;
     });
 
@@ -203,7 +207,8 @@ const seekerHandler = () => {
         seeker_container.value.offsetWidth;
       const time = audio.value.duration * click_position;
       audio.value.currentTime = time;
-      seeker.value = (100 / audio.value.duration) * audio.value.currentTime;
+      seeker.value.value =
+        (100 / audio.value.duration) * audio.value.currentTime;
     });
   }
 };
