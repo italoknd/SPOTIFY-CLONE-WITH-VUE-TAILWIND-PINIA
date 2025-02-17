@@ -63,11 +63,13 @@
     ]
   },
   {
-    "album": "AS BRABAS DA SUMMER ELETROHITS!",
+    "album": "ELETRÔNICAS 2025",
     "artist_of_the_album": "Italo Pedroza",
     "album_category": "Public Playlist",
     "public_playlist": true,
     "release_year": "2024",
+    "main_color_on_top": "#502695",
+    "main_color_on_bottom": "#B88DEE",
     "playlist_owner_picture": "https://lh3.googleusercontent.com/a/ACg8ocJ-zkH1FfQwQhEAJa5_07Pp2q_HVmFnXS_ce9xYtPHGbnk=s96-c-rg-br100",
     "playlist_name": "AS BRABAS DA SUMMER ELETROHITS!",
     "album_cover": "/album-covers/garoto-balada-meme-cover-art.jpg",
