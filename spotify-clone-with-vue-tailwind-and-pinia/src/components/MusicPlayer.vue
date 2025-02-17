@@ -154,34 +154,34 @@ watch(
 
 //FUNCTIONS
 const timeupdate = () => {
-  if (!Object.keys(audio.value).length) return;
+  if (audio.value instanceof HTMLAudioElement) {
+    audio.value.addEventListener("timeupdate", () => {
+      const minutes = Math.floor(audio.value.currentTime / 60);
+      const seconds = Math.floor(audio.value.currentTime - minutes * 60);
 
-  audio.value.addEventListener("timeupdate", () => {
-    const minutes = Math.floor(audio.value.currentTime / 60);
-    const seconds = Math.floor(audio.value.currentTime - minutes * 60);
+      current_track_time.value = `${minutes}:${seconds
+        .toString()
+        .padStart(2, "0")}`;
 
-    current_track_time.value = `${minutes}:${seconds
-      .toString()
-      .padStart(2, "0")}`;
-
-    const value = (100 / audio.value.duration) * audio.value.currentTime;
-    range.value = value;
-    seeker.value.value = value;
-  });
+      const value = (100 / audio.value.duration) * audio.value.currentTime;
+      range.value = value;
+      seeker.value.value = value;
+    });
+  }
 };
 
 const loadedMetadata = () => {
-  if (!Object.keys(audio.value).length) return;
+  if (audio.value instanceof HTMLAudioElement) {
+    audio.value.addEventListener("loadedmetadata", () => {
+      const duration = audio.value.duration;
+      const minutes = Math.floor(duration / 60);
+      const seconds = Math.floor(duration - minutes * 60);
 
-  audio.value.addEventListener("loadedmetadata", () => {
-    const duration = audio.value.duration;
-    const minutes = Math.floor(duration / 60);
-    const seconds = Math.floor(duration - minutes * 60);
-
-    total_track_time.value = `${minutes}:${seconds
-      .toString()
-      .padStart(2, "0")}`;
-  });
+      total_track_time.value = `${minutes}:${seconds
+        .toString()
+        .padStart(2, "0")}`;
+    });
+  }
 };
 
 const seekerHandler = () => {
