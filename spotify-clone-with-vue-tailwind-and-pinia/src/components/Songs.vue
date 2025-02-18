@@ -85,7 +85,7 @@ const useSong = useSongStore();
 const { is_playing, current_track, album } = storeToRefs(useSong);
 
 //VARS
-const album_details = ref<IAlbum>(album);
+const album_details = ref<IAlbum>(album.value);
 
 let index = ref<number | null>(null);
 let is_hover = ref<boolean>(false);
