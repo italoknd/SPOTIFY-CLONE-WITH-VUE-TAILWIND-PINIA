@@ -27,10 +27,6 @@
   </div>
 </template>
 <script setup lang="ts">
-//MODULES AND INTERFACES
-import { ref } from "vue";
-import { IAlbum } from "../interfaces/albums";
-
 //COMPONENTS
 import Songs from "./Songs.vue";
 import Play from "vue-material-design-icons/Play.vue";
