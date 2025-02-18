@@ -28,7 +28,7 @@
 </template>
 <script setup lang="ts">
 //MODULES AND INTERFACES
-import { ref, watch } from "vue";
+import { ref } from "vue";
 import { IAlbum } from "../interfaces/albums";
 
 //COMPONENTS
@@ -41,27 +41,7 @@ import Heart from "vue-material-design-icons/Heart.vue";
 import { storeToRefs } from "pinia";
 import { useSongStore } from "../store/song";
 const useSong = useSongStore();
-const { is_playing, current_track, current_artist, album } =
-  storeToRefs(useSong);
-
-//VARIABLES
-const album_details = ref<IAlbum>(album.value);
-
-// watch(current_track_time.value, (time) => {
-//   if (time && time === total_track_time.value) {
-//     useSong.nextSong(current_track.value);
-//   }
-// });
-
-//FUNCTIONS
-// const playFunc = () => {
-//   if (current_track.value) {
-//     useSong.playOrPauseThisSong(current_artist.value, current_track.value);
-//     return;
-//   }
-
-//   useSong.playFromTheBeginning();
-// };
+const { is_playing, current_track, current_artist } = storeToRefs(useSong);
 </script>
 <style scoped>
 .glass-effect {
