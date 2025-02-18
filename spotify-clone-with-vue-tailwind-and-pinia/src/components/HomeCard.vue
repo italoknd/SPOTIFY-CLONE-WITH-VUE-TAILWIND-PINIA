@@ -25,7 +25,6 @@
 <script setup lang="ts">
 import { IHomeCard } from "../interfaces/homeCard";
 import { RouterLink } from "vue-router";
-const props = defineProps<IHomeCard>();
-const debug_css =
-  "xl:bg-green-500 lg:bg-blue-500 md:bg-yellow-400 sm:bg-red-500";
+
+const { subtitle, title, image } = defineProps<IHomeCard>();
 </script>
