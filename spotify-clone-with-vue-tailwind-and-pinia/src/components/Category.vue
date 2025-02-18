@@ -22,9 +22,7 @@ import { IUniqueColor } from "../interfaces/uniqolor";
 import { RouterLink } from "vue-router";
 import { ref } from "vue";
 import uniqolor from "uniqolor";
-import { ICategory } from "../interfaces/category";
 
 let randColor = ref<IUniqueColor>({ color: "", isLight: false });
 randColor.value = uniqolor.random();
-const props = defineProps<ICategory>();
 </script>
