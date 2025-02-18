@@ -2,5 +2,5 @@ export interface IHomeCard {
   title: string;
   subtitle: string;
   image: string;
-  styles: string
+  styles?: string
 }
