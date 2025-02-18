@@ -6,7 +6,7 @@ import { IMenuItems } from "../interfaces/menuItemsProps";
 const route = useRoute();
 const props = defineProps<IMenuItems>();
 
-let icon = ref(null);
+let icon = ref<IMenuItems["iconString"]>("");
 let textIsHover = ref(false);
 
 watchEffect(() => {
