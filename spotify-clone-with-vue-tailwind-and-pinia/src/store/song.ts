@@ -133,7 +133,19 @@ export const useSongStore = defineStore("song", {
     },
 
     addToLikedPlaylistTheEntireAlbum() {
-      this.liked_songs = [...this.album.tracks];
+      if (this.liked_songs.length) {
+        this.album.tracks.forEach((track: IAlbum) => {
+          if (
+            !this.liked_songs.some(
+              (likedSong: IAlbum) => likedSong.path === track.path
+            )
+          ) {
+            this.liked_songs.push(track);
+          }
+        });
+      } else {
+        this.liked_songs.push(...this.album.tracks);
+      }
     },
 
     resetState() {
