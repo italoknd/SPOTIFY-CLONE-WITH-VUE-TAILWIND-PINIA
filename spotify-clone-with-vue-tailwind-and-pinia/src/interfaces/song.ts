@@ -7,5 +7,6 @@ export interface ISongStore {
   current_track: ITrack;
   playlist_duration: string;
   acc_duration: number;
+  liked_songs: IAlbum;
   album: IAlbum
 }
