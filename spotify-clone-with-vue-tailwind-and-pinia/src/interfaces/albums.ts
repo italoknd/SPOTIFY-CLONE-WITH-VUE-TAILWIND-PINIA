@@ -1,4 +1,6 @@
 export interface IAlbum {
+  id: number;
+  liked_playlist: boolean;
   artist_of_the_album?: string;
   artist_picture?: string;
   main_color_on_top?: string;

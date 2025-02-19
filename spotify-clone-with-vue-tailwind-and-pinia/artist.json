@@ -1,5 +1,7 @@
 [
   {
+    "id": 1,
+    "liked_playlist": false,
     "public_playlist": false,
     "artist_of_the_album": "Vintage Culture",
     "album": "Promised Land (Remixes)",
@@ -8,7 +10,7 @@
     "release_year": "2024",
     "main_color_on_top": "#BBFC0A",
     "main_color_on_bottom": "#7B9E20",
-    "artist_picture": "./public/artist-pictures/vintage-culture.jpeg",
+    "artist_picture": "/artist-pictures/vintage-culture.jpeg",
     "tracks": [
       {
         "id": 1,
@@ -25,13 +27,15 @@
     ]
   },
   {
+    "id": 2,
+    "liked_playlist": false,
     "public_playlist": false,
     "artist_of_the_album": "Camelphat",
     "album": "Spiritual Milk",
     "album_category": "Album",
     "main_color_on_top": "#374F84",
     "main_color_on_bottom": "#374F66",
-    "artist_picture": "./public/artist-pictures/camelphat.jpg",
+    "artist_picture": "/artist-pictures/camelphat.jpg",
     "album_cover": "/album-covers/spiritual-milk-cover-art.jpeg",
     "release_year": "2023",
     "tracks": [
@@ -44,6 +48,8 @@
     ]
   },
   {
+    "id": 3,
+    "liked_playlist": false,
     "public_playlist": false,
     "artist_of_the_album": "Kevin de Vries, Y do I",
     "album": "Saga",
@@ -52,7 +58,7 @@
     "release_year": "2024",
     "main_color_on_top": "#396884",
     "main_color_on_bottom": "#558295",
-    "artist_picture": "./public/artist-pictures/kevin-de-vries.jpg",
+    "artist_picture": "/artist-pictures/kevin-de-vries.jpg",
     "tracks": [
       {
         "id": 1,
@@ -63,6 +69,8 @@
     ]
   },
   {
+    "id": 4,
+    "liked_playlist": false,
     "album": "ELETRÔNICAS 2025",
     "artist_of_the_album": "Italo Pedroza",
     "album_category": "Public Playlist",
@@ -84,6 +92,8 @@
     ]
   },
   {
+    "id": 5,
+    "liked_playlist": false,
     "album": "Fallen Leaf (Massano Remix)",
     "artist_of_the_album": "Massano",
     "public_playlist": false,
@@ -92,7 +102,7 @@
     "main_color_on_bottom": "#3E9FAC",
     "release_year": "2024",
     "playlist_name": "Fallen Leaf (Massano Remix)",
-    "artist_picture": "./public/artist-pictures/massano.jpg",
+    "artist_picture": "/artist-pictures/massano.jpg",
     "album_cover": "/cover-art/fallen-leaf-massano-remix.png",
     "playlist_cover": "/cover-art/fallen-leaf-massano-remix.png",
     "tracks": [
@@ -105,6 +115,8 @@
     ]
   },
   {
+    "id": 6,
+    "liked_playlist": false,
     "album": "Make Up",
     "artist_of_the_album": "Blazy",
     "public_playlist": false,
@@ -114,7 +126,7 @@
     "playlist_cover": "/cover-art/makeup-blazy-remix.jpg",
     "main_color_on_top": "#192A32",
     "main_color_on_bottom": "#3E4A58",
-    "artist_picture": "./public/artist-pictures/blazy.jpg",
+    "artist_picture": "/artist-pictures/blazy.jpg",
     "release_year": "2020",
     "tracks": [
       {
@@ -126,10 +138,12 @@
     ]
   },
   {
+    "id": 7,
+    "liked_playlist": false,
     "album": "Carry You",
     "public_playlist": false,
     "artist_of_the_album": "Martin Garrix, Third Party Oaks, Declan J Donovan",
-    "artist_picture": "./public/artist-pictures/martin-garrix.jpg",
+    "artist_picture": "/artist-pictures/martin-garrix.jpg",
     "album_category": "Single",
     "playlist_name": "Carry You",
     "main_color_on_top": "#0C3F42",
@@ -147,9 +161,11 @@
     ]
   },
   {
+    "id": 8,
+    "liked_playlist": false,
     "album": "Smile",
     "artist_of_the_album": "Martin Garrix, Carolina Liar",
-    "artist_picture": "./public/artist-pictures/martin-garrix.jpg",
+    "artist_picture": "/artist-pictures/martin-garrix.jpg",
     "public_playlist": false,
     "playlist_name": "Smile",
     "main_color_on_top": "#BC2534",
@@ -168,6 +184,8 @@
     ]
   },
   {
+    "id": 9,
+    "liked_playlist": false,
     "album": "Hollow",
     "artist_of_the_album": "MORTEN, ARTBAT, Bonn",
     "release_year": "2024",

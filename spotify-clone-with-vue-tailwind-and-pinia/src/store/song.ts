@@ -1,10 +1,13 @@
 import { defineStore } from "pinia";
 import { ISongStore } from "../interfaces/song";
 import { IAlbum, ITrack } from "../interfaces/albums";
+import all_albums from "../../artist.json";
 
 export const useSongStore = defineStore("song", {
   state: () =>
     ({
+      album_id: 0 as number,
+      all_albums: all_albums as IAlbum[],
       is_playing: false,
       audio: {} as HTMLAudioElement,
       current_artist: "",
@@ -140,12 +143,22 @@ export const useSongStore = defineStore("song", {
               (likedSong: IAlbum) => likedSong.path === track.path
             )
           ) {
+            this.album_id = this.album.id;
+            // this.album.liked_playlist = true;
             this.liked_songs.push(track);
+          }else{
+            console.log("cscasc", this.album);
+            this.album_id = this.album.id;
           }
         });
       } else {
+        // this.album.liked_playlist = true;
+        this.album_id = this.album.id;
         this.liked_songs.push(...this.album.tracks);
       }
+
+      console.log("this.all_albums >>>", this.all_albums);
+      console.log("this.album_id >>>", this.album_id);
     },
 
     resetState() {

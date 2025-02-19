@@ -38,7 +38,9 @@ import { IAlbum } from "../interfaces/albums";
 import { useSongStore } from "../store/song";
 import { useRouter } from "vue-router";
 import { ref } from "vue";
-import all_albums from "../../artist.json";
+import { storeToRefs } from "pinia";
+
+const { all_albums } = storeToRefs(useSongStore());
 
 //ICONS
 import Play from "vue-material-design-icons/Play.vue";

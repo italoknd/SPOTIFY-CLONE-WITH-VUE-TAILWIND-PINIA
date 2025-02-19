@@ -82,7 +82,7 @@ import ClockTimeThreeOutline from "vue-material-design-icons/ClockTimeThreeOutli
 //STUFF FROM PINIA
 import { useSongStore } from "../store/song";
 const useSong = useSongStore();
-const { is_playing, current_track, album } = storeToRefs(useSong);
+const { is_playing, current_track, album, liked_songs } = storeToRefs(useSong);
 
 //VARS
 const album_details = ref<IAlbum>(album.value);
@@ -126,4 +126,5 @@ const getItem = (hovering: boolean, item_position: number) => {
 const verifyHovering = (item_position: number): boolean => {
   return item_position === index.value && is_hover.value ? true : false;
 };
+
 </script>
