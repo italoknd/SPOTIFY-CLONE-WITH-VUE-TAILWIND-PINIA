@@ -12,6 +12,7 @@ export const useSongStore = defineStore("song", {
       album: {} as IAlbum,
       playlist_duration: "",
       acc_duration: 0,
+      liked_songs: [],
     } as ISongStore),
   getters: {
     selected_album: (state) => state.album,
@@ -129,6 +130,10 @@ export const useSongStore = defineStore("song", {
             .padStart(2, "0")}secs`;
         });
       }
+    },
+
+    addToLikedPlaylistTheEntireAlbum() {
+      this.liked_songs = [...this.album.tracks];
     },
 
     resetState() {
