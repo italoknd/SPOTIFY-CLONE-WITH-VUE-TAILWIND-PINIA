@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "playlist_id": 1,
     "liked_playlist": false,
     "public_playlist": false,
     "artist_of_the_album": "Vintage Culture",
@@ -14,12 +14,14 @@
     "tracks": [
       {
         "id": 1,
+        "playlist_id": 1,
         "track_artists": "Vintage Culture, Fideles, Be No Rain",
         "name": "Fallen Leaf (Massano Remix)",
         "path": "/tracks/Vintage Culture, Fideles & Be No Rain - Fallen Leaf (Massano Remix).mp3"
       },
       {
         "id": 2,
+        "playlist_id": 1,
         "track_artists": "Vintage Culture, Yellowitz",
         "name": "Just Like Home (Kevin De Vries Remix)",
         "path": "/tracks/Vintage Culture, Yellowitz - Just Like Home (Kevin De Vries Remix).mp3"
@@ -27,7 +29,7 @@
     ]
   },
   {
-    "id": 2,
+    "playlist_id": 2,
     "liked_playlist": false,
     "public_playlist": false,
     "artist_of_the_album": "Camelphat",
@@ -41,6 +43,7 @@
     "tracks": [
       {
         "id": 1,
+        "playlist_id": 2,
         "track_artists": "Camelphat, Mathame, Fryinn",
         "name": "Many Times",
         "path": "/tracks/CAMELPHAT & Mathame & Frýnn - Many Times.mp3"
@@ -48,7 +51,7 @@
     ]
   },
   {
-    "id": 3,
+    "playlist_id": 3,
     "liked_playlist": false,
     "public_playlist": false,
     "artist_of_the_album": "Kevin de Vries, Y do I",
@@ -62,6 +65,7 @@
     "tracks": [
       {
         "id": 1,
+        "playlist_id": 3,
         "track_artists": "Kevin de Vries, Y do I",
         "name": "Saga",
         "path": "/tracks/Kevin de Vries, Y do I - Saga.mp3"
@@ -69,7 +73,7 @@
     ]
   },
   {
-    "id": 4,
+    "playlist_id": 4,
     "liked_playlist": false,
     "album": "ELETRÔNICAS 2025",
     "artist_of_the_album": "Italo Pedroza",
@@ -85,6 +89,7 @@
     "tracks": [
       {
         "id": 1,
+        "playlist_id": 4,
         "track_artists": "Kevin de Vries, Y do I",
         "name": "Saga",
         "path": "/tracks/Kevin de Vries, Y do I - Saga.mp3"
@@ -92,7 +97,7 @@
     ]
   },
   {
-    "id": 5,
+    "playlist_id": 5,
     "liked_playlist": false,
     "album": "Fallen Leaf (Massano Remix)",
     "artist_of_the_album": "Massano",
@@ -108,6 +113,7 @@
     "tracks": [
       {
         "id": 1,
+        "playlist_id": 5,
         "track_artists": "Vintage Culture, Fideles, Be No Rain",
         "name": "Fallen Leaf (Massano Remix)",
         "path": "/tracks/Vintage Culture, Fideles & Be No Rain - Fallen Leaf (Massano Remix).mp3"
@@ -115,7 +121,7 @@
     ]
   },
   {
-    "id": 6,
+    "playlist_id": 6,
     "liked_playlist": false,
     "album": "Make Up",
     "artist_of_the_album": "Blazy",
@@ -131,6 +137,7 @@
     "tracks": [
       {
         "id": 1,
+        "playlist_id": 6,
         "track_artists": "Neelix, Caroline Harrison",
         "name": "Makeup (Blazy Remix)",
         "path": "/tracks/Neelix - Makeup (feat Caroline Harrison) (Blazy Remix).mp3"
@@ -138,7 +145,7 @@
     ]
   },
   {
-    "id": 7,
+    "playlist_id": 7,
     "liked_playlist": false,
     "album": "Carry You",
     "public_playlist": false,
@@ -154,6 +161,7 @@
     "tracks": [
       {
         "id": 1,
+        "playlist_id": 7,
         "track_artists": "Martin Garrix, Third Party, Oaks, Declan J Donovan",
         "name": "Carry You",
         "path": "/tracks/Martin Garrix & Third  Party - Carry You (feat. Oaks & Declan J Donovan).mp3"
@@ -161,7 +169,7 @@
     ]
   },
   {
-    "id": 8,
+    "playlist_id": 8,
     "liked_playlist": false,
     "album": "Smile",
     "artist_of_the_album": "Martin Garrix, Carolina Liar",
@@ -177,6 +185,7 @@
     "tracks": [
       {
         "id": 1,
+        "playlist_id": 8,
         "track_artists": "Martin Garrix, Carolina Liar",
         "name": "Smile",
         "path": "/tracks/Martin Garrix feat. Carolina Liar - Smile.mp3"
@@ -184,7 +193,7 @@
     ]
   },
   {
-    "id": 9,
+    "playlist_id": 9,
     "liked_playlist": false,
     "album": "Hollow",
     "artist_of_the_album": "MORTEN, ARTBAT, Bonn",
@@ -197,6 +206,7 @@
     "tracks": [
       {
         "id": 1,
+        "playlist_id": 9,
         "track_artists": "MORTEN, ARTBAT, Bonn",
         "name": "Hollow (feat. Bonn)",
         "path": "/tracks/MORTEN, ARTBAT  Hollow (feat. Bonn).mp3"
