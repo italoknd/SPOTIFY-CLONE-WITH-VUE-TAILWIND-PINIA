@@ -26,7 +26,6 @@
         <p class="mx-2 text-md">{{ album_details.release_year }}</p>
         <Dot />
         <p class="mx-2 text-md">
-          {{ album_details.tracks.length }}
           {{ album_details.tracks.length > 1 ? "songs" : "song" }},
           {{ albumStore.playlist_duration }}
         </p>

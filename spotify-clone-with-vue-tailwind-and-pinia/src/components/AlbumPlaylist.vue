@@ -21,9 +21,8 @@
         @click="addTracksToFavoritePlaylist()"
         class="hover:scale-125 duration-300 mt-1 ml-4"
         :size="40"
-        :fillColor="album.liked_playlist ? '#444' : '#fff'"
+        :fillColor="album.liked_playlist ? '#23CF5F' : '#fff'"
       />
-      {{ album.liked_playlist }}
     </div>
     <Songs />
   </div>
@@ -42,7 +41,7 @@ import { useSongStore } from "../store/song";
 const useSong = useSongStore();
 
 const addTracksToFavoritePlaylist = (): void => {
-  useSong.addToLikedPlaylistTheEntireAlbum();
+  useSong.saveOrRemoveAlbumFromLikedPlaylist();
 };
 
 const { is_playing, current_track, current_artist, album } =
@@ -50,13 +49,13 @@ const { is_playing, current_track, current_artist, album } =
 </script>
 <style scoped>
 .glass-effect {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(2, 0, 0, 0.288),
-    #101010
-  ); /* Fundo branco semi-transparente */
-  color: white; /* Cor do texto para contraste */
-  backdrop-filter: blur(100px); /* Efeito de blur no fundo */
-  -webkit-backdrop-filter: blur(10px); /* Suporte para navegadores WebKit */
+  background-image: linear-gradient(to bottom, rgba(2, 0, 0, 0.288), #101010);
+  /* Fundo branco semi-transparente */
+  color: white;
+  /* Cor do texto para contraste */
+  backdrop-filter: blur(100px);
+  /* Efeito de blur no fundo */
+  -webkit-backdrop-filter: blur(10px);
+  /* Suporte para navegadores WebKit */
 }
 </style>

@@ -15,7 +15,7 @@ export const useSongStore = defineStore("song", {
       album: {} as IAlbum,
       playlist_duration: "",
       acc_duration: 0,
-      liked_songs: [],
+      liked_songs: [] as IAlbum[],
     } as ISongStore),
   getters: {
     selected_album: (state) => state.album,
@@ -135,30 +135,39 @@ export const useSongStore = defineStore("song", {
       }
     },
 
-    addToLikedPlaylistTheEntireAlbum() {
+    saveOrRemoveAlbumFromLikedPlaylist() {
       if (this.liked_songs.length) {
         this.album.tracks.forEach((track: IAlbum) => {
-          if (
-            !this.liked_songs.some(
-              (likedSong: IAlbum) => likedSong.path === track.path
-            )
-          ) {
-            this.album_id = this.album.id;
-            // this.album.liked_playlist = true;
-            this.liked_songs.push(track);
-          }else{
-            console.log("cscasc", this.album);
-            this.album_id = this.album.id;
+          let not_a_saved_album: boolean = !this.liked_songs.some(
+            (likedSong: IAlbum) => likedSong.playlist_id === track.playlist_id
+          );
+
+          if (not_a_saved_album) {
+            this.saveAlbumOnLikedPlaylist();
+          } else {
+            this.removeAlbumFromLikedPlaylist();
           }
         });
-      } else {
-        // this.album.liked_playlist = true;
-        this.album_id = this.album.id;
-        this.liked_songs.push(...this.album.tracks);
+        return;
       }
 
-      console.log("this.all_albums >>>", this.all_albums);
-      console.log("this.album_id >>>", this.album_id);
+      this.saveAlbumOnLikedPlaylist();
+    },
+
+    saveAlbumOnLikedPlaylist() {
+      this.album_id = this.album.playlist_id;
+      this.album.liked_playlist = true;
+      this.liked_songs.push(...this.album.tracks);
+    },
+
+    removeAlbumFromLikedPlaylist() {
+      this.album.liked_playlist = false;
+      this.album_id = this.album.playlist_id;
+      this.liked_songs.forEach((song: IAlbum, index: number) => {
+        if (song.playlist_id === this.album.playlist_id) {
+          this.liked_songs.splice(index, 1);
+        }
+      });
     },
 
     resetState() {
@@ -170,5 +179,5 @@ export const useSongStore = defineStore("song", {
       this.playlist_duration = "";
     },
   },
-  persist: true,
+  persist: false,
 });
