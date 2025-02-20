@@ -15,7 +15,21 @@ export const useSongStore = defineStore("song", {
       album: {} as IAlbum,
       playlist_duration: "",
       acc_duration: 0,
-      liked_songs: [] as IAlbum[],
+      liked_songs: {
+        playlist_id: 99999,
+        liked_playlist: true,
+        public_playlist: true,
+        artist_of_the_album: "Italo Pedroza",
+        album: "Liked Songs",
+        album_category: "Playlist",
+        album_cover: "../../public/images/icons/liked-active.png",
+        release_year: "",
+        main_color_on_top: "#847AEA",
+        main_color_on_bottom: "#5C34F1",
+        artist_picture:
+          "https://lh3.googleusercontent.com/a/ACg8ocJ-zkH1FfQwQhEAJa5_07Pp2q_HVmFnXS_ce9xYtPHGbnk=s96-c-rg-br100",
+        tracks: [],
+      },
     } as ISongStore),
   getters: {
     selected_album: (state) => state.album,
