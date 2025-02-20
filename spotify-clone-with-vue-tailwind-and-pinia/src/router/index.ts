@@ -4,7 +4,6 @@ import Home from "../views/Home.vue";
 import Search from "../views/Search.vue";
 import Library from "../views/Library.vue";
 import AlbumDetails from "../views/AlbumDetails.vue";
-import LikedSongs from '../views/LikedSongs.vue'
 
 const routes = [
   { path: "/", component: Home },
@@ -19,7 +18,7 @@ const routes = [
   },
   {
     path: "/liked",
-    component: LikedSongs,
+    component: AlbumDetails,
   },
 ];
 
