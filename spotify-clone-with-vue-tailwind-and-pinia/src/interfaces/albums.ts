@@ -1,5 +1,5 @@
 export interface IAlbum {
-  id: number;
+  playlist_id: number;
   liked_playlist: boolean;
   artist_of_the_album?: string;
   artist_picture?: string;
@@ -17,6 +17,7 @@ export interface IAlbum {
 }
 
 export interface ITrack {
+  playlist_id: number;
   id: number;
   name: string;
   path: string;
