@@ -13,7 +13,7 @@
     <ul class="w-full">
       <li
         class="flex items-center justify-between rounded-md hover:bg-[#2a2929]"
-        v-for="(track, index) in album_details.tracks"
+        v-for="(track, index) in album_details?.tracks"
         :key="index"
       >
         <div
@@ -70,6 +70,7 @@
 <script setup lang="ts">
 //MODULES AND INTERFACES
 import { ref, onMounted } from "vue";
+import { useRoute } from "vue-router";
 import { storeToRefs } from "pinia";
 import { IAlbum, ITrack } from "../interfaces/albums";
 
@@ -82,10 +83,11 @@ import ClockTimeThreeOutline from "vue-material-design-icons/ClockTimeThreeOutli
 //STUFF FROM PINIA
 import { useSongStore } from "../store/song";
 const useSong = useSongStore();
-const { is_playing, current_track, album, liked_songs } = storeToRefs(useSong);
+const { is_playing, current_track } = storeToRefs(useSong);
 
 //VARS
-const album_details = ref<IAlbum>(album.value);
+const route = useRoute();
+const album_details = ref<IAlbum>();
 
 let index = ref<number | null>(null);
 let is_hover = ref<boolean>(false);
@@ -93,7 +95,9 @@ let duration = ref<string | null>(null);
 
 //HOOKS
 onMounted(() => {
-  for (const track of album_details.value.tracks) {
+  validateSection();
+
+  for (const track of album_details.value?.tracks ?? []) {
     const audio = new Audio(track.path);
 
     audio.addEventListener("loadedmetadata", () => {
@@ -127,4 +131,11 @@ const verifyHovering = (item_position: number): boolean => {
   return item_position === index.value && is_hover.value ? true : false;
 };
 
+const validateSection = (): void => {
+  if (route.path.includes("liked")) {
+    album_details.value = useSong.liked_songs;
+  } else if (route.path.includes("selected-album")) {
+    album_details.value = useSong.album;
+  }
+};
 </script>
