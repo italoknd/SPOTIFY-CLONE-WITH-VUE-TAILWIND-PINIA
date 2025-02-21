@@ -150,9 +150,9 @@ export const useSongStore = defineStore("song", {
     },
 
     saveOrRemoveAlbumFromLikedPlaylist() {
-      if (this.liked_songs.length) {
+      if (this.liked_songs.tracks.length) {
         this.album.tracks.forEach((track: IAlbum) => {
-          let not_a_saved_album: boolean = !this.liked_songs.some(
+          let not_a_saved_album: boolean = !this.liked_songs.tracks.some(
             (likedSong: IAlbum) => likedSong.playlist_id === track.playlist_id
           );
 
@@ -171,15 +171,15 @@ export const useSongStore = defineStore("song", {
     saveAlbumOnLikedPlaylist() {
       this.album_id = this.album.playlist_id;
       this.album.liked_playlist = true;
-      this.liked_songs.push(...this.album.tracks);
+      this.liked_songs.tracks.push(...this.album.tracks);
     },
 
     removeAlbumFromLikedPlaylist() {
       this.album.liked_playlist = false;
       this.album_id = this.album.playlist_id;
-      this.liked_songs.forEach((song: IAlbum, index: number) => {
+      this.liked_songs.tracks.forEach((song: IAlbum, index: number) => {
         if (song.playlist_id === this.album.playlist_id) {
-          this.liked_songs.splice(index, 1);
+          this.liked_songs.tracks.splice(index, 1);
         }
       });
     },
