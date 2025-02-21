@@ -93,6 +93,7 @@ const emptyPlaylist = () => {
   const audio = new Audio(
     "../../public/system-sounds/message-notification-103496.mp3"
   );
+  audio.volume = 0.2;
   audio.play();
 };
 
