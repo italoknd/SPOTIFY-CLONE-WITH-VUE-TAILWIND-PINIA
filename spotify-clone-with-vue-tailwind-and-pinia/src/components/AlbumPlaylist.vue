@@ -1,6 +1,6 @@
 <template>
   <div class="-mt-[100px] glass-effect cursor-pointer">
-    <div class="flex">
+    <div class="flex justify-between">
       <div>
         <div class="circle">
           <Play
@@ -29,6 +29,16 @@
         :size="40"
         :fillColor="album.liked_playlist ? '#23CF5F' : '#fff'"
       />
+
+      <n-space v-if="route.path.includes('liked')" class="mb-4">
+        <n-alert title="Info" type="info">
+          <n-marquee style="width: 400px">
+            <strong
+              >This is a Beta function, errors may occur while using.</strong
+            >
+          </n-marquee>
+        </n-alert>
+      </n-space>
     </div>
     <Songs />
   </div>
