@@ -4,7 +4,12 @@
       <div>
         <div class="circle">
           <Play
-            @click="useSong.playFromTheBeginning()"
+            :disabled="!album_details?.tracks.length"
+            @click="
+              album_details?.tracks.length
+                ? useSong.playFromTheBeginning()
+                : emptyPlaylist()
+            "
             :size="40"
             fillColor="#fff"
             v-if="!is_playing"
@@ -18,6 +23,7 @@
         </div>
       </div>
       <Heart
+        v-if="!route.path.includes('liked')"
         @click="addTracksToFavoritePlaylist()"
         class="hover:scale-125 duration-300 mt-1 ml-4"
         :size="40"
@@ -28,6 +34,13 @@
   </div>
 </template>
 <script setup lang="ts">
+//VUE IMPORTS
+import { watch, onMounted } from "vue";
+import { useRoute } from "vue-router";
+
+//INTERFACES
+import { IAlbum } from "../interfaces/albums";
+
 //NAIVE UI COMPONENTS
 import { useNotification } from "naive-ui";
 
@@ -42,8 +55,22 @@ import { storeToRefs } from "pinia";
 import { useSongStore } from "../store/song";
 
 //INSTANCIES
+const route = useRoute();
 const useSong = useSongStore();
 const notification = useNotification();
+
+//VARIABLES
+let album_details = $ref<IAlbum>();
+
+//HOOKS
+onMounted(() => validateSection());
+
+watch(
+  () => route.path,
+  () => {
+    validateSection();
+  }
+);
 
 const addTracksToFavoritePlaylist = (): void => {
   useSong.saveOrRemoveAlbumFromLikedPlaylist();
@@ -57,8 +84,28 @@ const notify = (title: string) => {
   notification.success({ title, duration: 1500 });
 };
 
+const emptyPlaylist = () => {
+  notification.warning({
+    title: `The playlist is empty!`,
+    duration: 1500,
+  });
+
+  const audio = new Audio(
+    "../../public/system-sounds/message-notification-103496.mp3"
+  );
+  audio.play();
+};
+
 const { is_playing, current_track, current_artist, album } =
   storeToRefs(useSong);
+
+const validateSection = (): void => {
+  if (route.path.includes("liked")) {
+    album_details = useSong.liked_songs;
+  } else if (route.path.includes("selected-album")) {
+    album_details = useSong.album;
+  }
+};
 </script>
 <style scoped>
 .glass-effect {
