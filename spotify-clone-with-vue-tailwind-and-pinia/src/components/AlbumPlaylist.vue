@@ -28,6 +28,9 @@
   </div>
 </template>
 <script setup lang="ts">
+//NAIVE UI COMPONENTS
+import { useNotification } from "naive-ui";
+
 //COMPONENTS
 import Songs from "./Songs.vue";
 import Play from "vue-material-design-icons/Play.vue";
@@ -38,10 +41,20 @@ import Heart from "vue-material-design-icons/Heart.vue";
 import { storeToRefs } from "pinia";
 import { useSongStore } from "../store/song";
 
+//INSTANCIES
 const useSong = useSongStore();
+const notification = useNotification();
 
 const addTracksToFavoritePlaylist = (): void => {
   useSong.saveOrRemoveAlbumFromLikedPlaylist();
+
+  album.value.liked_playlist
+    ? notify("Album added to liked songs")
+    : notify("Album removed from liked songs");
+};
+
+const notify = (title: string) => {
+  notification.success({ title, duration: 1500 });
 };
 
 const { is_playing, current_track, current_artist, album } =
