@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "naive-ui": "^2.41.0",
     "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^4.2.0",
     "uniqolor": "^1.1.1",
