@@ -69,7 +69,7 @@
 </template>
 <script setup lang="ts">
 //MODULES AND INTERFACES
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { storeToRefs } from "pinia";
 import { IAlbum, ITrack } from "../interfaces/albums";
@@ -107,6 +107,13 @@ onMounted(() => {
     });
   }
 });
+
+watch(
+  () => route.path,
+  () => {
+    validateSection();
+  }
+);
 
 //FUNCTIONS
 const highlightPlayingTrack = (

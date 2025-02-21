@@ -37,7 +37,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import { useSongStore } from "../store/song";
 import { IAlbum } from "../interfaces/albums";
 
@@ -49,9 +49,17 @@ const route = useRoute();
 const albumStore = useSongStore();
 const album_details = ref<IAlbum>();
 
+//HOOKS
 onMounted(() => {
   validateSection();
 });
+
+watch(
+  () => route.path,
+  () => {
+    validateSection();
+  }
+);
 
 //FUNCTIONS
 const validateSection = (): void => {

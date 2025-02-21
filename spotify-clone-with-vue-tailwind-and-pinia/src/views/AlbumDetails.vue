@@ -11,7 +11,7 @@
 import AlbumCover from "../components/AlbumCover.vue";
 import AlbumPlaylist from "../components/AlbumPlaylist.vue";
 
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import { useSongStore } from "../store/song";
 import { IAlbum } from "../interfaces/albums";
 import { useRoute } from "vue-router";
@@ -21,9 +21,17 @@ const albumStore = useSongStore();
 const album_details = ref<IAlbum>();
 const linear_gradient = ref<string>("");
 
+//hooks
 onMounted(() => {
   validateSection();
 });
+
+watch(
+  () => route.path,
+  () => {
+    validateSection();
+  }
+);
 
 //FUNCTIONS
 const validateSection = (): void => {
