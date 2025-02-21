@@ -202,5 +202,5 @@ export const useSongStore = defineStore("song", {
       this.playlist_duration = "";
     },
   },
-  persist: false,
+  persist: true,
 });
