@@ -9,3 +9,4 @@ declare module "vue-material-design-icons/SkipForward.vue";
 declare module "vue-material-design-icons/SkipBackward.vue";
 declare module "vue-material-design-icons/PictureInPictureBottomRight.vue";
 declare module "vue-material-design-icons/ClockTimeThreeOutline.vue";
+declare module "vue-material-design-icons/EmoticonSad.vue";
