@@ -14,7 +14,7 @@
     "tracks": [
       {
         "id": 1,
-        "track_cover": "./public/track-covers/fallen-leaf-massano-remix.png",
+        "track_cover": "/track-covers/fallen-leaf-massano-remix.png",
         "playlist_id": 1,
         "track_artists": "Vintage Culture, Fideles, Be No Rain",
         "name": "Fallen Leaf (Massano Remix)",
@@ -22,7 +22,7 @@
       },
       {
         "id": 2,
-        "track_cover": "./public/track-covers/just-like-home-kevin-de-vries-remix.jpg",
+        "track_cover": "/track-covers/just-like-home-kevin-de-vries-remix.jpg",
         "playlist_id": 1,
         "track_artists": "Vintage Culture, Yellowitz",
         "name": "Just Like Home (Kevin De Vries Remix)",
@@ -45,6 +45,7 @@
     "tracks": [
       {
         "id": 1,
+        "track_cover": "/album-covers/spiritual-milk-cover-art.jpeg",
         "playlist_id": 2,
         "track_artists": "Camelphat, Mathame, Fryinn",
         "name": "Many Times",
@@ -67,6 +68,7 @@
     "tracks": [
       {
         "id": 1,
+        "track_cover": "/album-covers/saga-cover-art.jpeg",
         "playlist_id": 3,
         "track_artists": "Kevin de Vries, Y do I",
         "name": "Saga",
@@ -92,6 +94,7 @@
       {
         "id": 1,
         "playlist_id": 4,
+        "track_cover": "/album-covers/saga-cover-art.jpeg",
         "track_artists": "Kevin de Vries, Y do I",
         "name": "Saga",
         "path": "/tracks/Kevin de Vries, Y do I - Saga.mp3"
@@ -115,6 +118,7 @@
     "tracks": [
       {
         "id": 1,
+        "track_picture": "/artist-pictures/massano.jpg",
         "playlist_id": 5,
         "track_artists": "Vintage Culture, Fideles, Be No Rain",
         "name": "Fallen Leaf (Massano Remix)",
@@ -139,6 +143,7 @@
     "tracks": [
       {
         "id": 1,
+        "track_cover": "/cover-art/makeup-blazy-remix.jpg",
         "playlist_id": 6,
         "track_artists": "Neelix, Caroline Harrison",
         "name": "Makeup (Blazy Remix)",
@@ -163,6 +168,7 @@
     "tracks": [
       {
         "id": 1,
+        "track_cover": "/cover-art/carry-you-martin-garrix.jpeg",
         "playlist_id": 7,
         "track_artists": "Martin Garrix, Third Party, Oaks, Declan J Donovan",
         "name": "Carry You",
@@ -187,6 +193,7 @@
     "tracks": [
       {
         "id": 1,
+        "track_cover": "/cover-art/martin-garrix-smile.jpeg",
         "playlist_id": 8,
         "track_artists": "Martin Garrix, Carolina Liar",
         "name": "Smile",
@@ -208,6 +215,7 @@
     "tracks": [
       {
         "id": 1,
+        "track_cover": "/cover-art/morten-artbat-hollow.jpeg",
         "playlist_id": 9,
         "track_artists": "MORTEN, ARTBAT, Bonn",
         "name": "Hollow (feat. Bonn)",
