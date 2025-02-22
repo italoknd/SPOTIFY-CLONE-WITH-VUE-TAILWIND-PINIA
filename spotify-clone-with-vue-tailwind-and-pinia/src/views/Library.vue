@@ -7,23 +7,19 @@
         class="flex bg-gray-600 rounded-md duration-300 hover:cursor-pointer hover:bg-gray-700"
         @mouseenter="getItem(true, index)"
         @mouseleave="getItem(false, index)"
+        @click="selectAlbum(album)"
       >
-        <img
-          @click="selectAlbum(album)"
-          :src="album.album_cover"
-          class="w-[60px] h-[60px] rounded-s-md"
-        />
+        <img :src="album.album_cover" class="w-[60px] h-[60px] rounded-s-md" />
         <div class="ml-3 mr-5 flex items-center justify-between w-full">
           <p
-            @click="selectAlbum(album)"
             class="font-semibold w-[60px] xl:max-w-[160px] md:max-w-[100px] sm:w-[200px] whitespace-nowrap overflow-hidden text-ellipsis"
           >
             {{ album.album }}
           </p>
           <div
-            @click="playSelectedPlaylist(album)"
+            @click.stop="playSelectedPlaylist(album)"
             v-if="verifyHovering(index)"
-            class="circle"
+            class="circle z-50"
           >
             <Play :size="25" />
           </div>

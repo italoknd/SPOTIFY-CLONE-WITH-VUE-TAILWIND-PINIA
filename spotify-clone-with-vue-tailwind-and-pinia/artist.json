@@ -118,7 +118,7 @@
     "tracks": [
       {
         "id": 1,
-        "track_picture": "/artist-pictures/massano.jpg",
+        "track_cover": "/cover-art/fallen-leaf-massano-remix.png",
         "playlist_id": 5,
         "track_artists": "Vintage Culture, Fideles, Be No Rain",
         "name": "Fallen Leaf (Massano Remix)",
@@ -206,10 +206,13 @@
     "liked_playlist": false,
     "album": "Hollow",
     "artist_of_the_album": "MORTEN, ARTBAT, Bonn",
+    "main_color_on_top": "#EE085D",
+    "main_color_on_bottom": "#A9134B",
     "release_year": "2024",
     "public_playlist": false,
     "playlist_name": "Hollow",
     "album_category": "Single",
+    "artist_picture": "./public/artist-pictures/morten.jpg",
     "album_cover": "/cover-art/morten-artbat-hollow.jpeg",
     "playlist_cover": "/cover-art/morten-artbat-hollow.jpeg",
     "tracks": [
