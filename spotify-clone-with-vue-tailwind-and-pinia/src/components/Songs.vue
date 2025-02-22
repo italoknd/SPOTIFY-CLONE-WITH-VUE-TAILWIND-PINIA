@@ -54,14 +54,21 @@
                 </p>
               </div>
             </div>
-            <div class="text-sm">
+            <div class="flex align-center text-sm">
+              <img
+                :src="track.track_cover"
+                alt="Track Cover"
+                class="w-[35px] h-[35px] object-cover rounded-sm mx-[-5px] mr-3 mt-[3px]"
+              />
               <div>
-                <span :class="highlightPlayingTrack(current_track, track)">
-                  <strong>{{ track.name }}</strong>
-                </span>
-              </div>
-              <div class="hover:underline">
-                <span>{{ track.track_artists }}</span>
+                <div>
+                  <span :class="highlightPlayingTrack(current_track, track)">
+                    <strong>{{ track.name }}</strong>
+                  </span>
+                </div>
+                <div class="hover:underline">
+                  <span>{{ track.track_artists }}</span>
+                </div>
               </div>
             </div>
           </div>
