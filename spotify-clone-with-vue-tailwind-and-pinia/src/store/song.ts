@@ -12,6 +12,7 @@ export const useSongStore = defineStore("song", {
       audio: {} as HTMLAudioElement,
       current_artist: "",
       current_track: {} as ITrack,
+      tracks: [] as ITrack[],
       album: {} as IAlbum,
       playlist_duration: "",
       acc_duration: 0,
@@ -29,11 +30,8 @@ export const useSongStore = defineStore("song", {
         artist_picture:
           "https://lh3.googleusercontent.com/a/ACg8ocJ-zkH1FfQwQhEAJa5_07Pp2q_HVmFnXS_ce9xYtPHGbnk=s96-c-rg-br100",
         tracks: [],
-      },
+      } as IAlbum,
     } as ISongStore),
-  getters: {
-    selected_album: (state) => state.album,
-  },
   actions: {
     loadSong(artist: string, track: ITrack) {
       this.current_artist = artist;
@@ -89,24 +87,24 @@ export const useSongStore = defineStore("song", {
     },
 
     prevSong(current_track: ITrack) {
-      let track = this.album.tracks[current_track.id - 2];
-      let artist = this.album.tracks[current_track.id - 2].track_artists;
+      let track = this.tracks[current_track.id - 2];
+      let artist = this.tracks[current_track.id - 2].track_artists;
       this.loadSong(artist, track);
     },
 
     nextSong(current_track: ITrack) {
-      if (current_track.id === this.album.tracks.length) {
+      if (current_track.id === this.tracks.length) {
         this.playFromTheBeginning();
       } else {
-        let track = this.album.tracks[current_track.id];
-        let artist = this.album.tracks[current_track.id].track_artists;
+        let track = this.tracks[current_track.id];
+        let artist = this.tracks[current_track.id].track_artists;
         this.loadSong(artist, track);
       }
     },
 
     playFromTheBeginning() {
       this.resetState();
-      let track = this.album.tracks[0];
+      let track = this.tracks[0];
       this.loadSong(track.name, track);
     },
 
@@ -123,8 +121,9 @@ export const useSongStore = defineStore("song", {
 
     getSelectedAlbum(payload: IAlbum) {
       this.album = payload;
+      this.tracks = payload.tracks;
 
-      this.getTotalTimeOfThePlaylist(this.album.tracks);
+      this.getTotalTimeOfThePlaylist(this.tracks);
     },
 
     getTotalTimeOfThePlaylist(tracks: ITrack[]) {
@@ -151,7 +150,7 @@ export const useSongStore = defineStore("song", {
 
     saveOrRemoveAlbumFromLikedPlaylist() {
       if (this.liked_songs.tracks.length) {
-        this.album.tracks.forEach((track: ITrack) => {
+        this.tracks.forEach((track: ITrack) => {
           let not_a_saved_album: boolean = !this.liked_songs.tracks.some(
             (likedSong: ITrack) => likedSong.playlist_id === track.playlist_id
           );
@@ -202,5 +201,5 @@ export const useSongStore = defineStore("song", {
       this.playlist_duration = "";
     },
   },
-  persist: true,
+  persist: false,
 });
