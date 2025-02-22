@@ -9,7 +9,7 @@
         <img
           class="rounded-sm shadow-2xl"
           width="55"
-          :src="album.album_cover"
+          :src="current_track.track_cover"
           alt="Album cover"
         />
       </div>
