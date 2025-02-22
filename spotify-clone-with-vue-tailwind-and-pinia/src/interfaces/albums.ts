@@ -18,6 +18,7 @@ export interface IAlbum {
 
 export interface ITrack {
   playlist_id: number;
+  track_cover: string;
   id: number;
   name: string;
   path: string;

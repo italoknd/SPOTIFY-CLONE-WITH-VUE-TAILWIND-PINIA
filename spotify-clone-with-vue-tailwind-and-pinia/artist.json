@@ -14,6 +14,7 @@
     "tracks": [
       {
         "id": 1,
+        "track_cover": "./public/track-covers/fallen-leaf-massano-remix.png",
         "playlist_id": 1,
         "track_artists": "Vintage Culture, Fideles, Be No Rain",
         "name": "Fallen Leaf (Massano Remix)",
@@ -21,6 +22,7 @@
       },
       {
         "id": 2,
+        "track_cover": "./public/track-covers/just-like-home-kevin-de-vries-remix.jpg",
         "playlist_id": 1,
         "track_artists": "Vintage Culture, Yellowitz",
         "name": "Just Like Home (Kevin De Vries Remix)",
