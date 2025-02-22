@@ -19,6 +19,7 @@
           class="flex items-center justify-between rounded-md hover:bg-[#2a2929]"
           v-for="(track, index) in album_details?.tracks"
           :key="index"
+          @dblclick="useSong.playOrPauseThisSong(track.track_artists, track)"
         >
           <div
             @mouseenter="getItem(true, index)"
