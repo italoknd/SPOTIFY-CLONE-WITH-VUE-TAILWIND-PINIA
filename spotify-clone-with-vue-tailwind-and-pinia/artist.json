@@ -212,7 +212,7 @@
     "public_playlist": false,
     "playlist_name": "Hollow",
     "album_category": "Single",
-    "artist_picture": "./public/artist-pictures/morten.jpg",
+    "artist_picture": "/artist-pictures/morten.jpg",
     "album_cover": "/cover-art/morten-artbat-hollow.jpeg",
     "playlist_cover": "/cover-art/morten-artbat-hollow.jpeg",
     "tracks": [

@@ -19,7 +19,7 @@
           <div
             @click.stop="playSelectedPlaylist(album)"
             v-if="verifyHovering(index)"
-            class="circle z-50"
+            class="circle"
           >
             <Play :size="25" />
           </div>

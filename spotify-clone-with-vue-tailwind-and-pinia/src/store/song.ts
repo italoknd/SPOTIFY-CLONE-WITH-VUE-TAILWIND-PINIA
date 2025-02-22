@@ -126,11 +126,11 @@ export const useSongStore = defineStore("song", {
       this.getTotalTimeOfThePlaylist(this.tracks);
     },
 
-    getTotalTimeOfThePlaylist(tracks: ITrack[]) {
+    getTotalTimeOfThePlaylist() {
       this.acc_duration = 0;
       this.playlist_duration = "";
 
-      for (let audio of tracks) {
+      for (let audio of this.tracks) {
         let audio2 = new Audio();
         audio2.src = audio.path;
 
@@ -201,5 +201,5 @@ export const useSongStore = defineStore("song", {
       this.playlist_duration = "";
     },
   },
-  persist: false,
+  persist: true,
 });

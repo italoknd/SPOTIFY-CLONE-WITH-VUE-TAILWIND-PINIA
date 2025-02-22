@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { watchEffect, ref } from "vue";
+import { watchEffect, watch, ref } from "vue";
 import { useRoute } from "vue-router";
 import { IMenuItems } from "../interfaces/menuItemsProps";
 import { useSongStore } from "../store/song";
@@ -19,11 +19,16 @@ watchEffect(() => {
     icon.value = props.iconString + "-inactive";
     textIsHover.value = false;
   }
-
-  if (route.path.includes("liked")) {
-    songStore.getSelectedAlbum(songStore.liked_songs);
-  }
 });
+
+watch(
+  () => route.path,
+  (val) => {
+    if (val.includes("liked")) {
+      songStore.getSelectedAlbum(songStore.liked_songs);
+    }
+  }
+);
 
 const isHover = () => {
   if (icon.value === props.iconString + "-active") return;
