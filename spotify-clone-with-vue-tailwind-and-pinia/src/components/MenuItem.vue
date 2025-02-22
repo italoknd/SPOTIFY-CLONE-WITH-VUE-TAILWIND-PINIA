@@ -2,9 +2,11 @@
 import { watchEffect, ref } from "vue";
 import { useRoute } from "vue-router";
 import { IMenuItems } from "../interfaces/menuItemsProps";
+import { useSongStore } from "../store/song";
 
 const route = useRoute();
 const props = defineProps<IMenuItems>();
+const songStore = useSongStore();
 
 let icon = ref<IMenuItems["iconString"]>("");
 let textIsHover = ref(false);
@@ -16,6 +18,10 @@ watchEffect(() => {
   } else {
     icon.value = props.iconString + "-inactive";
     textIsHover.value = false;
+  }
+
+  if (route.path.includes("liked")) {
+    songStore.getSelectedAlbum(songStore.liked_songs);
   }
 });
 
