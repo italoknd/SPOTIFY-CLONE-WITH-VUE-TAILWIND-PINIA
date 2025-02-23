@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div
-      v-if="album_details?.tracks.length"
-      :class="!album_details?.tracks.length ? 'mt-4' : 'mt-2'"
-    >
+    <div v-if="tracks.length" :class="!tracks.length ? 'mt-4' : 'mt-2'">
       <div class="flex items-center justify-between px-5 pt-2">
         <div class="flex items-center justify-between text-gray-400">
           <div class="mr-7">#</div>
@@ -17,7 +14,7 @@
       <ul class="w-full">
         <li
           class="flex items-center justify-between rounded-md hover:bg-[#2a2929]"
-          v-for="(track, index) in album_details?.tracks"
+          v-for="(track, index) in tracks"
           :key="index"
           @dblclick="useSong.playOrPauseThisSong(track.track_artists, track)"
         >
@@ -94,10 +91,9 @@
 </template>
 <script setup lang="ts">
 //MODULES AND INTERFACES
-import { ref, onMounted, watch } from "vue";
-import { useRoute } from "vue-router";
+import { ref, onMounted } from "vue";
 import { storeToRefs } from "pinia";
-import { IAlbum, ITrack } from "../interfaces/albums";
+import { ITrack } from "../interfaces/albums";
 
 //ICONS
 import Play from "vue-material-design-icons/Play.vue";
@@ -109,21 +105,16 @@ import EmoticonSad from "vue-material-design-icons/EmoticonSad.vue";
 //STUFF FROM PINIA
 import { useSongStore } from "../store/song";
 const useSong = useSongStore();
-const { is_playing, current_track } = storeToRefs(useSong);
+const { is_playing, current_track, tracks } = storeToRefs(useSong);
 
 //VARS
-const route = useRoute();
-const album_details = ref<IAlbum>();
-
 let index = ref<number | null>(null);
 let is_hover = ref<boolean>(false);
 let duration = ref<string | null>(null);
 
 //HOOKS
 onMounted(() => {
-  validateSection();
-
-  for (const track of album_details.value?.tracks ?? []) {
+  for (const track of tracks.value) {
     const audio = new Audio(track.path);
 
     audio.addEventListener("loadedmetadata", () => {
@@ -133,13 +124,6 @@ onMounted(() => {
     });
   }
 });
-
-watch(
-  () => route.path,
-  () => {
-    validateSection();
-  }
-);
 
 //FUNCTIONS
 const highlightPlayingTrack = (
@@ -162,13 +146,5 @@ const getItem = (hovering: boolean, item_position: number) => {
 
 const verifyHovering = (item_position: number): boolean => {
   return item_position === index.value && is_hover.value ? true : false;
-};
-
-const validateSection = (): void => {
-  if (route.path.includes("liked")) {
-    album_details.value = useSong.liked_songs;
-  } else if (route.path.includes("selected-album")) {
-    album_details.value = useSong.album;
-  }
 };
 </script>
