@@ -24,7 +24,7 @@ watchEffect(() => {
 watch(
   () => route.path,
   (val) => {
-    if (val.includes("liked")) {
+    if (val.includes("liked") && songStore.album !== songStore.liked_songs) {
       songStore.getSelectedAlbum(songStore.liked_songs);
     }
   }
