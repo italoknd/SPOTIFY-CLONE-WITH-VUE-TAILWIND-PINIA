@@ -225,5 +225,287 @@
         "path": "/tracks/MORTEN, ARTBAT  Hollow (feat. Bonn).mp3"
       }
     ]
+  },
+  {
+    "playlist_id": 10,
+    "liked_playlist": false,
+    "album": "Mini Mixes",
+    "artist_of_the_album": "Italo Pedroza",
+    "main_color_on_top": "#000",
+    "main_color_on_bottom": "#8b0000",
+    "release_year": "2019",
+    "public_playlist": false,
+    "playlist_name": "Italo's Mini Mixes",
+    "album_category": "Album",
+    "artist_picture": "https://lh3.googleusercontent.com/a/ACg8ocJ-zkH1FfQwQhEAJa5_07Pp2q_HVmFnXS_ce9xYtPHGbnk=s96-c-rg-br100",
+    "album_cover": "/album-covers/mini-mixes-cover.webp",
+    "playlist_cover": "/album-covers/mini-mixes-cover.webp",
+    "tracks": [
+      {
+        "id": 1,
+        "track_cover": "/album-covers/mini-mixes-cover.webp",
+        "playlist_id": 10,
+        "track_artists": "Italo Pedroza",
+        "name": "Mini Mix 1 (featuring Yellow Claw, Skrillex and more...)",
+        "path": "/tracks/Italo Kennedy (Mini Mix 1).mp3"
+      },
+      {
+        "id": 2,
+        "track_cover": "/album-covers/mini-mixes-cover.webp",
+        "playlist_id": 10,
+        "track_artists": "Italo Pedroza",
+        "name": "Mini Mix 2 (featuring Boombox Cartel, Yellow Claw and more...)",
+        "path": "/tracks/Italo Kennedy (Mini Mix 2).mp3"
+      },
+      {
+        "id": 3,
+        "track_cover": "/album-covers/mini-mixes-cover.webp",
+        "playlist_id": 10,
+        "track_artists": "Italo Pedroza",
+        "name": "Mini Mix 3 (featuring)",
+        "path": "/tracks/Italo Kennedy (Mini Mix 3).mp3"
+      },
+      {
+        "id": 4,
+        "track_cover": "/album-covers/mini-mixes-cover.webp",
+        "playlist_id": 10,
+        "track_artists": "Italo Pedroza",
+        "name": "Mini Mix 4 (featuring Zomboy)",
+        "path": "/tracks/Italo Kennedy (Mini Mix 4).mp3"
+      },
+      {
+        "id": 5,
+        "track_cover": "/album-covers/mini-mixes-cover.webp",
+        "playlist_id": 10,
+        "track_artists": "Italo Pedroza",
+        "name": "Mini Mix 5 (featuring The Chainsmokers, Illenium, David Guetta, Afrojack, Zomboy and more...)",
+        "path": "/tracks/Italo Kennedy (Mini Mix 5).mp3"
+      },
+      {
+        "id": 6,
+        "track_cover": "/album-covers/mini-mixes-cover.webp",
+        "playlist_id": 10,
+        "track_artists": "Italo Pedroza",
+        "name": "Mini Mix 6 (featuring Steve Aoki, Martin Garrix, Bassjackers, Bali Bandits and more...)",
+        "path": "/tracks/Italo Kennedy (Mini Mix 6).mp3"
+      },
+      {
+        "id": 7,
+        "track_cover": "/album-covers/mini-mixes-cover.webp",
+        "playlist_id": 10,
+        "track_artists": "Italo Pedroza",
+        "name": "Mini Mix 7 (featuring SLVR, MOSKA, VINNE and more...)",
+        "path": "/tracks/Italo Kennedy (Mini Mix 7).mp3"
+      },
+      {
+        "id": 8,
+        "track_cover": "/album-covers/mini-mixes-cover.webp",
+        "playlist_id": 10,
+        "track_artists": "Italo Pedroza",
+        "name": "Mini Mix 8 (featuring Carnage, Vinai, Steve Aoki and more...)",
+        "path": "/tracks/Italo Kennedy (Mini Mix 8).mp3"
+      },
+      {
+        "id": 9,
+        "track_cover": "/album-covers/mini-mixes-cover.webp",
+        "playlist_id": 10,
+        "track_artists": "Italo Pedroza",
+        "name": "Mini Mix 9 (featuring Excision and Dirtyphonics)",
+        "path": "/tracks/italo Kennedy (Mini Mix 9).mp3"
+      },
+      {
+        "id": 10,
+        "track_cover": "/album-covers/mini-mixes-cover.webp",
+        "playlist_id": 10,
+        "track_artists": "Italo Pedroza",
+        "name": "Mini Mix 10 (featuring Tascione, Diplo and more...)",
+        "path": "/tracks/Italo Kennedy (Mini Mix 10).mp3"
+      },
+      {
+        "id": 11,
+        "track_cover": "/album-covers/mini-mixes-cover.webp",
+        "playlist_id": 10,
+        "track_artists": "Italo Pedroza",
+        "name": "Mini Mix 11 (featuring Dillon Francis, Bro Safari Skrillex and more...)",
+        "path": "/tracks/Italo Kennedy (Mini Mix 11).mp3"
+      },
+      {
+        "id": 12,
+        "track_cover": "/album-covers/mini-mixes-cover.webp",
+        "playlist_id": 10,
+        "track_artists": "Italo Pedroza",
+        "name": "Mini Mix 12 (featuring Excision, Justin Prime, Onderkoffer and more...)",
+        "path": "/tracks/Italo Kennedy (Mini Mix 12).mp3"
+      }
+    ]
+  },
+  {
+    "playlist_id": 11,
+    "liked_playlist": false,
+    "album": "Harmonica Andromeda (Deluxe)",
+    "artist_of_the_album": "KSHMR",
+    "main_color_on_top": "#1657AF",
+    "main_color_on_bottom": "#B3A4DD",
+    "release_year": "2021",
+    "public_playlist": false,
+    "playlist_name": "Harmonica Andromeda",
+    "album_category": "Album",
+    "artist_picture": "/artist-pictures/kshmr.jpeg",
+    "album_cover": "/album-covers/harmonica-andromeda.jpg",
+    "playlist_cover": "/cover-art/morten-artbat-hollow.jpeg",
+    "tracks": [
+      {
+        "id": 1,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR",
+        "name": "Harmonica Andromeda",
+        "path": "/tracks/KSHMR - Harmonica Andromeda .mp3"
+      },
+      {
+        "id": 2,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR",
+        "name": "Midnight Lion Walk",
+        "path": "/tracks/KSHMR - Midnight Lion Walk .mp3"
+      },
+      {
+        "id": 3,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR",
+        "name": "Blood In The Water",
+        "path": "/tracks/KSHMR - Blood In The Water .mp3"
+      },
+      {
+        "id": 4,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR, KARRA",
+        "name": "The World We Left Behind (feat. KARRA)",
+        "path": "/tracks/KSHMR - The World We Left Behind (feat. KARRA) .mp3"
+      },
+      {
+        "id": 5,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR",
+        "name": "Dusty Fairytale",
+        "path": "/tracks/KSHMR - Dusty Fairytale .mp3"
+      },
+      {
+        "id": 6,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR",
+        "name": "Gypsy Waltz",
+        "path": "/tracks/KSHMR - Gypsy Waltz .mp3"
+      },
+      {
+        "id": 7,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR, KARRA",
+        "name": "Mystical Beginning (feat. KARRA)",
+        "path": "/tracks/KSHMR - Mystical Beginning (feat. KARRA) .mp3"
+      },
+      {
+        "id": 8,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR, NOUMENN",
+        "name": "Around The World (feat. NOUMENN)",
+        "path": "/tracks/KSHMR - Around The World (Feat. NOUMENN) .mp3"
+      },
+      {
+        "id": 9,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR, Mahmut Orhan, KARRA",
+        "name": "Slow (feat. KARRA)",
+        "path": "/tracks/KSHMR & Mahmut Orhan - Slow (feat. KARRA).mp3"
+      },
+      {
+        "id": 10,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR",
+        "name": "Tupinambá",
+        "path": "/tracks/KSHMR - Tupinambá.mp3"
+      },
+      {
+        "id": 11,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR, TZAR",
+        "name": "You Don't Need To Ask (feat. TZAR)",
+        "path": "/tracks/KSHMR - You Don't Need To Ask (feat. TZAR).mp3"
+      },
+      {
+        "id": 12,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR",
+        "name": "Storm (Interlude)",
+        "path": "/tracks/KSHMR - Storm (Interlude) .mp3"
+      },
+      {
+        "id": 13,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR",
+        "name": "Song Of War",
+        "path": "/tracks/KSHMR - Song Of War .mp3"
+      },
+      {
+        "id": 14,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR",
+        "name": "Peace (Interlude)",
+        "path": "/tracks/KSHMR - Peace (Interlude) .mp3"
+      },
+      {
+        "id": 15,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR, Jake Reese",
+        "name": "I Will Be A Lion (feat. Jake Reese)",
+        "path": "/tracks/KSHMR - I Will Be A Lion (feat. Jake Reese) .mp3"
+      },
+      {
+        "id": 16,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR",
+        "name": "Wings (Interlude)",
+        "path": "/tracks/KSHMR - Wings (Interlude) .mp3"
+      },
+      {
+        "id": 17,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR",
+        "name": "The Little Voice",
+        "path": "/tracks/KSHMR - The Little Voice .mp3"
+      },
+      {
+        "id": 18,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR",
+        "name": "Come To Life",
+        "path": "/tracks/KSHMR - Come To Life .mp3"
+      },
+      {
+        "id": 19,
+        "track_cover": "/album-covers/harmonica-andromeda.jpg",
+        "playlist_id": 11,
+        "track_artists": "KSHMR",
+        "name": "Paula",
+        "path": "/tracks/KSHMR - Paula .mp3"
+      }
+    ]
   }
 ]
