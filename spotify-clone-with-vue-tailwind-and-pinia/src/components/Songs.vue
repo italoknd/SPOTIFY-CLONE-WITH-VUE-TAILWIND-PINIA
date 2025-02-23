@@ -76,7 +76,7 @@
               fillColor="#1bd760"
               :size="22"
             />
-            <div class="pl-3">{{ duration }}</div>
+            <div class="pl-3">{{ track.duration }}</div>
           </div>
         </li>
       </ul>
@@ -91,7 +91,7 @@
 </template>
 <script setup lang="ts">
 //MODULES AND INTERFACES
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 import { storeToRefs } from "pinia";
 import { ITrack } from "../interfaces/albums";
 
@@ -110,20 +110,6 @@ const { is_playing, current_track, tracks } = storeToRefs(useSong);
 //VARS
 let index = ref<number | null>(null);
 let is_hover = ref<boolean>(false);
-let duration = ref<string | null>(null);
-
-//HOOKS
-onMounted(() => {
-  for (const track of tracks.value) {
-    const audio = new Audio(track.path);
-
-    audio.addEventListener("loadedmetadata", () => {
-      const minutes = Math.floor(audio.duration / 60);
-      const seconds = Math.floor(audio.duration % 60);
-      duration.value = `${minutes}:${seconds.toString().padStart(2, "0")}`;
-    });
-  }
-});
 
 //FUNCTIONS
 const highlightPlayingTrack = (
