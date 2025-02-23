@@ -4,11 +4,9 @@
       <div>
         <div class="circle">
           <Play
-            :disabled="!album_details?.tracks.length"
+            :disabled="!tracks.length"
             @click="
-              album_details?.tracks.length
-                ? useSong.playFromTheBeginning()
-                : emptyPlaylist()
+              tracks.length ? useSong.playFromTheBeginning() : emptyPlaylist()
             "
             :size="40"
             fillColor="#fff"
@@ -35,11 +33,7 @@
 </template>
 <script setup lang="ts">
 //VUE IMPORTS
-import { watch, onMounted } from "vue";
 import { useRoute } from "vue-router";
-
-//INTERFACES
-import { IAlbum } from "../interfaces/albums";
 
 //NAIVE UI COMPONENTS
 import { useNotification } from "naive-ui";
@@ -58,19 +52,6 @@ import { useSongStore } from "../store/song";
 const route = useRoute();
 const useSong = useSongStore();
 const notification = useNotification();
-
-//VARIABLES
-let album_details = $ref<IAlbum>();
-
-//HOOKS
-onMounted(() => validateSection());
-
-watch(
-  () => route.path,
-  () => {
-    validateSection();
-  }
-);
 
 const addTracksToFavoritePlaylist = (): void => {
   useSong.saveOrRemoveAlbumFromLikedPlaylist();
@@ -97,16 +78,8 @@ const emptyPlaylist = () => {
   audio.play();
 };
 
-const { is_playing, current_track, current_artist, album } =
+const { is_playing, current_track, current_artist, album, tracks } =
   storeToRefs(useSong);
-
-const validateSection = (): void => {
-  if (route.path.includes("liked")) {
-    album_details = useSong.liked_songs;
-  } else if (route.path.includes("selected-album")) {
-    album_details = useSong.album;
-  }
-};
 </script>
 <style scoped>
 .glass-effect {
