@@ -122,7 +122,7 @@ export const useSongStore = defineStore("song", {
       this.album = payload;
       this.tracks = payload.tracks;
 
-      this.getTotalTimeOfThePlaylist(this.tracks);
+      this.getTotalTimeOfThePlaylist();
     },
 
     getTotalTimeOfThePlaylist() {
@@ -130,18 +130,28 @@ export const useSongStore = defineStore("song", {
       this.playlist_duration = "";
 
       for (let audio of this.tracks) {
-        let audio2 = new Audio(audio.path);
+        let audioElement = new Audio();
+        audioElement.src = audio.path;
 
-        audio2.addEventListener("loadedmetadata", () => {
-          const duration: number = audio2.duration;
+        audioElement.addEventListener("loadedmetadata", () => {
+          const duration: number = audioElement.duration;
           this.acc_duration += duration;
 
-          const minutes = Math.floor(this.acc_duration / 60);
-          const seconds = Math.floor(this.acc_duration - minutes * 60);
+          const acc_minutes = Math.floor(this.acc_duration / 60);
+          const acc_seconds = Math.floor(this.acc_duration - acc_minutes * 60);
 
-          this.playlist_duration = `${minutes}min ${seconds
+          const minutes = Math.floor(duration / 60);
+          const seconds = Math.floor(duration - minutes * 60);
+
+          const extended_duration = `${acc_minutes}min ${acc_seconds
             .toString()
             .padStart(2, "0")}secs`;
+          const short_duration = `${minutes}:${seconds
+            .toString()
+            .padStart(2, "0")}`;
+
+          this.playlist_duration = extended_duration;
+          audio.duration = short_duration;
         });
       }
     },
@@ -174,7 +184,7 @@ export const useSongStore = defineStore("song", {
         (track: ITrack, index: number) => {
           return {
             ...track,
-            id: index + 1
+            id: index + 1,
           };
         }
       );
@@ -199,5 +209,5 @@ export const useSongStore = defineStore("song", {
       this.playlist_duration = "";
     },
   },
-  persist: false,
+  persist: true,
 });
