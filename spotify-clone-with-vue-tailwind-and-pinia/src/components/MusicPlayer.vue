@@ -14,10 +14,7 @@
         />
       </div>
       <div class="ml-3 text-sm cursor-pointer">
-        <n-marquee
-          class="w-[230px]"
-          v-if="current_track.name.length > 50"
-        >
+        <n-marquee class="w-[230px]" v-if="current_track.name.length > 50">
           <p class="text-gray-300 hover:text-white pr-[200px]">
             <strong>{{ current_track.name }}</strong>
           </p>
@@ -91,10 +88,10 @@
           />
         </div>
         <div
-          v-if="total_track_time"
+          v-if="current_track?.duration"
           class="text-white text-[12px] pl-2 pt-[11px]"
         >
-          {{ total_track_time }}
+          {{ current_track.duration }}
         </div>
       </div>
     </div>
@@ -117,13 +114,12 @@ import SkipForward from "vue-material-design-icons/SkipForward.vue";
 import { storeToRefs } from "pinia";
 import { useSongStore } from "../store/song";
 const useSong = useSongStore();
-const { is_playing, audio, current_artist, current_track, album } =
+const { is_playing, audio, current_artist, current_track } =
   storeToRefs(useSong);
 
 //VARS
 let is_hover = ref<boolean>(false);
 let current_track_time = ref<any>(null);
-let total_track_time = ref<any>(null);
 let seeker = ref<any>(null);
 let seeker_container = ref<any>(null);
 let range = ref<number>(0);
@@ -131,10 +127,7 @@ let range = ref<number>(0);
 //HOOKS
 onMounted(() => {
   if (audio.value) {
-    setTimeout(() => {
-      timeupdate();
-      loadedMetadata();
-    }, 300);
+    setTimeout(() => timeupdate(), 300);
   }
 });
 
@@ -144,7 +137,6 @@ watch(
   (val) => {
     if (val) {
       timeupdate();
-      loadedMetadata();
     }
 
     nextTick(() => seekerHandler());
@@ -154,7 +146,7 @@ watch(
 watch(
   () => current_track_time.value,
   (time) => {
-    if (time && time === total_track_time.value) {
+    if (time && time === current_track.value.duration) {
       useSong.nextSong(current_track.value);
     }
   }
@@ -174,20 +166,6 @@ const timeupdate = () => {
       const value = (100 / audio.value.duration) * audio.value.currentTime;
       range.value = value;
       seeker.value.value = value;
-    });
-  }
-};
-
-const loadedMetadata = () => {
-  if (audio.value instanceof HTMLAudioElement) {
-    audio.value.addEventListener("loadedmetadata", () => {
-      const duration = audio.value.duration;
-      const minutes = Math.floor(duration / 60);
-      const seconds = Math.floor(duration - minutes * 60);
-
-      total_track_time.value = `${minutes}:${seconds
-        .toString()
-        .padStart(2, "0")}`;
     });
   }
 };
