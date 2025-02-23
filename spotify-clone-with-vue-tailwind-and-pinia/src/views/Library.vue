@@ -2,7 +2,7 @@
   <div
     class="p-8 text-white rounded-md grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6"
   >
-    <div v-for="(album, index) in albums" :key="index">
+    <div v-for="(album, index) in all_albums" :key="index">
       <div
         class="flex bg-gray-600 rounded-md duration-300 hover:cursor-pointer hover:bg-gray-700"
         @mouseenter="getItem(true, index)"
@@ -45,7 +45,6 @@ import Play from "vue-material-design-icons/Play.vue";
 let index = ref<number | null>(null);
 let is_hovering = ref<boolean>(false);
 const router = useRouter();
-const albums = ref<IAlbum[]>(all_albums);
 const albumStore = useSongStore();
 
 //FUNCTIONS
