@@ -103,7 +103,6 @@ export const useSongStore = defineStore("song", {
     },
 
     playFromTheBeginning() {
-      this.resetState();
       let track = this.tracks[0];
       this.loadSong(track.name, track);
     },
@@ -131,8 +130,7 @@ export const useSongStore = defineStore("song", {
       this.playlist_duration = "";
 
       for (let audio of this.tracks) {
-        let audio2 = new Audio();
-        audio2.src = audio.path;
+        let audio2 = new Audio(audio.path);
 
         audio2.addEventListener("loadedmetadata", () => {
           const duration: number = audio2.duration;
@@ -176,7 +174,7 @@ export const useSongStore = defineStore("song", {
         (track: ITrack, index: number) => {
           return {
             ...track,
-            id: index + 1,
+            id: index + 1
           };
         }
       );
@@ -201,5 +199,5 @@ export const useSongStore = defineStore("song", {
       this.playlist_duration = "";
     },
   },
-  persist: true,
+  persist: false,
 });

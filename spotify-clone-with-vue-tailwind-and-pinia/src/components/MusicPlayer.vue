@@ -14,7 +14,15 @@
         />
       </div>
       <div class="ml-3 text-sm cursor-pointer">
-        <p class="text-gray-300 hover:text-white">
+        <n-marquee
+          class="w-[230px]"
+          v-if="current_track.name.length > 50"
+        >
+          <p class="text-gray-300 hover:text-white pr-[200px]">
+            <strong>{{ current_track.name }}</strong>
+          </p>
+        </n-marquee>
+        <p v-else class="text-gray-300 hover:text-white">
           <strong>{{ current_track.name }}</strong>
         </p>
         <p class="text-gray-300 hover:text-white">
