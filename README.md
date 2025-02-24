@@ -1,48 +1,61 @@
-### 🎵 Spotify Clone with Vue, Tailwind & Pinia  
+### 🎵 Spotify Clone with Vue, Tailwind & Pinia
 
-Um clone do Spotify criado para estudos! 🎧 Feito com Vue 3, Pinia e Tailwind, este projeto busca replicar funcionalidades essenciais de um player de música moderno.  
+Este projeto é uma aplicação inspirada no **Spotify**! <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" width="20" height="20"></img>
+Desenvolvida para aplicar boas práticas em Vue 3, Pinia e Tailwind. O foco está na construção de um player de música moderno e interativo, priorizando performance, usabilidade e uma interface intuitiva.
 
-## 🚀 Tecnologias  
-- ⚡ Vue 3 + Composition API  
-- 🎨 Tailwind CSS  
-- 📦 Pinia  
-- 🛠️ Naive UI  
-- ⚡ Vite  
+## 🚀 Tecnologias
 
-## 🔧 Como rodar o projeto  
+- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/2367px-Vue.js_Logo_2.svg.png" width="25" height="20"/> Vue 3 + Composition API
+- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png" width="25" height="20"/> Tailwind CSS
+- <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Pinialogo.svg" width="25" height="20"/> Pinia
+- <img src="https://seeklogo.com/images/N/naive-ui-logo-A29B497AA3-seeklogo.com.png" width="25" height="20"/> Naive UI
+- <img src="data:image/jpeg;base64,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" width="25" height="20"/> Vite
+- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/800px-Typescript_logo_2020.svg.png" width="25" height="25"/> Typescript
+
+## 🔧 Como rodar o projeto
+
 ```sh
 # Clone o repositório
 $ git clone https://github.com/italoknd/SPOTIFY-CLONE-WITH-VUE-TAILWIND-PINIA.git
-Cloning into 'spotify-clone-with-vue-tailwind-and-pinia'...
-remote: Enumerating objects: 100, done.
-remote: Counting objects: 100% (100/100), done.
-Receiving objects: 100% (100/100), 10.5 MiB | 2.3 MiB/s, done.
 
 # Entre na pasta do projeto
 $ cd spotify-clone-with-vue-tailwind-and-pinia
 
-# Instale as dependências
-$ yarn  # ou npm i
-Installing dependencies...
-Done in 12.34s.
+# Instale as dependências com yarn ou npm, por exemplo
 
-# Rode o projeto
-$ yarn dev  # ou npm run dev
-VITE v4.0.0  ready in 500ms
-Local: http://localhost:5173/
-Network: use --host to expose
+# Instalando com yarn
+$ yarn
+
+# Instalando com npm
+$ npm i
+
+# Rode o projeto com yarn ou npm
+
+# Para rodar com o yarn, use:
+$ yarn dev
+
+# Para rodar com o npm, use:
+$ npm run dev
 ```
 
-## 🎶 Funcionalidades  
+## 🎶 Funcionalidades
+
 ✅ Reproduzir músicas disponíveis  
 ✅ Adicionar músicas aos favoritos  
 ✅ Pular, pausar, retroceder e avançar músicas  
 ✅ Controle de mídia na barra de tarefas  
-✅ Ajuste de volume  
+✅ Ajuste de volume
 
----  
+## Imagens do Projeto
 
-💡 **Obs:** Este projeto é apenas para fins de aprendizado e não tem nenhuma intenção comercial.  
+- ### Seção Home
+<img src="./spotify-clone-with-vue-tailwind-and-pinia/public/readme-images/home.png"/>
 
-Se quiser dar uma força, contribuições são bem-vindas! 🤝🚀  
+- ### Seção Search
+<img src="./spotify-clone-with-vue-tailwind-and-pinia/public/readme-images/search.png"/>
 
+- ### Seção Biblioteca
+<img src="./spotify-clone-with-vue-tailwind-and-pinia/public/readme-images/library.png"/>
+
+- ### Seção Album
+<img src="./spotify-clone-with-vue-tailwind-and-pinia/public/readme-images/album.png"/>
