@@ -95,13 +95,17 @@
         </div>
       </div>
     </div>
+
+    <div class="flex items-center w-1/4 justify-center pr-10">
+      <MusicPlayerVolume></MusicPlayerVolume>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 //MODULES AND UTILS
 import { ref, onMounted, watch, nextTick } from "vue";
-
+import MusicPlayerVolume from "./MusicPlayerVolume.vue"
 //icons
 import PictureInPictureBottomRight from "vue-material-design-icons/PictureInPictureBottomRight.vue";
 import Heart from "vue-material-design-icons/Heart.vue";
