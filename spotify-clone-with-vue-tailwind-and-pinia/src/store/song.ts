@@ -23,7 +23,7 @@ export const useSongStore = defineStore("song", {
         artist_of_the_album: "Italo Pedroza",
         album: "Liked Songs",
         album_category: "Playlist",
-        album_cover: "../../public/images/icons/liked-active.png",
+        album_cover: "/images/icons/liked-active.png",
         release_year: "",
         main_color_on_top: "#847AEA",
         main_color_on_bottom: "#5C34F1",
