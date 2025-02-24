@@ -11,7 +11,6 @@ export interface IAlbum {
   release_year?: string;
   public_playlist: boolean;
   playlist_name?: string;
-  playlist_cover?: string;
   playlist_owner_picture?: string;
   tracks: ITrack[];
 }
