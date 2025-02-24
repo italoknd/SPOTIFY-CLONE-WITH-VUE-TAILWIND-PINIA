@@ -59,6 +59,8 @@ export const useSongStore = defineStore("song", {
             is_playing: this.is_playing,
           })
         );
+
+        this.verifyAndApplyNavigatorMediaSession();
       }, 200);
     },
 
@@ -198,6 +200,33 @@ export const useSongStore = defineStore("song", {
           this.liked_songs.tracks.splice(index, 1);
         }
       });
+    },
+
+    verifyAndApplyNavigatorMediaSession(): void {
+      if ("mediaSession" in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: this.current_track.name,
+          artist: this.current_track.track_artists,
+          album: this.album.album,
+          artwork: [{ src: this.current_track.track_cover }],
+        });
+
+        navigator.mediaSession.setActionHandler("play", () => {
+          this.playOrPauseSong();
+        });
+
+        navigator.mediaSession.setActionHandler("pause", () => {
+          this.playOrPauseSong();
+        });
+
+        navigator.mediaSession.setActionHandler("previoustrack", () => {
+          this.prevSong(this.current_track);
+        });
+
+        navigator.mediaSession.setActionHandler("nexttrack", () => {
+          this.nextSong(this.current_track);
+        });
+      }
     },
 
     resetState() {

@@ -36,6 +36,7 @@ const userProfilePicture = $ref(
 //HOOKS
 onMounted(() => {
   is_playing.value = false;
+  setTimeout(() => useSong.verifyAndApplyNavigatorMediaSession(), 1000);
 });
 
 //FUNCTIONS
