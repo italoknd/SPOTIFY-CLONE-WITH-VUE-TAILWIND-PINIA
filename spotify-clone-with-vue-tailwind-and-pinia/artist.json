@@ -89,7 +89,6 @@
     "playlist_owner_picture": "https://lh3.googleusercontent.com/a/ACg8ocJ-zkH1FfQwQhEAJa5_07Pp2q_HVmFnXS_ce9xYtPHGbnk=s96-c-rg-br100",
     "playlist_name": "AS BRABAS DA SUMMER ELETROHITS!",
     "album_cover": "/album-covers/garoto-balada-meme-cover-art.jpg",
-    "playlist_cover": "/album-covers/garoto-balada-meme-cover-art.jpg",
     "tracks": [
       {
         "id": 1,
@@ -114,7 +113,6 @@
     "playlist_name": "Fallen Leaf (Massano Remix)",
     "artist_picture": "/artist-pictures/massano.jpg",
     "album_cover": "/cover-art/fallen-leaf-massano-remix.png",
-    "playlist_cover": "/cover-art/fallen-leaf-massano-remix.png",
     "tracks": [
       {
         "id": 1,
@@ -135,7 +133,6 @@
     "album_category": "Single",
     "playlist_name": "Make Up (Blazy Remix)",
     "album_cover": "/cover-art/makeup-blazy-remix.jpg",
-    "playlist_cover": "/cover-art/makeup-blazy-remix.jpg",
     "main_color_on_top": "#192A32",
     "main_color_on_bottom": "#3E4A58",
     "artist_picture": "/artist-pictures/blazy.jpg",
@@ -164,7 +161,6 @@
     "main_color_on_bottom": "#62A1A8",
     "release_year": "2024",
     "album_cover": "/cover-art/carry-you-martin-garrix.jpeg",
-    "playlist_cover": "/cover-art/carry-you-martin-garrix.jpeg",
     "tracks": [
       {
         "id": 1,
@@ -189,7 +185,6 @@
     "release_year": "2024",
     "album_category": "Single",
     "album_cover": "/cover-art/martin-garrix-smile.jpeg",
-    "playlist_cover": "/cover-art/martin-garrix-smile.jpeg",
     "tracks": [
       {
         "id": 1,
@@ -214,7 +209,6 @@
     "album_category": "Single",
     "artist_picture": "/artist-pictures/morten.jpg",
     "album_cover": "/cover-art/morten-artbat-hollow.jpeg",
-    "playlist_cover": "/cover-art/morten-artbat-hollow.jpeg",
     "tracks": [
       {
         "id": 1,
@@ -239,7 +233,6 @@
     "album_category": "Album",
     "artist_picture": "https://lh3.googleusercontent.com/a/ACg8ocJ-zkH1FfQwQhEAJa5_07Pp2q_HVmFnXS_ce9xYtPHGbnk=s96-c-rg-br100",
     "album_cover": "/album-covers/mini-mixes-cover.webp",
-    "playlist_cover": "/album-covers/mini-mixes-cover.webp",
     "tracks": [
       {
         "id": 1,
@@ -352,7 +345,6 @@
     "album_category": "Album",
     "artist_picture": "/artist-pictures/kshmr.jpeg",
     "album_cover": "/album-covers/harmonica-andromeda.jpg",
-    "playlist_cover": "/cover-art/morten-artbat-hollow.jpeg",
     "tracks": [
       {
         "id": 1,
@@ -505,6 +497,222 @@
         "track_artists": "KSHMR",
         "name": "Paula",
         "path": "/tracks/KSHMR - Paula .mp3"
+      }
+    ]
+  },
+  {
+    "playlist_id": 12,
+    "liked_playlist": false,
+    "album": "This Is Italo",
+    "artist_of_the_album": "Italo",
+    "main_color_on_top": "#107988",
+    "main_color_on_bottom": "#F78855",
+    "release_year": "2024",
+    "public_playlist": true,
+    "playlist_name": "This Is Italo",
+    "album_category": "Playlist",
+    "artist_picture": "https://lh3.googleusercontent.com/a/ACg8ocJ-zkH1FfQwQhEAJa5_07Pp2q_HVmFnXS_ce9xYtPHGbnk=s96-c-rg-br100",
+    "album_cover": "/album-covers/cover-album.webp",
+    "tracks": [
+      {
+        "id": 1,
+        "track_cover": "/track-covers/set1-cover.webp",
+        "playlist_id": 12,
+        "track_artists": "Italo",
+        "name": "Set 1",
+        "path": "/tracks/Italo Kennedy (Set 1).mp3"
+      },
+      {
+        "id": 2,
+        "track_cover": "/track-covers/set2-cover.webp",
+        "playlist_id": 12,
+        "track_artists": "Italo",
+        "name": "Set 2",
+        "path": "/tracks/Italo Kennedy (Set 2).mp3"
+      },
+      {
+        "id": 3,
+        "track_cover": "/track-covers/set14-cover.webp",
+        "playlist_id": 12,
+        "track_artists": "Italo",
+        "name": "Set 3",
+        "path": "/tracks/Italo Kennedy (Set 14).mp3"
+      },
+      {
+        "id": 4,
+        "track_cover": "/track-covers/set17-cover.webp",
+        "playlist_id": 12,
+        "track_artists": "Italo",
+        "name": "Set 4",
+        "path": "/tracks/Italo Kennedy (Set 17).mp3"
+      },
+      {
+        "id": 5,
+        "track_cover": "/track-covers/skrillex-chill-set-cover.webp",
+        "playlist_id": 12,
+        "track_artists": "Italo",
+        "name": "Set 10 [Chill Session] (With Skrillex's Tracks)",
+        "path": "/tracks/Italo Kennedy (Set 10) [Chill Out Session] (With Skrillex Tracks).mp3"
+      }
+    ]
+  },
+  {
+    "playlist_id": 13,
+    "liked_playlist": false,
+    "album": "Voices In My Head",
+    "artist_of_the_album": "Anyma",
+    "main_color_on_top": "#969B9F",
+    "main_color_on_bottom": "#202020",
+    "release_year": "2024",
+    "public_playlist": false,
+    "playlist_name": "Voices In My Head",
+    "album_category": "Single",
+    "artist_picture": "/artist-pictures/anyma.jpeg",
+    "album_cover": "/track-covers/voices-in-my-head.jpg",
+    "tracks": [
+      {
+        "id": 1,
+        "track_cover": "/track-covers/voices-in-my-head.jpg",
+        "playlist_id": 13,
+        "track_artists": "Anyma, Argy, Son of Son",
+        "name": "Voices In My Head",
+        "path": "/tracks/Anyma, Argy, Son of Son - Voices In My Head.mp3"
+      }
+    ]
+  },
+  {
+    "playlist_id": 14,
+    "liked_playlist": false,
+    "album": "On and On",
+    "artist_of_the_album": "HOBBS",
+    "main_color_on_top": "#969B9F",
+    "main_color_on_bottom": "#202020",
+    "release_year": "2017",
+    "public_playlist": false,
+    "playlist_name": "On and On",
+    "album_category": "Single",
+    "artist_picture": "/artist-pictures/blank-picture.jpg",
+    "album_cover": "/track-covers/on-and-on-hobbs.jpg",
+    "tracks": [
+      {
+        "id": 1,
+        "track_cover": "/track-covers/on-and-on-hobbs.jpg",
+        "playlist_id": 14,
+        "track_artists": "Erykah Badu, HOBBS",
+        "name": "On and On (HOBBS Remix)",
+        "path": "/tracks/Erykah Badu - On and On (HOBBS Remix) .mp3"
+      }
+    ]
+  },
+  {
+    "playlist_id": 15,
+    "liked_playlist": false,
+    "album": "Strangers Do",
+    "artist_of_the_album": "Jonas Aden",
+    "main_color_on_top": "#C43945",
+    "main_color_on_bottom": "#263B7C",
+    "release_year": "2018",
+    "public_playlist": false,
+    "playlist_name": "Strangers Do",
+    "album_category": "Single",
+    "artist_picture": "/artist-pictures/jonas-aden.jpeg",
+    "album_cover": "/track-covers/strangers-do.jpeg",
+    "tracks": [
+      {
+        "id": 1,
+        "track_cover": "/track-covers/strangers-do.jpeg",
+        "playlist_id": 15,
+        "track_artists": "Jonas Aden",
+        "name": "Strangers Do",
+        "path": "/tracks/Jonas Aden - Strangers Do.m4a"
+      }
+    ]
+  },
+  {
+    "playlist_id": 16,
+    "liked_playlist": false,
+    "album": "Meet You",
+    "artist_of_the_album": "Jonas Aden",
+    "main_color_on_top": "#D50911",
+    "main_color_on_bottom": "#2C0102",
+    "release_year": "2019",
+    "public_playlist": false,
+    "playlist_name": "Meet You",
+    "album_category": "Single",
+    "artist_picture": "/artist-pictures/jonas-aden.jpeg",
+    "album_cover": "/track-covers/meet-you.jpeg",
+    "tracks": [
+      {
+        "id": 1,
+        "track_cover": "/track-covers/meet-you.jpeg",
+        "playlist_id": 16,
+        "track_artists": "Jonas Aden",
+        "name": "Meet You",
+        "path": "/tracks/Jonas Aden - Meet You.m4a"
+      }
+    ]
+  },
+  {
+    "playlist_id": 17,
+    "liked_playlist": false,
+    "album": "Tell Me A Lie",
+    "artist_of_the_album": "Jonas Aden",
+    "main_color_on_top": "#ADD6E1",
+    "main_color_on_bottom": "#2770A4",
+    "release_year": "2019",
+    "public_playlist": false,
+    "playlist_name": "Tell Me A Lie",
+    "album_category": "Single",
+    "artist_picture": "/artist-pictures/jonas-aden.jpeg",
+    "album_cover": "/track-covers/tell-me-a-lie.jpeg",
+    "tracks": [
+      {
+        "id": 1,
+        "track_cover": "/track-covers/tell-me-a-lie.jpeg",
+        "playlist_id": 17,
+        "track_artists": "Jonas Aden",
+        "name": "Tell Me A Lie",
+        "path": "/tracks/Jonas Aden - Tell Me A Lie.m4a"
+      }
+    ]
+  },
+  {
+    "playlist_id": 18,
+    "liked_playlist": false,
+    "album": "This Is Jonas Aden",
+    "artist_of_the_album": "Jonas Aden",
+    "main_color_on_top": "#ADD6E1",
+    "main_color_on_bottom": "#2770A4",
+    "release_year": "2024",
+    "public_playlist": false,
+    "playlist_name": "This Is Jonas Aden",
+    "album_category": "Playlist",
+    "artist_picture": "/artist-pictures/jonas-aden.jpeg",
+    "album_cover": "/artist-pictures/jonas-aden.jpeg",
+    "tracks": [
+      {
+        "id": 1,
+        "track_cover": "/track-covers/tell-me-a-lie.jpeg",
+        "playlist_id": 18,
+        "track_artists": "Jonas Aden",
+        "name": "Tell Me A Lie",
+        "path": "/tracks/Jonas Aden - Tell Me A Lie.m4a"
+      },
+     {
+        "id": 2,
+        "track_cover": "/track-covers/strangers-do.jpeg",
+        "playlist_id": 15,
+        "track_artists": "Jonas Aden",
+        "name": "Strangers Do",
+        "path": "/tracks/Jonas Aden - Strangers Do.m4a"
+      },
+      {
+        "id": 3,
+        "track_cover": "/track-covers/meet-you.jpeg",
+        "playlist_id": 16,
+        "track_artists": "Jonas Aden",
+        "name": "Meet You",
+        "path": "/tracks/Jonas Aden - Meet You.m4a"
       }
     ]
   }
