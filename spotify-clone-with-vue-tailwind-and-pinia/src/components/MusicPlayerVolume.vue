@@ -56,7 +56,7 @@ let volume = $ref(null);
 watch(
   () => vol,
   (val) => {
-    audio.value.volume = val / 100;
+    audio.value.volume = Number(val) / 100;
   }
 );
 
