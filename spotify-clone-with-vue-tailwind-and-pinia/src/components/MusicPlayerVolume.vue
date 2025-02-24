@@ -60,6 +60,15 @@ watch(
   }
 );
 
+watch(
+  () => audio.value,
+  (newAudio, oldAudio) => {
+    if (newAudio !== oldAudio) {
+      audio.value.volume = vol / 100;
+    }
+  }
+);
+
 const muteOrUnmuteTrack = () => {
   is_muted = !is_muted;
 
