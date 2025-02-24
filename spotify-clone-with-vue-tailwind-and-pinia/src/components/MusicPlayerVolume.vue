@@ -1,7 +1,7 @@
 <template>
   <VolumeMute
     class="cursor-pointer"
-    v-if="vol === 0"
+    v-if="Number(vol) === 0"
     @click="muteOrUnmuteTrack"
     fillColor="#fff"
     :size="20"
