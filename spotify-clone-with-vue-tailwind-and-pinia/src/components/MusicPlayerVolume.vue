@@ -1,11 +1,13 @@
 <template>
   <VolumeMute
+    class="cursor-pointer"
     v-if="vol === 0"
     @click="muteOrUnmuteTrack"
     fillColor="#fff"
     :size="20"
   ></VolumeMute>
   <VolumeHigh
+    class="cursor-pointer"
     v-else
     @click="muteOrUnmuteTrack"
     fillColor="#fff"
@@ -34,7 +36,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { watch } from "vue";
 
 import VolumeMute from "vue-material-design-icons/VolumeMute.vue";
 import VolumeHigh from "vue-material-design-icons/VolumeHigh.vue";
@@ -51,14 +53,23 @@ let is_hovering = $ref<boolean>(false);
 let vol = $ref<number>(80);
 let volume = $ref(null);
 
+watch(
+  () => vol,
+  (val) => {
+    audio.value.volume = val / 100;
+  }
+);
+
 const muteOrUnmuteTrack = () => {
   is_muted = !is_muted;
 
   if (is_muted) {
     last_volume_saved = vol;
+    audio.value.volume = 0;
     vol = 0;
   } else {
     vol = last_volume_saved;
+    audio.value.volume = last_volume_saved / 100;
     last_volume_saved = 0;
   }
 };
