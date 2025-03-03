@@ -108,7 +108,7 @@ const routeTo = (toRoute: string): void => {
       </div>
 
       <!--SIDEBAR-->
-      <div class="h-[100%] p-6 w-[240px] fixed z-50 bg-black" id="sideNav">
+      <div class="h-[100%] p-6 w-[240px] fixed z-50 bg-black hidden lg:block" id="sideNav">
         <div class="w-[200px] cursor-pointer">
           <div class="mb-4" @click="routeTo('/')">
             <img
@@ -171,7 +171,7 @@ const routeTo = (toRoute: string): void => {
         </div>
       </div>
       <div
-        class="fixed right-0 top-0 w-[calc(100%-240px)] overflow-auto h-full bg-gradient-to-b from-[#1c1c1c] to-black"
+        class="fixed right-0 top-0 w-full lg:w-[calc(100%-240px)] overflow-auto h-full bg-gradient-to-b from-[#1c1c1c] to-black"
       >
         <div class="mt-[70px]" />
         <RouterView />
