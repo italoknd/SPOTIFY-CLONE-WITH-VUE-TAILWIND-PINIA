@@ -54,7 +54,7 @@
     </span>
   </div>
 </template>
-<script lang="ts">
+<script setup lang="ts">
 //ICONS
 import ChevronUp from "vue-material-design-icons/ChevronUp.vue";
 import ChevronDown from "vue-material-design-icons/ChevronDown.vue";
