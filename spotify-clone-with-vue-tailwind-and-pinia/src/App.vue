@@ -3,12 +3,12 @@
 import MusicPlayer from "./components/MusicPlayer.vue";
 import MenuItem from "./components/MenuItem.vue";
 import HeaderDesktop from "./components/Header/HeaderDesktop.vue";
-import HeaderMobile from "./components/Header/HeaderMobile.vue"; 
+import HeaderMobile from "./components/Header/HeaderMobile.vue";
 
 //MODULES
 import { useRouter } from "vue-router";
 import { storeToRefs } from "pinia";
-import { onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted, watch } from "vue";
 
 //SCRIPTS
 import { side_items, side_items_p2 } from "./scripts/sideItems";
@@ -32,6 +32,13 @@ onUnmounted(() => {
   window.removeEventListener("resize", checkScreenSize);
 });
 
+watch(
+  () => window.innerWidth,
+  () => {
+    checkScreenSize();
+  }
+);
+
 //FUNCTIONS
 const routeTo = (toRoute: string): void => {
   router.push(toRoute);
@@ -46,7 +53,7 @@ const checkScreenSize = () => {
   <div>
     <n-notification-provider>
       <!--HEADER-->
-      <component :is="isMobile ? HeaderDesktop : HeaderMobile" />
+      <component :is="isMobile ? HeaderMobile : HeaderDesktop" />
 
       <!--SIDEBAR-->
       <div
