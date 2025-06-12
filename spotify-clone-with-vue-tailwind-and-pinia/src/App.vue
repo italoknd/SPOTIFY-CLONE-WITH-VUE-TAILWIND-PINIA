@@ -4,6 +4,7 @@ import MusicPlayer from "./components/MusicPlayer.vue";
 import MenuItem from "./components/MenuItem.vue";
 import HeaderDesktop from "./components/Header/HeaderDesktop.vue";
 import HeaderMobile from "./components/Header/HeaderMobile.vue";
+import MenuItemsMobile from "./components/MenuItemsMobile.vue";
 
 //MODULES
 import { useRouter } from "vue-router";
@@ -127,8 +128,26 @@ const checkScreenSize = () => {
         <div class="mt-[70px]" />
         <RouterView />
         <div class="mb-[100px]" />
+        <span v-if="isMobile" class="flex">
+          <div
+            v-for="(
+              { iconSize, iconString, name, pageURL, style }, index
+            ) in side_items"
+            :key="index"
+          >
+            <RouterLink :to="pageURL">
+              <MenuItemsMobile
+                :iconSize="iconSize"
+                :name="name"
+                :iconString="iconString"
+                :pageURL="pageURL"
+                :class="style"
+              />
+            </RouterLink>
+          </div>
+        </span>
       </div>
-      <MusicPlayer v-if="Object.keys(current_track).length" />
+      <!-- <MusicPlayer v-if="Object.keys(current_track).length" /> -->
     </n-notification-provider>
   </div>
 </template>
