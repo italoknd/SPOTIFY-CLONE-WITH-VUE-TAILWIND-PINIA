@@ -128,23 +128,21 @@ const checkScreenSize = () => {
         <div class="mt-[70px]" />
         <RouterView />
         <div class="mb-[100px]" />
-        <span v-if="isMobile" class="flex">
-          <div
+        <span v-if="isMobile" class="w-full flex justify-around">
+          <RouterLink
             v-for="(
               { iconSize, iconString, name, pageURL, style }, index
             ) in side_items"
             :key="index"
+            :to="pageURL"
           >
-            <RouterLink :to="pageURL">
-              <MenuItemsMobile
-                :iconSize="iconSize"
-                :name="name"
-                :iconString="iconString"
-                :pageURL="pageURL"
-                :class="style"
-              />
-            </RouterLink>
-          </div>
+            <MenuItemsMobile
+              :iconSize="iconSize"
+              :name="name"
+              :iconString="iconString"
+              :pageURL="pageURL"
+            />
+          </RouterLink>
         </span>
       </div>
       <!-- <MusicPlayer v-if="Object.keys(current_track).length" /> -->
