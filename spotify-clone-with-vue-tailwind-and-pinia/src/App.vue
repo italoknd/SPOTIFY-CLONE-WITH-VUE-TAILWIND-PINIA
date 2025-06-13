@@ -128,7 +128,10 @@ const checkScreenSize = () => {
         <div class="mt-[70px]" />
         <RouterView />
         <div class="mb-[100px]" />
-        <span v-if="isMobile" class="w-full flex justify-around">
+        <span
+          v-if="isMobile"
+          class="p-3 flex justify-between items-center fixed bottom-0 w-full z-50 h-[70px] bg-[#181818] border-t border-t-[#272727]"
+        >
           <RouterLink
             v-for="(
               { iconSize, iconString, name, pageURL, style }, index
@@ -141,6 +144,7 @@ const checkScreenSize = () => {
               :name="name"
               :iconString="iconString"
               :pageURL="pageURL"
+              :class="style"
             />
           </RouterLink>
         </span>

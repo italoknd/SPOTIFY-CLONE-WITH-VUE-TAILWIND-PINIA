@@ -43,9 +43,7 @@ const isHover = () => {
 };
 </script>
 <template>
-  <div
-    class="p-3 flex fixed bottom-0 w-full z-50 h-[70px] bg-[#181818] border-t border-t-[#272727]"
-  >
+  <div>
     <li
       class="flex items-center justify-start pb-1 cursor-pointer"
       @mouseenter="isHover()"
