@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="tracks.length" :class="!tracks.length ? 'mt-4' : 'mt-2'">
-      <div class="flex items-center justify-between px-5 pt-2">
+      <div class="flex items-center justify-between px-3md:px-5 pt-2">
         <div class="flex items-center justify-between text-gray-400">
           <div class="mr-7">#</div>
           <div class="text-sm">Title</div>
@@ -10,7 +10,7 @@
           <ClockTimeThreeOutline fillColor="#fff" :size="18" />
         </div>
       </div>
-      <div class="border-b border-b-[#2a2a2a] mt-2 mb-4"></div>
+      <div class="border-b border-b-[#2a2a2a] mt-2 md:mt-2 md:mb-4"></div>
       <ul class="w-full">
         <li
           class="flex items-center justify-between rounded-md hover:bg-[#2a2929]"
@@ -23,7 +23,7 @@
             @mouseleave="getItem(false, index)"
             class="flex items-center w-full py-1.5"
           >
-            <div class="w-[40px] ml-[14px] mr-[6px] cursor-pointer">
+            <div class="w-[40px] md:ml-[14px] mr-[6px] cursor-pointer">
               <div v-if="verifyHovering(index)">
                 <Play
                   v-if="!is_playing"
@@ -46,7 +46,7 @@
                   :size="25"
                 />
               </div>
-              <div v-else class="ml-1 text-sm">
+              <div v-else class="md:ml-1 text-sm">
                 <p :class="highlightPlayingTrack(current_track, track)">
                   <strong>{{ track.id }}</strong>
                 </p>
@@ -56,11 +56,16 @@
               <img
                 :src="track.track_cover"
                 alt="Track Cover"
-                class="w-[35px] h-[35px] object-cover rounded-sm mx-[-5px] mr-3 mt-[3px]"
+                class="w-[35px] h-[35px] object-cover rounded-sm mx-[-8px] md:mx-[-5px] mr-3 mt-[3px]"
               />
               <div>
                 <div>
-                  <span :class="highlightPlayingTrack(current_track, track)">
+                  <span
+                    :class="[
+                      highlightPlayingTrack(current_track, track),
+                      'block w-[160px] truncate md:w-auto md:whitespace-normal md:truncate-none',
+                    ]"
+                  >
                     <strong>{{ track.name }}</strong>
                   </span>
                 </div>
@@ -70,7 +75,7 @@
               </div>
             </div>
           </div>
-          <div class="mr-4 flex items-center">
+          <div class="md:mr-4 flex items-center">
             <Heart
               v-if="verifyHovering(index)"
               fillColor="#1bd760"

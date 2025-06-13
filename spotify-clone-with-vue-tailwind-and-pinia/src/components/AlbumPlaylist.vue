@@ -8,13 +8,13 @@
             @click="
               tracks.length ? useSong.playFromTheBeginning() : emptyPlaylist()
             "
-            :size="40"
+            :size="mobileView ? 25 : 40"
             fillColor="#fff"
             v-if="!is_playing"
           />
           <Pause
             @click="useSong.playOrPauseThisSong(current_artist, current_track)"
-            :size="40"
+            :size="mobileView ? 25 : 40"
             fillColor="#fff"
             v-else
           />
@@ -23,8 +23,8 @@
       <Heart
         v-if="!route.path.includes('liked')"
         @click="addTracksToFavoritePlaylist()"
-        class="hover:scale-125 duration-300 mt-1 ml-4"
-        :size="40"
+        class="hover:scale-125 duration-300 mt-0.5 md:mt-1 ml-4"
+        :size="mobileView ? 30 : 40"
         :fillColor="album.liked_playlist ? '#23CF5F' : '#fff'"
       />
     </div>
@@ -33,6 +33,7 @@
 </template>
 <script setup lang="ts">
 //VUE IMPORTS
+import { onMounted } from "vue";
 import { useRoute } from "vue-router";
 
 //NAIVE UI COMPONENTS
@@ -52,6 +53,9 @@ import { useSongStore } from "../store/song";
 const route = useRoute();
 const useSong = useSongStore();
 const notification = useNotification();
+let mobileView = $ref<boolean>(false);
+
+onMounted(() => (mobileView = window.innerWidth < 768));
 
 const addTracksToFavoritePlaylist = (): void => {
   useSong.saveOrRemoveAlbumFromLikedPlaylist();

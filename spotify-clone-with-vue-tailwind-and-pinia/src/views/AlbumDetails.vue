@@ -1,10 +1,8 @@
 <template>
   <div class="-mt-[10px]">
-    <AlbumCover
-      :style="linear_gradient"
-      class="p-8 text-white select-none rounded-t-md"
-    />
-    <AlbumPlaylist class="p-8 text-white select-none rounded-b-md" />
+    <AlbumCover v-if="!mobileView" :style="linear_gradient" class="p-8 text-white select-none rounded-t-md" />
+    <AlbumCoverMobile v-else :style="linear_gradient" class="p-3 text-white select-none rounded-t-md" />
+    <AlbumPlaylist class="p-3 md:p-8 text-white select-none rounded-b-md" />
   </div>
 </template>
 <script setup lang="ts">
@@ -15,15 +13,18 @@ import { ref, onMounted, watch } from "vue";
 import { useSongStore } from "../store/song";
 import { IAlbum } from "../interfaces/albums";
 import { useRoute } from "vue-router";
+import AlbumCoverMobile from "../components/AlbumCoverMobile.vue";
 
 const route = useRoute();
 const albumStore = useSongStore();
 const album_details = ref<IAlbum>();
 const linear_gradient = ref<string>("");
+let mobileView = $ref<boolean>(false);
 
 //hooks
 onMounted(() => {
   validateSection();
+  mobileView = window.innerWidth < 768;
 });
 
 watch(
