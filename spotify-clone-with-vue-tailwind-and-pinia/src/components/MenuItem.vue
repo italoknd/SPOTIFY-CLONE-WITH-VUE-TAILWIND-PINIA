@@ -13,10 +13,10 @@ let textIsHover = ref(false);
 
 watchEffect(() => {
   if (route.path === props.pageURL) {
-    icon.value = props.iconString + "-active";
+    icon.value = props.iconString + "-active-enhanced";
     textIsHover.value = true;
   } else {
-    icon.value = props.iconString + "-inactive";
+    icon.value = props.iconString + "-inactive-enhanced";
     textIsHover.value = false;
   }
 });
@@ -31,13 +31,13 @@ watch(
 );
 
 const isHover = () => {
-  if (icon.value === props.iconString + "-active") return;
+  if (icon.value === props.iconString + "-active-enhanced") return;
 
-  if (icon.value === props.iconString + "-inactive") {
-    icon.value = props.iconString + "-inactive-hover";
+  if (icon.value === props.iconString + "-inactive-enhanced") {
+    icon.value = props.iconString + "-inactive-hover-enhanced";
     textIsHover.value = true;
   } else {
-    icon.value = props.iconString + "-inactive";
+    icon.value = props.iconString + "-inactive-enhanced";
     textIsHover.value = false;
   }
 };

@@ -13,10 +13,10 @@ let textIsHover = ref(false);
 
 watchEffect(() => {
   if (route.path === props.pageURL) {
-    icon.value = props.iconString + "-active";
+    icon.value = props.iconString + "-active-enhanced";
     textIsHover.value = true;
   } else {
-    icon.value = props.iconString + "-inactive";
+    icon.value = props.iconString + "-inactive-enhanced";
     textIsHover.value = false;
   }
 });
@@ -29,36 +29,18 @@ watch(
     }
   }
 );
-
-const isHover = () => {
-  if (icon.value === props.iconString + "-active") return;
-
-  if (icon.value === props.iconString + "-inactive") {
-    icon.value = props.iconString + "-inactive-hover";
-    textIsHover.value = true;
-  } else {
-    icon.value = props.iconString + "-inactive";
-    textIsHover.value = false;
-  }
-};
 </script>
 <template>
-  <div>
-    <li
-      class="flex items-center justify-start pb-1 cursor-pointer"
-      @mouseenter="isHover()"
-      @mouseleave="isHover()"
-    >
-      <img :src="`/images/icons/${icon}.png`" :width="props.iconSize" />
+  <li class="flex items-center justify-start pb-1 cursor-pointer">
+    <img :src="`/images/icons/${icon}.png`" :width="props.iconSize" />
 
-      <div
-        :class="textIsHover ? 'text-white' : 'text-gray-400'"
-        class="font-semibold text-[14px] ml-4 mt-0.5"
-      >
-        <span :class="route.path === props.pageURL ? 'text-white' : ''">
-          {{ props.name }}
-        </span>
-      </div>
-    </li>
-  </div>
+    <div
+      :class="textIsHover ? 'text-white' : 'text-gray-400'"
+      class="font-semibold text-[14px] ml-4 mt-0.5"
+    >
+      <span :class="route.path === props.pageURL ? 'text-white' : ''">
+        {{ props.name }}
+      </span>
+    </div>
+  </li>
 </template>

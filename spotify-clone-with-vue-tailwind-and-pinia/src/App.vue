@@ -17,7 +17,7 @@ import { side_items, side_items_p2 } from "./scripts/sideItems";
 //STUFF FROM PINIA
 import { useSongStore } from "./store/song";
 const useSong = useSongStore();
-const { is_playing, current_track } = storeToRefs(useSong);
+const { is_playing } = storeToRefs(useSong);
 
 //VARIABLES
 const router = useRouter();
