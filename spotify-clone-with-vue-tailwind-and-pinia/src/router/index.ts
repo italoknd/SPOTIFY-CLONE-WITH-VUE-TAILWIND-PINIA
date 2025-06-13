@@ -5,13 +5,14 @@ import HomeMobile from "../views/HomeMobile.vue";
 import Search from "../views/Search.vue";
 import Library from "../views/Library.vue";
 import AlbumDetails from "../views/AlbumDetails.vue";
+import LibraryMobile from "../views/LibraryMobile.vue";
 
 const routes = [
   { path: "/", component: window.innerWidth < 768 ? HomeMobile : Home },
   { path: "/search", component: Search },
   {
     path: "/library",
-    component: Library,
+    component: window.innerWidth < 768 ? LibraryMobile : Library,
   },
   {
     path: "/selected-album",
