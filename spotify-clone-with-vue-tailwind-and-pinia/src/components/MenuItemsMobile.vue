@@ -32,8 +32,7 @@ watch(
 </script>
 <template>
   <li class="flex items-center justify-start pb-1 cursor-pointer">
-    <img :src="`/images/icons/${icon}.png`" :width="props.iconSize" />
-
+    <img :src="`/images/icons/${icon}.png`" class="w-5 h-5" />
     <div
       :class="textIsHover ? 'text-white' : 'text-gray-400'"
       class="font-semibold text-[14px] ml-4 mt-0.5"

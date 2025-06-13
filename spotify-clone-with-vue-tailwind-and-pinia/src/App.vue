@@ -127,10 +127,10 @@ const checkScreenSize = () => {
       >
         <div class="mt-[70px]" />
         <RouterView />
-        <div class="mb-[100px]" />
+        <div class="mb-[55px] md:mb-[100px]" />
         <span
           v-if="isMobile"
-          class="p-3 flex justify-between items-center fixed bottom-0 w-full z-50 h-[70px] bg-[#181818] border-t border-t-[#272727]"
+          class="p-3 flex justify-between items-center fixed bottom-0 w-full z-50 h-[55px] bg-[#181818] border-t border-t-[#272727]"
         >
           <RouterLink
             v-for="(
