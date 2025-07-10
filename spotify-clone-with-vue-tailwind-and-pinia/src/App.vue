@@ -16,8 +16,9 @@ import { side_items, side_items_p2 } from "./scripts/sideItems";
 
 //STUFF FROM PINIA
 import { useSongStore } from "./store/song";
+import FloatingMusicPlayer from "./components/FloatingMusicPlayer.vue";
 const useSong = useSongStore();
-const { is_playing } = storeToRefs(useSong);
+const { is_playing, current_track } = storeToRefs(useSong);
 
 //VARIABLES
 const router = useRouter();
@@ -149,7 +150,10 @@ const checkScreenSize = () => {
           </RouterLink>
         </span>
       </div>
-      <!-- <MusicPlayer v-if="Object.keys(current_track).length" /> -->
+      <MusicPlayer v-if="Object.keys(current_track).length && !isMobile" />
+      <FloatingMusicPlayer
+        v-if="Object.keys(current_track).length && isMobile"
+      />
     </n-notification-provider>
   </div>
 </template>
