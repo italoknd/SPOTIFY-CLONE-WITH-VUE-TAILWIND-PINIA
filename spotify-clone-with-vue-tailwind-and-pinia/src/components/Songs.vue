@@ -13,10 +13,11 @@
       <div class="border-b border-b-[#2a2a2a] mt-2 md:mt-2 md:mb-4"></div>
       <ul class="w-full">
         <li
+          :id="'play-pause-control-' + index"
           class="flex items-center justify-between rounded-md hover:bg-[#2a2929]"
           v-for="(track, index) in tracks"
           :key="index"
-          @dblclick="useSong.playOrPauseThisSong(track.track_artists, track)"
+          @click="playOrPauseSong(track)"
         >
           <div
             @mouseenter="getItem(true, index)"
@@ -46,7 +47,7 @@
                   :size="25"
                 />
               </div>
-              <div v-else class="md:ml-1 text-sm">
+              <div v-else class="md:ml-[-11px] text-sm">
                 <p :class="highlightPlayingTrack(current_track, track)">
                   <strong>{{ track.id }}</strong>
                 </p>
@@ -56,20 +57,20 @@
               <img
                 :src="track.track_cover"
                 alt="Track Cover"
-                class="w-[35px] h-[35px] object-cover rounded-sm mx-[-8px] md:mx-[-5px] mr-3 mt-[3px]"
+                class="w-[35px] h-[35px] object-cover rounded-sm mx-[-8px] md:mx-[-5px] mr-3 mt-[3px] md:ml-[-22px]"
               />
               <div>
                 <div>
                   <span
                     :class="[
                       highlightPlayingTrack(current_track, track),
-                      'block w-[160px] truncate md:w-auto md:whitespace-normal md:truncate-none',
+                      'block w-[160px] truncate md:w-auto md:whitespace-normal md:truncate-none md:ml-4',
                     ]"
                   >
                     <strong>{{ track.name }}</strong>
                   </span>
                 </div>
-                <div class="hover:underline">
+                <div class="hover:underline md:ml-4">
                   <span>{{ track.track_artists }}</span>
                 </div>
               </div>
@@ -81,7 +82,8 @@
               fillColor="#1bd760"
               :size="22"
             />
-            <div class="pl-3">{{ track.duration }}</div>
+
+            <div class="pl-3 md:mr-[-16px]">{{ track.duration }}</div>
           </div>
         </li>
       </ul>
@@ -96,7 +98,7 @@
 </template>
 <script setup lang="ts">
 //MODULES AND INTERFACES
-import { ref } from "vue";
+import { ref, watch, nextTick, onMounted, onUnmounted } from "vue";
 import { storeToRefs } from "pinia";
 import { ITrack } from "../interfaces/albums";
 
@@ -115,8 +117,29 @@ const { is_playing, current_track, tracks } = storeToRefs(useSong);
 //VARS
 let index = ref<number | null>(null);
 let is_hover = ref<boolean>(false);
+let click_counter = $ref<number>(0);
+let isMobile = $ref(window.innerWidth < 768);
+
+watch(
+  () => window.innerWidth,
+  () => {
+    checkScreenSize();
+  }
+);
+
+onUnmounted(() => {
+  window.removeEventListener("resize", checkScreenSize);
+});
+
+onMounted(() => {
+  window.addEventListener("resize", checkScreenSize);
+});
 
 //FUNCTIONS
+const checkScreenSize = () => {
+  isMobile = window.innerWidth < 768;
+};
+
 const highlightPlayingTrack = (
   current_track: ITrack,
   track: ITrack
@@ -128,6 +151,24 @@ const highlightPlayingTrack = (
   }
 
   return applied_class;
+};
+
+const playOrPauseSong = (track: ITrack) => {
+  nextTick(() => {
+    click_counter++;
+
+    setTimeout(() => {
+      click_counter = 0;
+    }, 500);
+
+    if (isMobile && click_counter === 1) {
+      useSong.playOrPauseThisSong(track.track_artists, track);
+      click_counter = 0;
+    } else if (!isMobile && click_counter === 2) {
+      useSong.playOrPauseThisSong(track.track_artists, track);
+      click_counter = 0;
+    }
+  });
 };
 
 const getItem = (hovering: boolean, item_position: number) => {
