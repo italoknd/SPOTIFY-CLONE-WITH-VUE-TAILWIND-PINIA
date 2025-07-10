@@ -61,14 +61,9 @@
 <script setup lang="ts">
 //MODULES AND UTILS
 import { ref, onMounted, watch, nextTick } from "vue";
-import MusicPlayerVolume from "./MusicPlayerVolume.vue";
-//icons
-import PictureInPictureBottomRight from "vue-material-design-icons/PictureInPictureBottomRight.vue";
-import Heart from "vue-material-design-icons/Heart.vue";
+
 import Play from "vue-material-design-icons/Play.vue";
 import Pause from "vue-material-design-icons/Pause.vue";
-import SkipBackward from "vue-material-design-icons/SkipBackward.vue";
-import SkipForward from "vue-material-design-icons/SkipForward.vue";
 
 //STORE STUFF
 import { storeToRefs } from "pinia";
@@ -78,7 +73,6 @@ const { is_playing, audio, current_artist, current_track } =
   storeToRefs(useSong);
 
 //VARS
-let is_hover = ref<boolean>(false);
 let current_track_time = ref<any>(null);
 let seeker = ref<any>(null);
 let seeker_container = ref<any>(null);

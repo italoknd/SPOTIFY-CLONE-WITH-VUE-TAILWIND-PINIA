@@ -33,7 +33,6 @@
 import { IAlbum } from "../interfaces/albums";
 import { useSongStore } from "../store/song";
 import { useRouter } from "vue-router";
-import { ref } from "vue";
 import { storeToRefs } from "pinia";
 
 const { all_albums } = storeToRefs(useSongStore());
@@ -42,8 +41,6 @@ const { all_albums } = storeToRefs(useSongStore());
 import Play from "vue-material-design-icons/Play.vue";
 
 //VARS
-let index = ref<number | null>(null);
-let is_hovering = ref<boolean>(false);
 const router = useRouter();
 const albumStore = useSongStore();
 
