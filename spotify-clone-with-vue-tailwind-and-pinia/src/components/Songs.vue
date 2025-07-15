@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="border-b border-b-[#2a2a2a] mt-2 md:mt-2 md:mb-4"></div>
-      <ul class="w-full">
+      <ul class="w-full md:mb-0 mb-[70px]">
         <li
           :id="'play-pause-control-' + index"
           class="flex items-center justify-between rounded-md hover:bg-[#2a2929]"
