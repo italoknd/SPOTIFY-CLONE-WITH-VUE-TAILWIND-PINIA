@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="!Object.keys(audio).length"
-    class="rounded-md select-none fixed flex items-center justify-between bottom-[60px] w-full z-50 h-[60px] bg-[#181818]"
+    class="rounded-t-md select-none fixed flex items-center justify-between bottom-[65px] w-full z-50 h-[60px] bg-[#181818]"
   >
     <div class="flex items-center">
       <div class="flex items-center ml-2">
@@ -26,9 +26,19 @@
         </p>
       </div>
     </div>
-    <!-- <div
+
+    <button
+      class="p-1 rounded-full mx-3 bg-white"
+      @click="useSong.playOrPauseThisSong(current_artist, current_track)"
+    >
+      <Play v-if="!is_playing" fillColor="#181818" :size="25"></Play>
+      <Pause v-else fillColor="#181818" :size="25"></Pause>
+    </button>
+
+    <!--DURATION SEEKER-->
+    <div
       ref="seeker_container"
-      class="w-full relative mt-2 mb-3"
+      class="w-full absolute bottom-1.5"
       @mouseenter="is_hover = true"
       @mouseleave="is_hover = false"
     >
@@ -47,14 +57,7 @@
       <div
         class="absolute h-[4px] z-[-0] mt-[6px] inset-y-0 left-0 w-full bg-gray-500 rounded-full"
       />
-    </div> -->
-    <button
-      class="p-1 rounded-full mx-3 bg-white"
-      @click="useSong.playOrPauseThisSong(current_artist, current_track)"
-    >
-      <Play v-if="!is_playing" fillColor="#181818" :size="25"></Play>
-      <Pause v-else fillColor="#181818" :size="25"></Pause>
-    </button>
+    </div>
   </div>
 </template>
 
@@ -77,6 +80,7 @@ let current_track_time = ref<any>(null);
 let seeker = ref<any>(null);
 let seeker_container = ref<any>(null);
 let range = ref<number>(0);
+let is_hover = ref<boolean>(false);
 
 //HOOKS
 onMounted(() => {
