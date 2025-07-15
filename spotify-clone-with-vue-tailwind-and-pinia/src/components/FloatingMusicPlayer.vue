@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      v-if="!Object.keys(audio).length"
+      v-if="!Object.keys(audio).length && !show_current_track"
       @click="toggleNowPlaying(true)"
       class="rounded-t-md select-none fixed flex items-center justify-between bottom-[65px] w-full z-50 h-[60px] bg-[#181818]"
     >
@@ -80,8 +80,13 @@ import Pause from "vue-material-design-icons/Pause.vue";
 
 //STORE STUFF
 import { storeToRefs } from "pinia";
+
+import { useScreenStore } from "../store/screen";
 import { useSongStore } from "../store/song";
+
 import NowPlaying from "./NowPlaying.vue";
+
+const useScreen = useScreenStore();
 const useSong = useSongStore();
 const { is_playing, audio, current_artist, current_track } =
   storeToRefs(useSong);
@@ -170,6 +175,7 @@ const seekerHandler = () => {
 };
 
 const toggleNowPlaying = (param: boolean) => {
+  useScreen.deactivateHeader(!param);
   show_current_track = param;
 };
 </script>
@@ -194,8 +200,6 @@ const toggleNowPlaying = (param: boolean) => {
 .now-playing-enter-to {
   transform: translateY(0);
   opacity: 1;
-  display: block;
-  position: absolute;
 }
 
 /* Estado de saída (antes de sumir) */

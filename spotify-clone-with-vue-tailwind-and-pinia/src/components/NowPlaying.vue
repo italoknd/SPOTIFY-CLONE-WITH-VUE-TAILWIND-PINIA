@@ -1,7 +1,6 @@
 <template>
-  <!-- v-if="!Object.keys(audio).length" -->
   <div
-    class="select-none z-50 h-full w-full bg-[#181818] border-t border-t-[#272727] p-4"
+    class="select-none z-100 absolute h-full w-full bg-[#181818] border-t border-t-[#272727] p-4"
   >
     <!--HEADER CONTAINER-->
     <div class="flex justify-between items-center">
@@ -12,11 +11,12 @@
     <!--IMAGE CONTAINER-->
     <div class="flex items-center justify-center my-4">
       <img
-        class="w-full h-[calc(100vh-375px)] object-cover rounded-xl shadow-2xl"
+        class="w-full h-[calc(100vh-335px)] object-cover rounded-xl shadow-2xl"
         :src="current_track.track_cover"
         alt="Album cover"
       />
     </div>
+
     <!--TRACK INFOS CONTAINER-->
     <div class="cursor-pointer">
       <n-marquee
