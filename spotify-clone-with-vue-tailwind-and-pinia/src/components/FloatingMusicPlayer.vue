@@ -45,13 +45,6 @@
         @mouseenter="is_hover = true"
         @mouseleave="is_hover = false"
       >
-        <input
-          v-model="range"
-          ref="seeker"
-          type="range"
-          class="cursor-pointer absolute rounded-full my-2 w-full h-0 z-40 appearance-none bg-opacity-100 focus:outline-none accent-white"
-          :class="{ rangeDotHidden: !is_hover }"
-        />
         <div
           class="pointer-events-none mt-[6px] absolute h-[4px] z-10 inset-y-0 left-0 w-0"
           :style="`width: ${range}%;`"
