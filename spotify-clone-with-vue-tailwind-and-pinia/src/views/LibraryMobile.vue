@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2 text-white">
+  <div class="p-2 text-white md:mb-0 mb-[120px]">
     <div v-for="(album, index) in all_albums" :key="index">
       <div
         class="flex rounded-md duration-300 hover:cursor-pointer pb-3"
@@ -13,7 +13,9 @@
             <p class="text-md font-semibold w-full">
               {{ album.album }}
             </p>
-            <p class="text-xs whitespace-nowrap overflow-hidden text-ellipsis">
+            <p
+              class="text-xs whitespace-nowrap overflow-hidden text-ellipsis w-[300px]"
+            >
               {{ album.album_category }} • {{ album.artist_of_the_album }}
             </p>
           </div>
@@ -48,5 +50,4 @@ const getItem = (hovering: boolean, item_position: number) => {
   index.value = item_position;
   hovering ? (is_hovering.value = true) : (is_hovering.value = false);
 };
-
 </script>
