@@ -3,25 +3,23 @@
     v-if="_showMobileHeader"
     class="w-full h-[60px] pl-2 fixed gap-2 right-0 z-20 bg-[#101010] flex items-center text-[10px]"
   >
-
-  <button
-  @click="toggleOpeness(!openMenu)"
-  :class="openMenu ? 'bg-secondary' : 'bg-black'"
-  class="mt-2 bg-neutral-700 hover:bg-secondary rounded-full p-[1px] mr-2 cursor-pointer"
-  >
-  <img
-  class="rounded-full"
-  width="35"
-  :src="userStore.userProfilePicture"
-  alt="Profile Picture"
-  />
-</button>
-<button
-class="p-2 rounded-full text-white"
-@click="router.push('/')"
-:class="route.path === '/' ? 'bg-[#23CF5F]' : 'bg-neutral-700'"
->
-{{ _showMobileHeader }}
+    <button
+      @click="toggleOpeness(!openMenu)"
+      :class="openMenu ? 'bg-secondary' : 'bg-black'"
+      class="mt-2 bg-neutral-700 hover:bg-secondary rounded-full p-[1px] mr-2 cursor-pointer"
+    >
+      <img
+        class="rounded-full"
+        width="35"
+        :src="userStore.userProfilePicture"
+        alt="Profile Picture"
+      />
+    </button>
+    <button
+      class="p-2 rounded-full text-white"
+      @click="router.push('/')"
+      :class="route.path === '/' ? 'bg-[#23CF5F]' : 'bg-neutral-700'"
+    >
       Home
     </button>
     <button
